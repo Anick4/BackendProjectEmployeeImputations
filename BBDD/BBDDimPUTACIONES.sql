@@ -93,8 +93,8 @@ CREATE TABLE `empleados_proyectos` (
   `proyectos_idproyectos` int NOT NULL,
   `empleados_idempleados` int NOT NULL,
   PRIMARY KEY (`proyectos_idproyectos`,`empleados_idempleados`),
-  KEY `fk_proyectos_has_empleados_empleados1_idx` (`empleados_idempleados`),
-  KEY `fk_proyectos_has_empleados_proyectos1_idx` (`proyectos_idproyectos`),
+  KEY `fk_proyectos_has_empleados_empleados_idx` (`empleados_idempleados`),
+  KEY `fk_proyectos_has_empleados_proyectos_idx` (`proyectos_idproyectos`),
   CONSTRAINT `fk_proyectos_has_empleados_empleados` FOREIGN KEY (`empleados_idempleados`) REFERENCES `empleados` (`EmpleadoId`),
   CONSTRAINT `fk_proyectos_has_empleados_proyectos` FOREIGN KEY (`proyectos_idproyectos`) REFERENCES `proyectos` (`idproyectos`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
@@ -205,4 +205,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-28 15:32:34
+-- Dump completed on 2022-02-28 15:39:10
