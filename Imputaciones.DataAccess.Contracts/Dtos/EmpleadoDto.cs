@@ -20,5 +20,6 @@ namespace Imputaciones.DataAccess.Contracts.Dtos
         public string? Email { get; set; }
 
         public string? Contraseña { get; set; }
+        
     }
 }
