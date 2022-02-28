@@ -95,8 +95,8 @@ CREATE TABLE `empleados_proyectos` (
   PRIMARY KEY (`proyectos_idproyectos`,`empleados_idempleados`),
   KEY `fk_proyectos_has_empleados_empleados1_idx` (`empleados_idempleados`),
   KEY `fk_proyectos_has_empleados_proyectos1_idx` (`proyectos_idproyectos`),
-  CONSTRAINT `fk_proyectos_has_empleados_empleados1` FOREIGN KEY (`empleados_idempleados`) REFERENCES `empleados` (`EmpleadoId`),
-  CONSTRAINT `fk_proyectos_has_empleados_proyectos1` FOREIGN KEY (`proyectos_idproyectos`) REFERENCES `proyectos` (`idproyectos`)
+  CONSTRAINT `fk_proyectos_has_empleados_empleados` FOREIGN KEY (`empleados_idempleados`) REFERENCES `empleados` (`EmpleadoId`),
+  CONSTRAINT `fk_proyectos_has_empleados_proyectos` FOREIGN KEY (`proyectos_idproyectos`) REFERENCES `proyectos` (`idproyectos`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -195,10 +195,6 @@ LOCK TABLES `roles` WRITE;
 INSERT INTO `roles` VALUES (1,_binary '',_binary '\0',_binary '\0');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'imputacionesdb'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -209,4 +205,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-28 13:57:57
+-- Dump completed on 2022-02-28 15:32:34
