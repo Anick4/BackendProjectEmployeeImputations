@@ -26,5 +26,6 @@ namespace Imputaciones.Application.BusinessModel.Responses
         public string? Email { get; set; }
 
         public string? Contraseña { get; set; }
+        public int? Calendario_idCalendario;
     }
 }
