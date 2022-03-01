@@ -1,13 +1,19 @@
-﻿using Imputaciones.DataAccess.Contracts.Entities;
+﻿
+using Imputaciones.DataAccess.Contracts.Entities;
 using Imputaciones.DataAccess.Contracts.Repositories;
 using Imputaciones.DataAccess.Services.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Imputaciones.DataAccess.Services.Respositories
 {
-    public class EmpleadoRepository : GenericRepository<Empleado>, IEmpleadoRepository
+    public class ImputacionRepository: GenericRepository<Imputacion>, IImputacionRepository
     {
         private readonly ApplicationDbContext _dbContext;
-        public EmpleadoRepository(ApplicationDbContext dbContext) : base(dbContext)
+        public ImputacionRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }

@@ -1,20 +1,14 @@
-<<<<<<< HEAD
 ﻿using Imputaciones.DataAccess.Contracts.Entities;
 using Imputaciones.DataAccess.Contracts.Repository;
-=======
-﻿using Imputaciones.DataAccess.Contracts.Repository;
-using Imputaciones.DataAccess.Contracts.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
->>>>>>> AdriBranch
 
 namespace Imputaciones.DataAccess.Contracts.Repositories
 {
-    public interface IEmpleadoRepository : IGenericRespository<Empleado>
+    public interface IImputacionRepository : IGenericRespository<Imputacion>
     {
-
     }
 }

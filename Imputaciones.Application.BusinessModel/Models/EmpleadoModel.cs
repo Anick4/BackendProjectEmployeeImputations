@@ -22,6 +22,7 @@ namespace Imputaciones.Application.BusinessModel.Models
 
         public string? Contraseña { get; set; }
         public int? Calendarios_idCalendarios { get; set; }
+        
 
     }
 }

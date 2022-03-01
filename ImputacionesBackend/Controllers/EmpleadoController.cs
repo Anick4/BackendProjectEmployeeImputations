@@ -1,7 +1,6 @@
 ﻿using Imputaciones.Application.BusinessModel.Responses;
 using Imputaciones.Application.Contracts.Mappers;
 using Imputaciones.Application.Contracts.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ImputacionesBackend.Controllers
