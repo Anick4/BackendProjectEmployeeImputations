@@ -1,19 +1,22 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Imputaciones.DataAccess.Services;
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace Cars.DataAccess.Services.Repositories
+namespace Imputaciones.DataAccess.Services.Repositories
 {
     public class GenericRepository<TEntity> where TEntity : class
     {
         #region Arquitectura
         internal ApplicationDbContext context;
         internal DbSet<TEntity> dbSet;
+        private ApplicationDbContext context1;
 
         public GenericRepository(ApplicationDbContext context)
         {
             this.context = context;
             this.dbSet = context.Set<TEntity>();
         }
+
 
         public virtual IEnumerable<TEntity> Get(
             Expression<Func<TEntity, bool>> filter = null,

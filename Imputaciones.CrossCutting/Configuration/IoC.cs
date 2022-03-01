@@ -4,7 +4,7 @@ using Imputaciones.DataAccess.Contracts.Repositories;
 using Imputaciones.DataAccess.Services.Respositories;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Cars.CrossCutting.Configuration
+namespace Imputaciones.CrossCutting.Configuration
 {
     public static class IoC
     {

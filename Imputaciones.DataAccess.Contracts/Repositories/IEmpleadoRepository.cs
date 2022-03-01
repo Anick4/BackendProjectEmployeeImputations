@@ -1,10 +1,5 @@
-﻿using Cars.DataAccess.Contracts.Repository;
-using Imputaciones.DataAccess.Contracts.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Imputaciones.DataAccess.Contracts.Entities;
+using Imputaciones.DataAccess.Contracts.Repository;
 
 namespace Imputaciones.DataAccess.Contracts.Repositories
 {

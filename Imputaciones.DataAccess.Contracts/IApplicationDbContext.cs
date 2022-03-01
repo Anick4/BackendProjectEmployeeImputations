@@ -3,12 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace Cars.DataAccess.Contracts
+namespace Imputaciones.DataAccess.Contracts
 {
     public interface IApplicationDbContext
     {
-        DbSet<Empleado> Empleados { get; set; } 
-        
+        DbSet<Empleado> Empleados { get; set; }
+        DbSet<Calendario> Calendarios { get; set; }
+
         int SaveChanges();
         void Dispose();
 

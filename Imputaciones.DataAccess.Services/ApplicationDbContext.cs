@@ -1,4 +1,4 @@
-﻿using Cars.DataAccess.Contracts;
+﻿using Imputaciones.DataAccess.Contracts;
 using Imputaciones.DataAccess.Contracts.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -10,12 +10,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cars.DataAccess.Services
+namespace Imputaciones.DataAccess.Services
 {
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
         private readonly IConfiguration _configuration;
         public DbSet<Empleado> Empleados { get; set; }
+        public DbSet<Calendario> Calendarios { get; set; }
 
 
         #region Arquitectura generica   

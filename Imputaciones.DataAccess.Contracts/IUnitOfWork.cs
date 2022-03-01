@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cars.DataAccess.Contracts
+namespace Imputaciones.DataAccess.Contracts
 {
     public interface IUnitOfWork
     {

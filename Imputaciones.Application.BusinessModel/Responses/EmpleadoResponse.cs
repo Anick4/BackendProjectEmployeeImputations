@@ -12,9 +12,6 @@ namespace Imputaciones.Application.BusinessModel.Responses
         public EmpleadoResponse() { }
         public EmpleadoResponse(string mesagge, bool status) : base(mesagge, status) { }
 
-
-
-
         public int EmpleadoId { get; set; }
 
         public string? Codigo_empleado { get; set; }
