@@ -1,4 +1,5 @@
 ﻿
+using Imputaciones.Application.Contracts.Services;
 using Imputaciones.DataAccess.Contracts.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,11 +9,11 @@ namespace ImputacionesBackend.Controllers
     [ApiController]
     public class ImputacionController : ControllerBase
     {
-        private readonly IImputacionRepository _imputacionRepository;
+        private readonly IImputacionService _imputacionService;
 
-        public ImputacionController(IImputacionRepository imputacionRepository)
+        public ImputacionController(IImputacionService imputacionService)
         {
-            _imputacionRepository = imputacionRepository;
+            _imputacionService = imputacionService;
         }
 
         [HttpGet]

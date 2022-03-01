@@ -1,5 +1,7 @@
 using Imputaciones.CrossCutting.Configuration;
+
 using Imputaciones.DataAccess.Services;
+
 using Microsoft.EntityFrameworkCore;
 
 
@@ -17,8 +19,7 @@ var appSettingsSection = builder.Configuration.GetSection("AppSettings");
 string myconnection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 options.UseMySql(
-myconnection, ServerVersion.AutoDetect(myconnection),
-b => b.MigrationsAssembly("Empleados.DataAccess.Services")
+myconnection, ServerVersion.AutoDetect(myconnection)
 )
 );
 

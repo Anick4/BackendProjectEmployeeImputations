@@ -28,6 +28,7 @@ namespace Imputaciones.CrossCutting.Configuration
             services.AddTransient<IEmpleadoService, EmpleadoService>();
             services.AddTransient<IImputacionService, ImputacionService>();
             services.AddTransient<IProyectoService, ProyectoService>();
+            services.AddTransient<ICalendarioService, CalendarioService>();
             
 
             return services;
@@ -38,6 +39,7 @@ namespace Imputaciones.CrossCutting.Configuration
             services.AddTransient<IEmpleadoRepository, EmpleadoRepository>();
             services.AddTransient<IImputacionRepository, ImputacionRepository>();
             services.AddTransient<IProyectoRepository, ProyectoRepository>();
+            services.AddTransient<ICalendarioRepository, CalendarioRepository>();
 
 
 

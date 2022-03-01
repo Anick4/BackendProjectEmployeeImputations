@@ -9,7 +9,7 @@ namespace Imputaciones.DataAccess.Services.Repositories
         #region Arquitectura
         internal ApplicationDbContext context;
         internal DbSet<TEntity> dbSet;
-        private ApplicationDbContext context1;
+        
 
         public GenericRepository(ApplicationDbContext context)
         {

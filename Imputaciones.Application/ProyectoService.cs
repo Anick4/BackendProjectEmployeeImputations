@@ -1,5 +1,7 @@
 ﻿using Imputaciones.Application.BusinessModel.Models;
+using Imputaciones.Application.Contracts.Mappers;
 using Imputaciones.Application.Contracts.Services;
+using Imputaciones.DataAccess.Contracts.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +12,11 @@ namespace Imputaciones.Application
 {
     public class ProyectoService : IProyectoService
     {
+        private readonly IProyectoRepository _proyectoRepository;
+        public ProyectoService(IProyectoRepository proyectoRepository)
+        {
+            _proyectoRepository = proyectoRepository;
+        }
         public Task<ProyectoModel> AddProyecto(ProyectoModel proyectoModel)
         {
             throw new NotImplementedException();
@@ -22,7 +29,9 @@ namespace Imputaciones.Application
 
         public ProyectoModel GetProyectoById(int id)
         {
-            throw new NotImplementedException();
+            var result = _proyectoRepository.GetByID(id);
+            return result.toProyectoModel();
         }
     }
 }
+

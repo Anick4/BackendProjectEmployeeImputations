@@ -10,8 +10,8 @@ namespace Imputaciones.Application.BusinessModel.Responses
     public class EmpleadoResponse : BaseResponse
     {
         public EmpleadoResponse() { }
-        public EmpleadoResponse(string mesagge, bool status) : base(mesagge, status) { }
-
+        public EmpleadoResponse(string message, bool status) : base(message, status) { }
+        
         public int EmpleadoId { get; set; }
 
         public string? Codigo_empleado { get; set; }

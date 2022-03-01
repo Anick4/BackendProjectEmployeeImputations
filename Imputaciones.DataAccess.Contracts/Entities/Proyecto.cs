@@ -4,14 +4,15 @@ namespace Imputaciones.DataAccess.Contracts.Entities
 {
     public class Proyecto
     {
+        [Key]
         [Required]
         public int IdProyecto { get; set; }
 
         [Required]
-        public bool Estado { get; set; }
+        public int Estado { get; set; }
         [Required]
 
-        public bool Generico { get; set; }
+        public int Generico { get; set; }
         [Required]
 
         public string? Nombre { get; set; }

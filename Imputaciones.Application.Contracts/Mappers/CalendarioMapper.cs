@@ -12,8 +12,8 @@ namespace Imputaciones.Application.Contracts.Mappers
         {
             return new CalendarioResponse()
             {
-                Id = calendarioModel.Id,
-                HorasDiarias = calendarioModel.HorasDiarias,
+                Idcalendarios = calendarioModel.Idcalendarios,
+                Horas_diarias = calendarioModel.Horas_diarias,
                 Lunes = calendarioModel.Lunes,
                 Martes = calendarioModel.Martes,
                 Miercoles = calendarioModel.Miercoles,
@@ -30,8 +30,8 @@ namespace Imputaciones.Application.Contracts.Mappers
         {
             return new CalendarioModel()
             {
-                Id = calendario.Id,
-                HorasDiarias = calendario.HorasDiarias,
+                Idcalendarios = calendario.Idcalendarios,
+                Horas_diarias = calendario.Horas_diarias,
                 Lunes = calendario.Lunes,
                 Martes = calendario.Martes,
                 Miercoles = calendario.Miercoles,

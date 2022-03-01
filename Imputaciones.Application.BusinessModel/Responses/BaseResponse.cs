@@ -9,9 +9,9 @@ namespace Imputaciones.Application.BusinessModel.Response
     public class BaseResponse
     {
         public BaseResponse() { }
-        public BaseResponse(string messagge, bool status) 
+        public BaseResponse(string message, bool status) 
         { 
-            this.Message = messagge;
+            this.Message = message;
             this.Status = status;
         }
         public string? Message { get; set; }

@@ -1,4 +1,7 @@
-﻿using Imputaciones.DataAccess.Contracts.Repositories;
+﻿using Imputaciones.Application.BusinessModel.Responses;
+using Imputaciones.Application.Contracts.Mappers;
+using Imputaciones.Application.Contracts.Services;
+using Imputaciones.DataAccess.Contracts.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,10 +11,27 @@ namespace ImputacionesBackend.Controllers
     [ApiController]
     public class ProyectoController : ControllerBase
     {
-        private readonly IProyectoRepository _proyectoRepository;
-        public ProyectoController(IProyectoRepository proyectoRepository)
+        private readonly IProyectoService _proyectoService;
+        public ProyectoController(IProyectoService proyectoService)
         {
-            _proyectoRepository = proyectoRepository;
+            _proyectoService = proyectoService;
+
+        }
+
+        [HttpGet]
+        [Route("GetProyectoById")]
+
+        public ActionResult GetProyectoById(int id)
+        {
+            try
+            {
+                var result = _proyectoService.GetProyectoById(id);
+                return Ok(result.toProyectoResponseMapper());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ProyectoResponse(ex.Message, false));
+            }
 
         }
 

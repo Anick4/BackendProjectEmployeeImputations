@@ -15,10 +15,10 @@ namespace Imputaciones.DataAccess.Services
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
         private readonly IConfiguration _configuration;
-        public DbSet<Empleado> Empleados { get; set; }
-        public DbSet<Calendario> Calendarios { get; set; }
-        public DbSet<Imputacion> Imputaciones { get; set; }
-        public DbSet<Proyecto> Proyectos { get; set; }
+        public DbSet<Empleado> empleados { get; set; }
+        public DbSet<Calendario> calendarios { get; set; }
+       // public DbSet<Imputacion> imputaciones { get; set; }
+        public DbSet<Proyecto> proyectos { get; set; }
 
 
 

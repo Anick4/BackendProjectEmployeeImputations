@@ -1,4 +1,5 @@
 ﻿using Imputaciones.Application;
+using Imputaciones.Application.BusinessModel.Responses;
 using Imputaciones.Application.Contracts.Mappers;
 using Imputaciones.Application.Contracts.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -14,7 +15,7 @@ namespace ImputacionesBackend.Controllers
         private readonly ICalendarioService _calendarioService; // private para proteger que no se trapichee
 
         //Constructor de CalendarioController:
-        public CalendarioController(CalendarioService calendarioService)
+        public CalendarioController(ICalendarioService calendarioService)
         {
             _calendarioService = calendarioService;
         }
@@ -24,9 +25,17 @@ namespace ImputacionesBackend.Controllers
         [Route("GetCalendario")]  // Ruta: /Calendario/GetCalendario  
         public ActionResult GetCalendario(int id)
         {
+            try
+            {
+
             var calendarioResponse = _calendarioService.GetCalendario(id);
 
             return Ok(calendarioResponse.toCalendarioResponseMapper());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new CalendarioResponse(ex.Message, false));
+            }
         }
 
 

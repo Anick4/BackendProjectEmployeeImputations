@@ -9,23 +9,25 @@ namespace Imputaciones.DataAccess.Contracts.Entities
 {
     public class Calendario
     {
+        [Key]
         [Required]
-        public int Id { get; set; }
+        
+        public int Idcalendarios { get; set; }
         [Required]
-        public int? HorasDiarias { get; set; }
+        public int? Horas_diarias { get; set; }
         [Required]
-        public Boolean? Lunes { get; set; }
+        public int? Lunes { get; set; }
         [Required]
-        public Boolean? Martes { get; set; }
+        public int? Martes { get; set; }
         [Required]
-        public Boolean? Miercoles { get; set; }
+        public int? Miercoles { get; set; }
         [Required]
-        public Boolean? Jueves { get; set; }
+        public int? Jueves { get; set; }
         [Required]
-        public Boolean? Viernes { get; set; }
+        public int? Viernes { get; set; }
         [Required]
-        public Boolean? Sabado { get; set; }
+        public int? Sabado { get; set; }
         [Required]
-        public Boolean? Domingo { get; set; }
+        public int? Domingo { get; set; }
     }
 }

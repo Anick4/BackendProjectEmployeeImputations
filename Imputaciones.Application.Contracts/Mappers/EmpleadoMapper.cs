@@ -32,7 +32,7 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Codigo_empleado = empleado.Codigo_empleado,
                 Email = empleado.Email,
                 Contraseña = empleado.Contraseña,
-                Calendarios_idCalendarios = empleado.Calendarios_idCalendarios,
+                
                 
                 
             };

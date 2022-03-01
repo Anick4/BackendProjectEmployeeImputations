@@ -11,17 +11,17 @@ namespace Imputaciones.Application.BusinessModel.Responses
     {
 
         public CalendarioResponse() { }
-        public CalendarioResponse(string mesagge, bool status) : base(mesagge, status) { }
+        public CalendarioResponse(string message, bool status) : base(message, status) { }
 
-        public int Id { get; set; }
-        public int? HorasDiarias { get; set; }
-        public Boolean? Lunes { get; set; }
-        public Boolean? Martes { get; set; }
-        public Boolean? Miercoles { get; set; }
-        public Boolean? Jueves { get; set; }
-        public Boolean? Viernes { get; set; }
-        public Boolean? Sabado { get; set; }
-        public Boolean? Domingo { get; set; }
+        public int Idcalendarios { get; set; }
+        public int? Horas_diarias { get; set; }
+        public int? Lunes { get; set; }
+        public int? Martes { get; set; }
+        public int? Miercoles { get; set; }
+        public int? Jueves { get; set; }
+        public int? Viernes { get; set; }
+        public int? Sabado { get; set; }
+        public int? Domingo { get; set; }
 
     }
 }

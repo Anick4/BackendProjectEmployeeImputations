@@ -19,7 +19,7 @@ namespace Imputaciones.DataAccess.Contracts.Entities
         public int Horas { get; set; }
         [Required]
 
-        public bool Estado { get; set; }
+        public int Estado { get; set; }
         [Required]
 
         public int Extras { get; set; }
