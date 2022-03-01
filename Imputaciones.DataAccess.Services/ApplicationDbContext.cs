@@ -16,13 +16,10 @@ namespace Imputaciones.DataAccess.Services
     {
         private readonly IConfiguration _configuration;
         public DbSet<Empleado> Empleados { get; set; }
-<<<<<<< HEAD
         public DbSet<Calendario> Calendarios { get; set; }
-=======
         public DbSet<Imputacion> Imputaciones { get; set; }
         public DbSet<Proyecto> Proyectos { get; set; }
 
->>>>>>> AdriBranch
 
 
         #region Arquitectura generica   
