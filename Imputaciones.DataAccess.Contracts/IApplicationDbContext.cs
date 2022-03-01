@@ -3,11 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace Cars.DataAccess.Contracts
+namespace Imputaciones.DataAccess.Contracts
 {
     public interface IApplicationDbContext
     {
-        DbSet<Empleado> Empleados { get; set; } 
+        DbSet<Empleado> Empleados { get; set; }
+        DbSet<Imputacion> Imputaciones { get; set; }
+        DbSet<Proyecto> Proyectos { get; set; } 
         
         int SaveChanges();
         void Dispose();

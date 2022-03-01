@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cars.Application.BusinessModel.Response
+namespace Imputaciones.Application.BusinessModel.Response
 {
     public class BaseResponse
     {

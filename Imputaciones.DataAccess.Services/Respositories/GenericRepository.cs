@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace Cars.DataAccess.Services.Repositories
+namespace Imputaciones.DataAccess.Services.Repositories
 {
     public class GenericRepository<TEntity> where TEntity : class
     {
