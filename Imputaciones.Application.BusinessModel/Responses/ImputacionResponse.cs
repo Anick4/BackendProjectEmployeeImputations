@@ -17,7 +17,7 @@ namespace Imputaciones.Application.BusinessModel.Responses
         public int IdImputaciones { get; set; }
         public int Dia { get; set; }
         public int Horas { get; set; }
-        public int Estado { get; set; }
+        public string Estado { get; set; }
         public int Extras { get; set; }
         public int Semana { get; set; }
         public int empleados_idempleados1 { get; set; }

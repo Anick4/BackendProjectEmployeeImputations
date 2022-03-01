@@ -17,7 +17,7 @@ namespace Imputaciones.DataAccess.Services
         private readonly IConfiguration _configuration;
         public DbSet<Empleado> empleados { get; set; }
         public DbSet<Calendario> calendarios { get; set; }
-       // public DbSet<Imputacion> imputaciones { get; set; }
+        public DbSet<Imputacion> imputaciones { get; set; }
         public DbSet<Proyecto> proyectos { get; set; }
 
 

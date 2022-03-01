@@ -1,4 +1,5 @@
 ﻿using Imputaciones.Application.BusinessModel.Models;
+using Imputaciones.Application.Contracts.Mappers;
 using Imputaciones.Application.Contracts.Services;
 using Imputaciones.DataAccess.Contracts.Repositories;
 using System;
@@ -17,17 +18,18 @@ namespace Imputaciones.Application
         {
             _imputacionRepository = imputacionRepository;
         }
-        public Task<ImputacionesModel> AddImputaciones(ImputacionesModel imputacionesModel)
+        public Task<ImputacionModel> AddImputaciones(ImputacionModel imputacionesModel)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<ImputacionesModel>> GetAllImputaciones()
+        public async Task<List<ImputacionModel>> GetAllImputaciones()
         {
-            throw new NotImplementedException();
+            var List = await _imputacionRepository.GetAsync();
+            return List.ToList().toListImputacionModel();
         }
 
-        public ImputacionesModel GetImputacionesById(int id)
+        public ImputacionModel GetImputacionesById(int id)
         {
             throw new NotImplementedException();
         }

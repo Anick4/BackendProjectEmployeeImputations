@@ -9,7 +9,7 @@ namespace Imputaciones.DataAccess.Contracts
     {
         DbSet<Empleado> empleados { get; set; }
         DbSet<Calendario> calendarios { get; set; }
-       // DbSet<Imputacion> imputaciones { get; set; }
+        DbSet<Imputacion> imputaciones { get; set; }
         DbSet<Proyecto> proyectos { get; set; } 
         
         int SaveChanges();

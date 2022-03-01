@@ -9,8 +9,8 @@ namespace Imputaciones.Application.Contracts.Services
 {
     public interface IImputacionService
     {
-        Task<List<ImputacionesModel>> GetAllImputaciones();
-        ImputacionesModel GetImputacionesById(int id);
-        Task<ImputacionesModel> AddImputaciones(ImputacionesModel imputacionesModel);
+        Task<List<ImputacionModel>> GetAllImputaciones();
+        ImputacionModel GetImputacionesById(int id);
+        Task<ImputacionModel> AddImputaciones(ImputacionModel imputacionesModel);
     }
 }

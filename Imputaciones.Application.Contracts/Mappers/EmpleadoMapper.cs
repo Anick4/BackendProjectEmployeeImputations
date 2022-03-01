@@ -32,9 +32,9 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Codigo_empleado = empleado.Codigo_empleado,
                 Email = empleado.Email,
                 Contraseña = empleado.Contraseña,
-                
-                
-                
+                Calendarios_idCalendarios = empleado.Calendarios_idCalendarios,
+                roles_idRoles1 = empleado.roles_idRoles1,
+               
             };
         }
 
@@ -48,8 +48,7 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Codigo_empleado = empleadoModel.Codigo_empleado,
                 Email = empleadoModel.Email,
                 Contraseña = empleadoModel.Contraseña,
-                Calendarios_idCalendarios = empleadoModel.Calendarios_idCalendarios
-                
+                Calendarios_idCalendarios = empleadoModel.Calendarios_idCalendarios      
             };
         }
 

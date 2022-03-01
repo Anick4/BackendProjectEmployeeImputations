@@ -1,4 +1,5 @@
 ﻿
+using Imputaciones.Application.BusinessModel.Responses;
 using Imputaciones.Application.Contracts.Services;
 using Imputaciones.DataAccess.Contracts.Repositories;
 using Microsoft.AspNetCore.Mvc;
@@ -18,6 +19,18 @@ namespace ImputacionesBackend.Controllers
 
         [HttpGet]
         [Route("GetImputaciones")]
-        public void hola() { }
+        public async Task<ActionResult> GetImputaciones()
+        {
+            try
+            {
+
+            var response = await _imputacionService.GetAllImputaciones();
+            return Ok(response);
+            } 
+            catch (Exception ex)
+            {
+                return BadRequest(new ImputacionResponse(ex.Message, false));
+            }
+        }
     }
 }

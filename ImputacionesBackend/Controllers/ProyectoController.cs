@@ -12,6 +12,7 @@ namespace ImputacionesBackend.Controllers
     public class ProyectoController : ControllerBase
     {
         private readonly IProyectoService _proyectoService;
+
         public ProyectoController(IProyectoService proyectoService)
         {
             _proyectoService = proyectoService;

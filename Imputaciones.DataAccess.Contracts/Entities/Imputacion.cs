@@ -9,6 +9,7 @@ namespace Imputaciones.DataAccess.Contracts.Entities
 {
     public class Imputacion
     {
+        [Key]
         [Required]
         public int IdImputaciones { get; set; }
         [Required]
@@ -19,7 +20,7 @@ namespace Imputaciones.DataAccess.Contracts.Entities
         public int Horas { get; set; }
         [Required]
 
-        public int Estado { get; set; }
+        public string Estado { get; set; }
         [Required]
 
         public int Extras { get; set; }
