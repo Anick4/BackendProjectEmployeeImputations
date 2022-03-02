@@ -11,7 +11,6 @@ namespace Imputaciones.DataAccess.Contracts.Entities
     {
         [Key]
         [Required]
-        
         public int Idcalendarios { get; set; }
         [Required]
         public int? Horas_diarias { get; set; }
