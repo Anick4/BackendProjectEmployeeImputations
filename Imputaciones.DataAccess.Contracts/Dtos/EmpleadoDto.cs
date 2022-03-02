@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Imputaciones.DataAccess.Contracts.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,10 @@ namespace Imputaciones.DataAccess.Contracts.Dtos
         public string? Contraseña { get; set; }
 
         public int? Calendarios_idCalendarios { get; set; }
+        public int? Roles_idRoles1 { get; set; }
+
+        public Calendario? Calendario { get; set; }
+        public string? Token { get; set; }
 
 
     }

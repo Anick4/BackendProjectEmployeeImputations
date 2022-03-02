@@ -19,6 +19,6 @@ namespace Imputaciones.Application.BusinessModel.Requests
         public string? Contraseña { get; set; }
         public int? Calendarios_idCalendarios { get; set; }
         public int? roles_idRoles1 { get; set; }
-        //public CalendarioRequest? Calendario { get; set; }
+        
     }
 }

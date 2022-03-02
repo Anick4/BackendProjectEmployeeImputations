@@ -10,8 +10,9 @@ namespace Imputaciones.DataAccess.Contracts
         DbSet<Empleado> empleados { get; set; }
         DbSet<Calendario> calendarios { get; set; }
         DbSet<Imputacion> imputaciones { get; set; }
-        DbSet<Proyecto> proyectos { get; set; } 
-        
+        DbSet<Proyecto> proyectos { get; set; }
+        DbSet<Rol> roles { get; set; }
+
         int SaveChanges();
         void Dispose();
 

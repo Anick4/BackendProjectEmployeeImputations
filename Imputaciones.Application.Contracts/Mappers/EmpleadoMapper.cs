@@ -1,5 +1,6 @@
 ﻿using Imputaciones.Application.BusinessModel.Models;
 using Imputaciones.Application.BusinessModel.Responses;
+using Imputaciones.DataAccess.Contracts.Dtos;
 using Imputaciones.DataAccess.Contracts.Entities;
 using System;
 using System.Collections.Generic;
@@ -33,14 +34,14 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Email = empleado.Email,
                 Contraseña = empleado.Contraseña,
                 Calendarios_idCalendarios = empleado.Calendarios_idCalendarios,
-                roles_idRoles1 = empleado.roles_idRoles1,
-               
+                Roles_idRoles1 = empleado.Roles_idRoles1,
+                
             };
         }
 
-        public static EmpleadoResponse toEmpleadoResponseMapper(this EmpleadoModel empleadoModel)
+        public static EmpleadoResponseConCalendario toEmpleadoResponseMapper(this EmpleadoModel empleadoModel)
         {
-            return new EmpleadoResponse()
+            return new EmpleadoResponseConCalendario()
             {
                 EmpleadoId = empleadoModel.EmpleadoId,
                 Nombre = empleadoModel.Nombre,
@@ -48,10 +49,46 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Codigo_empleado = empleadoModel.Codigo_empleado,
                 Email = empleadoModel.Email,
                 Contraseña = empleadoModel.Contraseña,
-                Calendarios_idCalendarios = empleadoModel.Calendarios_idCalendarios      
+                Calendarios_idCalendarios = empleadoModel.Calendarios_idCalendarios,
+                Token = empleadoModel.Token,
             };
         }
 
-        
+        public static EmpleadoResponseConCalendario toEmpleadoResponseMapper2(this EmpleadoModel empleadoModel)
+        {
+            return new EmpleadoResponseConCalendario()
+            {
+                EmpleadoId = empleadoModel.EmpleadoId,
+                Nombre = empleadoModel.Nombre,
+                Apellidos = empleadoModel.Apellidos,
+                Codigo_empleado = empleadoModel.Codigo_empleado,
+                Email = empleadoModel.Email,
+                Contraseña = empleadoModel.Contraseña,
+                Calendarios_idCalendarios = empleadoModel.Calendarios_idCalendarios,
+                Calendario = null,
+                Token = empleadoModel.Token,
+                
+                
+            };
+        }
+
+        public static EmpleadoModel toEmpleadoModelMapper(this EmpleadoDto empleadoDto)
+        {
+            return new EmpleadoModel()
+            {
+                EmpleadoId = empleadoDto.EmpleadoId,
+                Nombre = empleadoDto.Nombre,
+                Apellidos = empleadoDto.Apellidos,
+                Codigo_empleado = empleadoDto.Codigo_empleado,
+                Email = empleadoDto.Email,
+                Contraseña = empleadoDto.Contraseña,
+                Calendarios_idCalendarios = empleadoDto.Calendarios_idCalendarios,
+                Roles_idRoles1 = empleadoDto.Roles_idRoles1,
+                
+                
+            };
+        }
+
+
     }
 }

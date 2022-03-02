@@ -25,8 +25,8 @@ namespace Imputaciones.DataAccess.Contracts.Entities
         [Required]
 
         public int? Calendarios_idCalendarios { get; set; }
-        public int? roles_idRoles1 { get; set; }
-        //public Calendario? Calendario { get; set; }
+        public int? Roles_idRoles1 { get; set; }
+        
 
 
 

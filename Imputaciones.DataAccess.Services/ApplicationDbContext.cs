@@ -19,6 +19,7 @@ namespace Imputaciones.DataAccess.Services
         public DbSet<Calendario> calendarios { get; set; }
         public DbSet<Imputacion> imputaciones { get; set; }
         public DbSet<Proyecto> proyectos { get; set; }
+        public DbSet<Rol> roles { get; set; }
 
 
 

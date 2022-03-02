@@ -11,7 +11,22 @@ namespace Imputaciones.Application.BusinessModel.Responses
     {
         public EmpleadoResponse() { }
         public EmpleadoResponse(string message, bool status) : base(message, status) { }
+        public EmpleadoResponse(int empleadoId, string? codigo_empleado, string? nombre, string? apellidos, string? email, string? contraseña, int? calendarios_idCalendarios, int? roles_idRoles1) 
+        { 
+            this.EmpleadoId = empleadoId;
+            this.Codigo_empleado = codigo_empleado;
+            this.Nombre = nombre;
+            this.Apellidos = apellidos;
+            this.Email = email;
+            this.Contraseña = contraseña;
+            this.Calendarios_idCalendarios = calendarios_idCalendarios;
+            this.Roles_idRoles1 = roles_idRoles1;
         
+        
+        
+        }
+
+
         public int EmpleadoId { get; set; }
 
         public string? Codigo_empleado { get; set; }
@@ -25,7 +40,6 @@ namespace Imputaciones.Application.BusinessModel.Responses
         public string? Contraseña { get; set; }
         public int? Calendarios_idCalendarios { get; set; }
         public int? Roles_idRoles1 { get; set; }
-        // public CalendarioResponse Calendario { get; set; }
 
 
     }

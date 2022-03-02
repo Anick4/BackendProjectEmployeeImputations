@@ -15,18 +15,18 @@ namespace Imputaciones.DataAccess.Contracts.Entities
         [Required]
         public int? Horas_diarias { get; set; }
         [Required]
-        public int? Lunes { get; set; }
+        public Boolean? Lunes { get; set; }
         [Required]
-        public int? Martes { get; set; }
+        public Boolean? Martes { get; set; }
         [Required]
-        public int? Miercoles { get; set; }
+        public Boolean? Miercoles { get; set; }
         [Required]
-        public int? Jueves { get; set; }
+        public Boolean? Jueves { get; set; }
         [Required]
-        public int? Viernes { get; set; }
+        public Boolean Viernes { get; set; }
         [Required]
-        public int? Sabado { get; set; }
+        public Boolean? Sabado { get; set; }
         [Required]
-        public int? Domingo { get; set; }
+        public Boolean? Domingo { get; set; }
     }
 }
