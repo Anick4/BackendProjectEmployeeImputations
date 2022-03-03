@@ -18,6 +18,7 @@ namespace Imputaciones.DataAccess.Contracts.Entities
         public Boolean? Lunes { get; set; }
         [Required]
         public Boolean? Martes { get; set; }
+        
         [Required]
         public Boolean? Miercoles { get; set; }
         [Required]

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ImputacionesBackend.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class EmpleadoController : ControllerBase
@@ -52,17 +53,13 @@ namespace ImputacionesBackend.Controllers
 
         [HttpGet]
         [Route("GetEmpleado")]
-        public async Task<EmpleadoResponseConCalendario> GetEmpleado(int id)
+        public async Task<ActionResult> GetEmpleado(int id) //NOMBRE CAMBIADO
         {
             try
             {
                 var result = await _empleadoService.GetEmpleado(id);
-                var empleado = result.Item1.toEmpleadoResponseMapper2();
-                empleado.Calendario = result.Item2.toCalendarioResponseMapper();
-                empleado.Rol = result.Item3.toRolResponseMapper();
 
-
-                return empleado;
+                return Ok(result);
 
             }
             catch 
@@ -78,12 +75,9 @@ namespace ImputacionesBackend.Controllers
             try
             {
                 var response = await _empleadoService.CheckLogin(loginRequest.Email, loginRequest.Password);
-                
-                var empleado = await GetEmpleado((int)response.EmpleadoId);
-                //IDEA PARA TOKEN CREAR FUNCION EN EL SERVICE Y LLAMARLA DESDE AQUI
-              
 
-                return Ok(empleado);
+
+                return Ok(response);
             }
             catch (Exception)
             {

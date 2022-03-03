@@ -22,6 +22,7 @@ namespace Imputaciones.DataAccess.Contracts.Entities
 
         [Required]
         public string? Contraseña { get; set; }
+        
         [Required]
 
         public int? Calendarios_idCalendarios { get; set; }

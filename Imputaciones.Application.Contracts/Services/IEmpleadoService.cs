@@ -9,7 +9,7 @@ namespace Imputaciones.Application.Contracts.Services
         EmpleadoModel GetEmpleadoById(int id);
         Task<EmpleadoModel> AddEmpleado(EmpleadoModel empleadoModel);
 
-        public Task<(EmpleadoModel, CalendarioModel, RolModel)> GetEmpleado(int id);
+        public Task<EmpleadoModel> GetEmpleado(int id);
 
         public Task<EmpleadoModel> CheckLogin(string email, string password);
 

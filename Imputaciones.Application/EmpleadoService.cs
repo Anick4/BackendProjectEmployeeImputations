@@ -32,10 +32,15 @@ namespace Imputaciones.Application
             return result.toEmpleadoModel();
         }
 
-        public async Task<(EmpleadoModel, CalendarioModel, RolModel)> GetEmpleado(int id)
+        public async Task<EmpleadoModel> GetEmpleado(int id)
         {
             var entityResponse = await _empleadoRepository.GetEmpleado(id);
-            return (entityResponse.Item1.toEmpleadoModelMapper(), entityResponse.Item2.toCalendarioModelMapper(), entityResponse.Item3.toRolModelMapper());
+            var empleado = entityResponse.Item1.toEmpleadoModelMapper();
+            empleado.Calendario = entityResponse.Item2.toCalendarioModelMapper();
+            empleado.Rol= entityResponse.Item3.toRolModelMapper();
+
+
+            return empleado;
         }
 
         public static Boolean CheckPassword(EmpleadoModel empleado, string password)
@@ -59,20 +64,22 @@ namespace Imputaciones.Application
                 if(CheckPassword(empleado.toEmpleadoModelMapper(), password))
                 {
                     //TOKEN CUTRISIMO ASIN ES LA BIDA
-                    var empleadoModel = empleado.toEmpleadoModelMapper();
-                    empleadoModel.Token = string.Concat("Soytutoken");
-                    return empleadoModel;
+                    var empleadoConToken = await GetEmpleado(empleado.EmpleadoId);
+                    empleadoConToken.Token = string.Concat("Soytutoken");
+                    //Hcerlo igual que en el controller
+
+                    return empleadoConToken;
                     
                 }
                 else
                 {
-                    throw new Exception("Contraseña incorrecta") ;
+                    return null ;
                 }
                 
             } 
             else
             {
-                throw new Exception("El email no esta en la base de datos");
+                return null;
             }
 
 

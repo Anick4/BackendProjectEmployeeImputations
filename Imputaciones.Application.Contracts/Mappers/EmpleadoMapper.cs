@@ -50,27 +50,30 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Email = empleadoModel.Email,
                 Contraseña = empleadoModel.Contraseña,
                 Calendarios_idCalendarios = empleadoModel.Calendarios_idCalendarios,
+                Calendario = null,
+                Rol = null,
                 Token = empleadoModel.Token,
             };
         }
 
-        public static EmpleadoResponseConCalendario toEmpleadoResponseMapper2(this EmpleadoModel empleadoModel)
-        {
-            return new EmpleadoResponseConCalendario()
-            {
-                EmpleadoId = empleadoModel.EmpleadoId,
-                Nombre = empleadoModel.Nombre,
-                Apellidos = empleadoModel.Apellidos,
-                Codigo_empleado = empleadoModel.Codigo_empleado,
-                Email = empleadoModel.Email,
-                Contraseña = empleadoModel.Contraseña,
-                Calendarios_idCalendarios = empleadoModel.Calendarios_idCalendarios,
-                Calendario = null,
-                Token = empleadoModel.Token,
-                
-                
-            };
-        }
+      // public static EmpleadoResponseConCalendario toEmpleadoResponseMapper2(this EmpleadoModel empleadoModel)
+      // {
+      //     return new EmpleadoResponseConCalendario()
+      //     {
+      //         EmpleadoId = empleadoModel.EmpleadoId,
+      //         Nombre = empleadoModel.Nombre,
+      //         Apellidos = empleadoModel.Apellidos,
+      //         Codigo_empleado = empleadoModel.Codigo_empleado,
+      //         Email = empleadoModel.Email,
+      //         Contraseña = empleadoModel.Contraseña,
+      //         Calendarios_idCalendarios = empleadoModel.Calendarios_idCalendarios,
+      //         Calendario = empleadoModel.Calendario,
+      //
+      //         Token = empleadoModel.Token,
+      //         
+      //         
+      //     };
+      // }
 
         public static EmpleadoModel toEmpleadoModelMapper(this EmpleadoDto empleadoDto)
         {
@@ -84,8 +87,8 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Contraseña = empleadoDto.Contraseña,
                 Calendarios_idCalendarios = empleadoDto.Calendarios_idCalendarios,
                 Roles_idRoles1 = empleadoDto.Roles_idRoles1,
-                
-                
+                Calendario = null,
+                Rol = null
             };
         }
 

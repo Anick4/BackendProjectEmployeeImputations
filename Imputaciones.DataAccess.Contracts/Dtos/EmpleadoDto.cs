@@ -25,7 +25,8 @@ namespace Imputaciones.DataAccess.Contracts.Dtos
         public int? Calendarios_idCalendarios { get; set; }
         public int? Roles_idRoles1 { get; set; }
 
-        public Calendario? Calendario { get; set; }
+        public CalendarioDto? Calendario { get; set; }
+        public RolDto? Rol { get; set; }
         public string? Token { get; set; }
 
 
