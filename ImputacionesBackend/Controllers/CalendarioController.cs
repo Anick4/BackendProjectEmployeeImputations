@@ -1,40 +1,40 @@
-﻿using Imputaciones.Application;
-using Imputaciones.Application.BusinessModel.Responses;
-using Imputaciones.Application.Contracts.Mappers;
-using Imputaciones.Application.Contracts.Services;
+﻿using Imputations.Application;
+using Imputations.Application.BusinessModel.Responses;
+using Imputations.Application.Contracts.Mappers;
+using Imputations.Application.Contracts.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ImputacionesBackend.Controllers
+namespace ImputationsBackend.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]  // Ruta: /Calendario
-    public class CalendarioController : ControllerBase
+    public class CalendarController : ControllerBase
     {
         // Inyeccion de dependencias (IoC), instancia automaticamente el constructor sin hacer "new" => IUSerServices userServices = new UserServices();
         //Atributo:
-        private readonly ICalendarioService _calendarioService; // private para proteger que no se trapichee
+        private readonly ICalendarService _calendarioService; // private para proteger que no se trapichee
 
         //Constructor de CalendarioController:
-        public CalendarioController(ICalendarioService calendarioService)
+        public CalendarController(ICalendarService calendarService)
         {
-            _calendarioService = calendarioService;
+            _calendarioService = calendarService;
         }
 
         // ENDPOINTs:
         [HttpGet]
-        [Route("GetCalendario")]  // Ruta: /Calendario/GetCalendario  
-        public ActionResult GetCalendario(int id)
+        [Route("GetCalendar")]  // Ruta: /Calendario/GetCalendario  
+        public ActionResult GetCalendar(int id)
         {
             try
             {
 
-            var calendarioResponse = _calendarioService.GetCalendario(id);
+            var calendarResponse = _calendarService.GetCalendar(id);
 
-            return Ok(calendarioResponse.toCalendarioResponseMapper());
+            return Ok(calendarResponse.toCalendarResponseMapper());
             }
             catch (Exception ex)
             {
-                return BadRequest(new CalendarioResponse(ex.Message, false));
+                return BadRequest(new CalendarResponse(ex.Message, false));
             }
         }
 

@@ -1,10 +1,10 @@
-﻿using Imputaciones.Application;
-using Imputaciones.Application.Contracts.Services;
-using Imputaciones.DataAccess.Contracts.Repositories;
-using Imputaciones.DataAccess.Services.Respositories;
+﻿using Imputations.Application;
+using Imputations.Application.Contracts.Services;
+using Imputations.DataAccess.Contracts.Repositories;
+using Imputations.DataAccess.Services.Respositories;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Imputaciones.CrossCutting.Configuration
+namespace Imputations.CrossCutting.Configuration
 {
     public static class IoC
     {
@@ -25,10 +25,10 @@ namespace Imputaciones.CrossCutting.Configuration
 
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
-            services.AddTransient<IEmpleadoService, EmpleadoService>();
-            services.AddTransient<IImputacionService, ImputacionService>();
-            services.AddTransient<IProyectoService, ProyectoService>();
-            services.AddTransient<ICalendarioService, CalendarioService>();
+            services.AddTransient<IEmployeeService, EmployeeService>();
+            services.AddTransient<IImputationService, ImputationService>();
+            services.AddTransient<IProjectService, ProyectService>();
+            services.AddTransient<ICalendarService, CalendarService>();
             
 
             return services;
@@ -36,10 +36,10 @@ namespace Imputaciones.CrossCutting.Configuration
 
         public static IServiceCollection AddRepository(this IServiceCollection services)
         {
-            services.AddTransient<IEmpleadoRepository, EmpleadoRepository>();
-            services.AddTransient<IImputacionRepository, ImputacionRepository>();
-            services.AddTransient<IProyectoRepository, ProyectoRepository>();
-            services.AddTransient<ICalendarioRepository, CalendarioRepository>();
+            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+            services.AddTransient<IImputationRepository, ImputationRepository>();
+            services.AddTransient<IProjectRepository, ProjectRepository>();
+            services.AddTransient<ICalendarRepository, CalendarRepository>();
 
 
 

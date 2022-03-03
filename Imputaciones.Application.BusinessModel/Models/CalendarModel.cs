@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputations.DataAccess.Contracts.Dtos
+namespace Imputations.Application.BusinessModel.Models
 {
-    public class CalendarioDto
+    public class CalendarModel
     {
         public int Idcalendarios { get; set; }
-        public int? Horas_Diarias { get; set; }
+        public int? Horas_diarias { get; set; }
         public Boolean? Lunes { get; set; }
         public Boolean? Martes { get; set; }
         public Boolean? Miercoles { get; set; }

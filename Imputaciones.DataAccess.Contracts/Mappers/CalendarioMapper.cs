@@ -1,17 +1,17 @@
-﻿using Imputaciones.Application.BusinessModel.Models;
-using Imputaciones.DataAccess.Contracts.Dtos;
-using Imputaciones.DataAccess.Contracts.Entities;
+﻿using Imputations.Application.BusinessModel.Models;
+using Imputations.DataAccess.Contracts.Dtos;
+using Imputations.DataAccess.Contracts.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputaciones.DataAccess.Contracts.Mappers
+namespace Imputations.DataAccess.Contracts.Mappers
 {
     public static class CalendarioMapper
     {
-        public static CalendarioDto ToCalendarioDtoMapper(this Calendario calendario)
+        public static CalendarioDto ToCalendarioDtoMapper(this Calendar calendario)
         {
             return new CalendarioDto()
             {
@@ -29,9 +29,9 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
 
         }
 
-        public static CalendarioModel toCalendarioModelMapper(this CalendarioDto calendarioDto)
+        public static CalendarModel toCalendarioModelMapper(this CalendarioDto calendarioDto)
         {
-            return new CalendarioModel()
+            return new CalendarModel()
             {
 
                 Idcalendarios = calendarioDto.Idcalendarios,

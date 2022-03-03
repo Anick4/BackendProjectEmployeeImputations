@@ -1,5 +1,5 @@
-﻿using Imputaciones.DataAccess.Contracts;
-using Imputaciones.DataAccess.Contracts.Entities;
+﻿using Imputations.DataAccess.Contracts;
+using Imputations.DataAccess.Contracts.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -10,16 +10,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputaciones.DataAccess.Services
+namespace Imputations.DataAccess.Services
 {
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
         private readonly IConfiguration _configuration;
-        public DbSet<Empleado> empleados { get; set; }
-        public DbSet<Calendario> calendarios { get; set; }
-        public DbSet<Imputacion> imputaciones { get; set; }
-        public DbSet<Proyecto> proyectos { get; set; }
-        public DbSet<Rol> roles { get; set; }
+        public DbSet<Employee> employees { get; set; }
+        public DbSet<Calendar> calendars { get; set; }
+        public DbSet<Imputation> imputations { get; set; }
+        public DbSet<Project> projects { get; set; }
+        public DbSet<Role> roles { get; set; }
 
 
 

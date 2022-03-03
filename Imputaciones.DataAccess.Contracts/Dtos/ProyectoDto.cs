@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputaciones.DataAccess.Contracts.Dtos
+namespace Imputations.DataAccess.Contracts.Dtos
 {
     public class ProyectoDto
     {

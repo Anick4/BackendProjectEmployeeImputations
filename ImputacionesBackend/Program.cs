@@ -1,6 +1,6 @@
-using Imputaciones.CrossCutting.Configuration;
+using Imputations.CrossCutting.Configuration;
 
-using Imputaciones.DataAccess.Services;
+using Imputations.DataAccess.Services;
 
 using Microsoft.EntityFrameworkCore;
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputaciones.Application.BusinessModel.Requests
+namespace Imputations.Application.BusinessModel.Requests
 {
     public class EmpleadoRequest
     {

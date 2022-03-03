@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Imputaciones.DataAccess.Contracts.Repository
+namespace Imputations.DataAccess.Contracts.Repository
 {
     public interface IGenericRespository<TEntity> where TEntity : class
     {

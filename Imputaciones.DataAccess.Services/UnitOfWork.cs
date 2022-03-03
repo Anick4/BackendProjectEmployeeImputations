@@ -1,7 +1,7 @@
-﻿using Imputaciones.DataAccess.Contracts;
+﻿using Imputations.DataAccess.Contracts;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Imputaciones.DataAccess.Services
+namespace Imputations.DataAccess.Services
 {
     public class UnitOfWork : IUnitOfWork
     {

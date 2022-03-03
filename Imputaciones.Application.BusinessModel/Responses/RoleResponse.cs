@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputations.DataAccess.Contracts.Entities
+namespace Imputations.Application.BusinessModel.Responses
 {
-    public class Rol
+    public class RoleResponse
     {
-        [Key]
-        [Required]
         public int IdRol { get; set; }
         public string Name { get; set; }
     }

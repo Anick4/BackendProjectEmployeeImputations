@@ -1,63 +1,63 @@
-﻿using Imputaciones.Application.BusinessModel.Models;
-using Imputaciones.Application.BusinessModel.Requests;
-using Imputaciones.Application.BusinessModel.Response;
-using Imputaciones.Application.BusinessModel.Responses;
-using Imputaciones.Application.Contracts.Mappers;
-using Imputaciones.Application.Contracts.Services;
+﻿using Imputations.Application.BusinessModel.Models;
+using Imputations.Application.BusinessModel.Requests;
+using Imputations.Application.BusinessModel.Response;
+using Imputations.Application.BusinessModel.Responses;
+using Imputations.Application.Contracts.Mappers;
+using Imputations.Application.Contracts.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ImputacionesBackend.Controllers
+namespace ImputationsBackend.Controllers
 {
     
     [Route("api/[controller]")]
     [ApiController]
-    public class EmpleadoController : ControllerBase
+    public class EmployeeController : ControllerBase
     {
-        private readonly IEmpleadoService _empleadoService;
+        private readonly IEmployeeService _employeeService;
 
-        public EmpleadoController(IEmpleadoService empleadoService)
+        public EmployeeController(IEmployeeService employeeService)
         {
-            _empleadoService = empleadoService;
+            _employeeService = employeeService;
 
         }
 
         [HttpGet]
-        [Route("GetAllEmpleados")]
-        public async Task<ActionResult> GetAllEmpleados()
+        [Route("GetAllEmployees")]
+        public async Task<ActionResult> GetAllEmployes()
         {
             try
             {
-                var result = await _empleadoService.GetAllEmpleados();
+                var result = await _employeeService.GetAllEmployees();
                 return Ok(result);
             }
             catch (Exception ex)
             {
-                return BadRequest(new EmpleadoResponse(ex.Message, false));
+                return BadRequest(new EmployeesResponse(ex.Message, false));
             }
         }
 
         [HttpGet]
-        [Route("GetEmpleadoById")]
+        [Route("GetEmployeeById")]
         public ActionResult GetEmpleadoById(int id)
         {
             try
             {
-                var result = _empleadoService.GetEmpleadoById(id);
+                var result = _employeeService.GetEmployeeById(id);
                 return Ok(result.toEmpleadoResponseMapper());
             }
             catch (Exception ex)
             {
-                return BadRequest(new EmpleadoResponse(ex.Message, false));
+                return BadRequest(new EmployeeResponse(ex.Message, false));
             }
         }
 
         [HttpGet]
-        [Route("GetEmpleado")]
-        public async Task<ActionResult> GetEmpleado(int id) //NOMBRE CAMBIADO
+        [Route("GetEmployee")]
+        public async Task<ActionResult> GetEmployee(int id) //NOMBRE CAMBIADO
         {
             try
             {
-                var result = await _empleadoService.GetEmpleado(id);
+                var result = await _employeeService.GetEmployee(id);
 
                 return Ok(result);
 
@@ -74,14 +74,14 @@ namespace ImputacionesBackend.Controllers
         {
             try
             {
-                var response = await _empleadoService.CheckLogin(loginRequest.Email, loginRequest.Password);
+                var response = await _employeeService.CheckLogin(loginRequest.Email, loginRequest.Password);
 
 
                 return Ok(response);
             }
             catch (Exception)
             {
-                return BadRequest(new BaseResponse("Usuario o Contraseña incorrectos", false));
+                return BadRequest(new BaseResponse("Wrong User or Password", false));
             }
         }
     }
