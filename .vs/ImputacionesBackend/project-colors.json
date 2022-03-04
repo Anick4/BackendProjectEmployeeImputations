@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "7b2c4245-0bfc-46b6-91f9-646053fd1d42": {
+      "ProjectGuid": "7b2c4245-0bfc-46b6-91f9-646053fd1d42",
+      "DisplayName": "ImputacionesBackend",
+      "ColorIndex": 0
+    },
+    "2eb7ceee-bb65-4e6d-b811-7c008b6ee216": {
+      "ProjectGuid": "2eb7ceee-bb65-4e6d-b811-7c008b6ee216",
+      "DisplayName": "Imputaciones.Application",
+      "ColorIndex": 1
+    },
+    "4cb18c00-4f5a-4375-bbcf-554d4e663c3c": {
+      "ProjectGuid": "4cb18c00-4f5a-4375-bbcf-554d4e663c3c",
+      "DisplayName": "Imputaciones.Application.Contracts",
+      "ColorIndex": 2
+    },
+    "8fa856ed-12ba-459d-861d-2f9af124e4ad": {
+      "ProjectGuid": "8fa856ed-12ba-459d-861d-2f9af124e4ad",
+      "DisplayName": "Imputations.Application.BusinessModel",
+      "ColorIndex": 3
+    },
+    "52e44f62-4c05-4352-ad32-f432a9fe1d8c": {
+      "ProjectGuid": "52e44f62-4c05-4352-ad32-f432a9fe1d8c",
+      "DisplayName": "Imputations.DataAccess.Contracts",
+      "ColorIndex": 4
+    },
+    "dd091c11-8fa1-4ab2-938c-e657b3b99dea": {
+      "ProjectGuid": "dd091c11-8fa1-4ab2-938c-e657b3b99dea",
+      "DisplayName": "Imputations.DataAccess.Services",
+      "ColorIndex": 5
+    },
+    "11a5cd53-0354-4483-9224-35e09d6fd139": {
+      "ProjectGuid": "11a5cd53-0354-4483-9224-35e09d6fd139",
+      "DisplayName": "Imputaciones.CrossCutting",
+      "ColorIndex": 6
+    }
+  },
+  "NextColorIndex": 7
+}
