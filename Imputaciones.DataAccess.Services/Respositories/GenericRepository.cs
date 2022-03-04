@@ -1,8 +1,8 @@
-﻿using Imputations.DataAccess.Services;
+﻿using Imputaciones.DataAccess.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace Imputations.DataAccess.Services.Repositories
+namespace Imputaciones.DataAccess.Services.Repositories
 {
     public class GenericRepository<TEntity> where TEntity : class
     {

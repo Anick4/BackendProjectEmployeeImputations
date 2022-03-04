@@ -1,13 +1,13 @@
-﻿using Imputations.Application.BusinessModel.Models;
-using Imputations.Application.BusinessModel.Responses;
-using Imputations.DataAccess.Contracts.Dtos;
+﻿using Imputaciones.Application.BusinessModel.Models;
+using Imputaciones.Application.BusinessModel.Responses;
+using Imputaciones.DataAccess.Contracts.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputations.Application.Contracts.Mappers
+namespace Imputaciones.Application.Contracts.Mappers
 {
     public static class RoleMapper
     {
@@ -16,7 +16,7 @@ namespace Imputations.Application.Contracts.Mappers
             return new RoleModel()
             {
                 Role_Id = roleDto.Role_Id,
-                Name = roleDto.Name,
+                Role_Name = roleDto.Role_Name,
             };
         }
 
@@ -25,7 +25,7 @@ namespace Imputations.Application.Contracts.Mappers
             return new RoleResponse()
             {
                 Role_Id = roleModel.Role_Id,
-                Name = roleModel.Name
+                Role_Name = roleModel.Role_Name
             };
         }
     }

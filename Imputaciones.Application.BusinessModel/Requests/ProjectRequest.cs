@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputaciones.Application.BusinessModel.Models
+namespace Imputaciones.Application.BusinessModel.Requests
 {
-    public class ProjectModel
+    public class ProjectRequest
     {
         public int Project_Id { get; set; }
         public int State { get; set; }
@@ -16,3 +16,4 @@ namespace Imputaciones.Application.BusinessModel.Models
         public int Responsible_Id { get; set; }
     }
 }
+

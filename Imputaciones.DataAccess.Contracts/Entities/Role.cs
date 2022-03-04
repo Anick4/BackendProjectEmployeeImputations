@@ -5,13 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputations.DataAccess.Contracts.Entities
+namespace Imputaciones.DataAccess.Contracts.Entities
 {
-    public class Rol
+    public class Role
     {
         [Key]
         [Required]
-        public int IdRol { get; set; }
-        public string Name { get; set; }
+        public int Role_Id { get; set; }
+        [Required]
+        public string Role_Name { get; set; }
     }
 }

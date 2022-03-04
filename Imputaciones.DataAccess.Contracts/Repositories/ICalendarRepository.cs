@@ -1,7 +1,7 @@
-﻿using Imputations.DataAccess.Contracts.Repository;
-using Imputations.DataAccess.Contracts.Entities;
+﻿using Imputaciones.DataAccess.Contracts.Repository;
+using Imputaciones.DataAccess.Contracts.Entities;
 
-namespace Imputations.DataAccess.Contracts.Repositories
+namespace Imputaciones.DataAccess.Contracts.Repositories
 {
     public interface ICalendarRepository : IGenericRespository<Calendar>
     {

@@ -1,14 +1,14 @@
-﻿using Imputations.Application.BusinessModel.Models;
-using Imputations.Application.Contracts.Mappers;
-using Imputations.Application.Contracts.Services;
-using Imputations.DataAccess.Contracts.Repositories;
+﻿using Imputaciones.Application.BusinessModel.Models;
+using Imputaciones.Application.Contracts.Mappers;
+using Imputaciones.Application.Contracts.Services;
+using Imputaciones.DataAccess.Contracts.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputations.Application
+namespace Imputaciones.Application
 {
     public class ImputationService : IImputationService
     {

@@ -1,5 +1,5 @@
-﻿using Imputations.DataAccess.Contracts;
-using Imputations.DataAccess.Contracts.Entities;
+﻿using Imputaciones.DataAccess.Contracts;
+using Imputaciones.DataAccess.Contracts.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputations.DataAccess.Services
+namespace Imputaciones.DataAccess.Services
 {
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {

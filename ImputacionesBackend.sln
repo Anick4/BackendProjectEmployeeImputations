@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImputacionesBackend", "ImputacionesBackend\ImputacionesBackend.csproj", "{7B2C4245-0BFC-46B6-91F9-646053FD1D42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImputacionesBackend", "ImputacionesBackend\ImputacionesBackend.csproj", "{7B2C4245-0BFC-46B6-91F9-646053FD1D42}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Distributed Services", "1 - Distributed Services", "{91C619A4-CC73-4608-8186-222027EA8DFA}"
 EndProject
@@ -15,17 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - DataAccess", "4 - DataA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - CrossCutting", "5 - CrossCutting", "{9E518A0D-E994-479D-8A11-86BCB38AE557}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imputaciones.Application", "Imputaciones.Application\Imputaciones.Application.csproj", "{2EB7CEEE-BB65-4E6D-B811-7C008B6EE216}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imputaciones.Application", "Imputaciones.Application\Imputaciones.Application.csproj", "{2EB7CEEE-BB65-4E6D-B811-7C008B6EE216}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imputaciones.Application.Contracts", "Imputaciones.Application.Contracts\Imputaciones.Application.Contracts.csproj", "{4CB18C00-4F5A-4375-BBCF-554D4E663C3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imputaciones.Application.Contracts", "Imputaciones.Application.Contracts\Imputaciones.Application.Contracts.csproj", "{4CB18C00-4F5A-4375-BBCF-554D4E663C3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imputaciones.Application.BusinessModel", "Imputaciones.Application.BusinessModel\Imputaciones.Application.BusinessModel.csproj", "{8FA856ED-12BA-459D-861D-2F9AF124E4AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imputaciones.Application.BusinessModel", "Imputaciones.Application.BusinessModel\Imputaciones.Application.BusinessModel.csproj", "{8FA856ED-12BA-459D-861D-2F9AF124E4AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imputaciones.DataAccess.Contracts", "Imputaciones.DataAccess.Contracts\Imputaciones.DataAccess.Contracts.csproj", "{52E44F62-4C05-4352-AD32-F432A9FE1D8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imputaciones.DataAccess.Contracts", "Imputaciones.DataAccess.Contracts\Imputaciones.DataAccess.Contracts.csproj", "{52E44F62-4C05-4352-AD32-F432A9FE1D8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imputaciones.DataAccess.Services", "Imputaciones.DataAccess.Services\Imputaciones.DataAccess.Services.csproj", "{DD091C11-8FA1-4AB2-938C-E657B3B99DEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imputaciones.DataAccess.Services", "Imputaciones.DataAccess.Services\Imputaciones.DataAccess.Services.csproj", "{DD091C11-8FA1-4AB2-938C-E657B3B99DEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imputaciones.CrossCutting", "Imputaciones.CrossCutting\Imputaciones.CrossCutting.csproj", "{11A5CD53-0354-4483-9224-35E09D6FD139}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imputaciones.CrossCutting", "Imputaciones.CrossCutting\Imputaciones.CrossCutting.csproj", "{11A5CD53-0354-4483-9224-35E09D6FD139}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

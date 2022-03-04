@@ -1,29 +1,27 @@
-﻿using Imputations.Application.BusinessModel.Response;
+﻿using Imputaciones.Application.BusinessModel.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputations.Application.BusinessModel.Responses
+namespace Imputaciones.Application.BusinessModel.Responses
 {
     public class EmployeeResponse : BaseResponse
     {
         public EmployeeResponse() { }
         public EmployeeResponse(string message, bool status) : base(message, status) { }
-        public EmployeeResponse(int empleadoId, string? codigo_empleado, string? nombre, string? apellidos, string? email, string? contraseña, int? calendarios_idCalendarios, int? roles_idRoles1) 
+        public EmployeeResponse(int employee_Id, string? employee_Code, string? name, string? surname, string? email, string? password, int? calendar_Id, int? role_Id) 
         { 
-            this.Employee_Id = empleadoId;
-            this.Employee_Code = codigo_empleado;
-            this.Name = nombre;
-            this.Surname = apellidos;
+            this.Employee_Id = employee_Id;
+            this.Employee_Code = employee_Code;
+            this.Name = name;
+            this.Surname = surname;
             this.Email = email;
-            this.Password = contraseña;
-            this.Calendar_Id = calendarios_idCalendarios;
-            this.Roles_idRoles1 = roles_idRoles1;
-        
-        
-        
+            this.Password = password;
+            this.Calendar_Id = calendar_Id;
+            this.Role_Id = role_Id;
+
         }
 
 
@@ -39,7 +37,7 @@ namespace Imputations.Application.BusinessModel.Responses
 
         public string? Password { get; set; }
         public int? Calendar_Id { get; set; }
-        public int? Roles_idRoles1 { get; set; }
+        public int? Role_Id { get; set; }
 
 
     }

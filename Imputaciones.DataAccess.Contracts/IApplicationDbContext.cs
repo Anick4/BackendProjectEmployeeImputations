@@ -1,15 +1,15 @@
-﻿using Imputations.DataAccess.Contracts.Entities;
+﻿using Imputaciones.DataAccess.Contracts.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace Imputations.DataAccess.Contracts
+namespace Imputaciones.DataAccess.Contracts
 {
     public interface IApplicationDbContext
     {
         DbSet<Employee> employees { get; set; }
         DbSet<Calendar> calendars { get; set; }
-        DbSet<Imputation> imputations { get; set; }
+        DbSet<Entities.Imputation> imputations { get; set; }
         DbSet<Project> projects { get; set; }
         DbSet<Role> roles { get; set; }
 

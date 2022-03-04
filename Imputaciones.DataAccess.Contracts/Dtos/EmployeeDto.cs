@@ -1,11 +1,11 @@
-﻿using Imputations.DataAccess.Contracts.Entities;
+﻿using Imputaciones.DataAccess.Contracts.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputations.DataAccess.Contracts.Dtos
+namespace Imputaciones.DataAccess.Contracts.Dtos
 {
     public class EmployeeDto
     {
@@ -21,13 +21,12 @@ namespace Imputations.DataAccess.Contracts.Dtos
         public string? Email { get; set; }
 
         public string? Password { get; set; }
-
         public int? Calendar_Id { get; set; }
+        public CalendarDto? Calendar { get; set; }
         public int? Role_Id { get; set; }
-
-        public CalendarioDto? Calendario { get; set; }
-        public RoleDto? Rol { get; set; }
+        public RoleDto? Role { get; set; }
         public string? Token { get; set; }
+
 
 
     }

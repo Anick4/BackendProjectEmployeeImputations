@@ -1,10 +1,10 @@
 ﻿
-using Imputations.Application.BusinessModel.Responses;
-using Imputations.Application.Contracts.Services;
-using Imputations.DataAccess.Contracts.Repositories;
+using Imputaciones.Application.BusinessModel.Responses;
+using Imputaciones.Application.Contracts.Services;
+using Imputaciones.DataAccess.Contracts.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ImputationsBackend.Controllers
+namespace ImputacionesBackend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -24,9 +24,9 @@ namespace ImputationsBackend.Controllers
             try
             {
 
-            var response = await _imputationService.GetAllImputations();
-            return Ok(response);
-            } 
+                var response = await _imputationService.GetAllImputations();
+                return Ok(response);
+            }
             catch (Exception ex)
             {
                 return BadRequest(new ImputationResponse(ex.Message, false));

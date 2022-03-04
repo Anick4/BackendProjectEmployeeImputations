@@ -1,14 +1,14 @@
-﻿using Imputations.Application.BusinessModel.Models;
-using Imputations.Application.BusinessModel.Responses;
-using Imputations.DataAccess.Contracts.Dtos;
-using Imputations.DataAccess.Contracts.Entities;
+﻿using Imputaciones.Application.BusinessModel.Models;
+using Imputaciones.Application.BusinessModel.Responses;
+using Imputaciones.DataAccess.Contracts.Dtos;
+using Imputaciones.DataAccess.Contracts.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputations.Application.Contracts.Mappers
+namespace Imputaciones.Application.Contracts.Mappers
 {
     public static class EmployeeMapper
     {
@@ -35,7 +35,7 @@ namespace Imputations.Application.Contracts.Mappers
                 Password = employee.Password,
                 Calendar_Id = employee.Calendar_Id,
                 Role_Id = employee.Role_Id,
-                
+
             };
         }
 

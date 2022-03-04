@@ -1,14 +1,14 @@
-﻿using Imputations.DataAccess.Contracts.Entities;
-using Imputations.DataAccess.Contracts.Repository;
+﻿using Imputaciones.DataAccess.Contracts.Entities;
+using Imputaciones.DataAccess.Contracts.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputations.DataAccess.Contracts.Repositories
+namespace Imputaciones.DataAccess.Contracts.Repositories
 {
-    public interface IImputationRepository : IGenericRespository<Imputation>
+    public interface IImputationRepository : IGenericRespository<Entities.Imputation>
     {
     }
 }

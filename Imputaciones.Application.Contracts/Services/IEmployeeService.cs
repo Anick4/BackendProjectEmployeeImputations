@@ -1,7 +1,7 @@
-﻿using Imputations.Application.BusinessModel.Models;
-using Imputations.DataAccess.Contracts.Dtos;
+﻿using Imputaciones.Application.BusinessModel.Models;
+using Imputaciones.DataAccess.Contracts.Dtos;
 
-namespace Imputations.Application.Contracts.Services
+namespace Imputaciones.Application.Contracts.Services
 {
     public interface IEmployeeService
     {

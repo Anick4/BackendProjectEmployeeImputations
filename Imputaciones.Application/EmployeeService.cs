@@ -1,11 +1,11 @@
-﻿using Imputations.Application.BusinessModel.Models;
-using Imputations.Application.Contracts.Mappers;
-using Imputations.Application.Contracts.Services;
-using Imputations.DataAccess.Contracts.Dtos;
-using Imputations.DataAccess.Contracts.Mappers;
-using Imputations.DataAccess.Contracts.Repositories;
+﻿using Imputaciones.Application.BusinessModel.Models;
+using Imputaciones.Application.Contracts.Mappers;
+using Imputaciones.Application.Contracts.Services;
+using Imputaciones.DataAccess.Contracts.Dtos;
+using Imputaciones.DataAccess.Contracts.Mappers;
+using Imputaciones.DataAccess.Contracts.Repositories;
 
-namespace Imputations.Application
+namespace Imputaciones.Application
 {
     public class EmployeeService : IEmployeeService
     {
@@ -19,11 +19,11 @@ namespace Imputations.Application
             throw new NotImplementedException();
         }
 
-        public async Task<List<EmployeeModel>> GetAllEmployee()
+        public async Task<List<EmployeeModel>> GetAllEmployees()
         {
             var List = await _employeeRepository.GetAsync();
             return List.ToList().toListEmployeeModel();
-            
+
         }
 
         public EmployeeModel GetEmployeeById(int id)
@@ -37,7 +37,7 @@ namespace Imputations.Application
             var entityResponse = await _employeeRepository.GetEmployee(id);
             var employee = entityResponse.Item1.toEmployeeModelMapper();
             employee.Calendar = entityResponse.Item2.toCalendarModelMapper();
-            employee.Role= entityResponse.Item3.toRoleModelMapper();
+            employee.Role = entityResponse.Item3.toRoleModelMapper();
 
 
             return employee;
@@ -45,7 +45,7 @@ namespace Imputations.Application
 
         public static Boolean CheckPassword(EmployeeModel employee, string password)
         {
-            if(employee.Password == password)
+            if (employee.Password == password)
             {
                 return true;
             }
@@ -57,11 +57,11 @@ namespace Imputations.Application
 
         public async Task<EmployeeModel> CheckLogin(string email, string password)
         {
-           
-           var employee = await _employeeRepository.GetEmployeeByEmail(email);
-           if(employee != null)
+
+            var employee = await _employeeRepository.GetEmployeeByEmail(email);
+            if (employee != null)
             {
-                if(CheckPassword(employee.toEmployeeModelMapper(), password))
+                if (CheckPassword(employee.toEmployeeModelMapper(), password))
                 {
                     //TOKEN CUTRISIMO ASIN ES LA BIDA
                     var employeWithToken = await GetEmployee(employee.Employee_Id);
@@ -69,14 +69,14 @@ namespace Imputations.Application
                     //Hcerlo igual que en el controller
 
                     return employeWithToken;
-                    
+
                 }
                 else
                 {
-                    return null ;
+                    return null;
                 }
-                
-            } 
+
+            }
             else
             {
                 return null;

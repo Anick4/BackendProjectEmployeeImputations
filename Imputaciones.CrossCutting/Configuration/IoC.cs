@@ -1,10 +1,10 @@
-﻿using Imputations.Application;
-using Imputations.Application.Contracts.Services;
-using Imputations.DataAccess.Contracts.Repositories;
-using Imputations.DataAccess.Services.Respositories;
+﻿using Imputaciones.Application;
+using Imputaciones.Application.Contracts.Services;
+using Imputaciones.DataAccess.Contracts.Repositories;
+using Imputaciones.DataAccess.Services.Respositories;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Imputations.CrossCutting.Configuration
+namespace Imputaciones.CrossCutting.Configuration
 {
     public static class IoC
     {
@@ -27,7 +27,7 @@ namespace Imputations.CrossCutting.Configuration
         {
             services.AddTransient<IEmployeeService, EmployeeService>();
             services.AddTransient<IImputationService, ImputationService>();
-            services.AddTransient<IProjectService, ProyectService>();
+            services.AddTransient<IProjectService, ProjectService>();
             services.AddTransient<ICalendarService, CalendarService>();
             
 
@@ -36,10 +36,10 @@ namespace Imputations.CrossCutting.Configuration
 
         public static IServiceCollection AddRepository(this IServiceCollection services)
         {
-            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
-            services.AddTransient<IImputationRepository, ImputationRepository>();
-            services.AddTransient<IProjectRepository, ProjectRepository>();
-            services.AddTransient<ICalendarRepository, CalendarRepository>();
+            services.AddTransient<IEmployeeRepository, EmpleadoRepository>();
+            services.AddTransient<IImputationRepository, ImputacionRepository>();
+            services.AddTransient<IProjectRepository, ProyectoRepository>();
+            services.AddTransient<ICalendarRepository, CalendarioRepository>();
 
 
 

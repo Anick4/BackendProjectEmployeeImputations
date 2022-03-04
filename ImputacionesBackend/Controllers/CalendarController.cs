@@ -1,10 +1,10 @@
-﻿using Imputations.Application;
-using Imputations.Application.BusinessModel.Responses;
-using Imputations.Application.Contracts.Mappers;
-using Imputations.Application.Contracts.Services;
+﻿using Imputaciones.Application;
+using Imputaciones.Application.BusinessModel.Responses;
+using Imputaciones.Application.Contracts.Mappers;
+using Imputaciones.Application.Contracts.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ImputationsBackend.Controllers
+namespace ImputacionesBackend.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]  // Ruta: /Calendario
@@ -12,12 +12,12 @@ namespace ImputationsBackend.Controllers
     {
         // Inyeccion de dependencias (IoC), instancia automaticamente el constructor sin hacer "new" => IUSerServices userServices = new UserServices();
         //Atributo:
-        private readonly ICalendarService _calendarioService; // private para proteger que no se trapichee
+        private readonly ICalendarService _calendarService; // private para proteger que no se trapichee
 
         //Constructor de CalendarioController:
         public CalendarController(ICalendarService calendarService)
         {
-            _calendarioService = calendarService;
+            _calendarService = calendarService;
         }
 
         // ENDPOINTs:
@@ -28,9 +28,9 @@ namespace ImputationsBackend.Controllers
             try
             {
 
-            var calendarResponse = _calendarService.GetCalendar(id);
+                var calendarResponse = _calendarService.GetCalendar(id);
 
-            return Ok(calendarResponse.toCalendarResponseMapper());
+                return Ok(calendarResponse.toCalendarResponseMapper());
             }
             catch (Exception ex)
             {

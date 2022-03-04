@@ -1,11 +1,11 @@
-﻿using Imputations.Application.BusinessModel.Responses;
-using Imputations.Application.Contracts.Mappers;
-using Imputations.Application.Contracts.Services;
-using Imputations.DataAccess.Contracts.Repositories;
+﻿using Imputaciones.Application.BusinessModel.Responses;
+using Imputaciones.Application.Contracts.Mappers;
+using Imputaciones.Application.Contracts.Services;
+using Imputaciones.DataAccess.Contracts.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ImputationsBackend.Controllers
+namespace ImputacionesBackend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -20,9 +20,9 @@ namespace ImputationsBackend.Controllers
         }
 
         [HttpGet]
-        [Route("GetProjectById")]
+        [Route("GetProyectoById")]
 
-        public ActionResult GetProjectById(int id)
+        public ActionResult GetProyectoById(int id)
         {
             try
             {

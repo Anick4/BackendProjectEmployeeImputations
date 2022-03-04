@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputaciones.Application.BusinessModel.Models
+namespace Imputaciones.DataAccess.Contracts.Dtos
 {
-    public class ProjectModel
+    public class ProjectDto
     {
         public int Project_Id { get; set; }
         public int State { get; set; }

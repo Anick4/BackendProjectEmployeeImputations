@@ -1,10 +1,10 @@
-﻿using Imputations.DataAccess.Contracts.Dtos;
-using Imputations.DataAccess.Contracts.Entities;
-using Imputations.DataAccess.Contracts.Mappers;
-using Imputations.DataAccess.Contracts.Repositories;
-using Imputations.DataAccess.Services.Repositories;
+﻿using Imputaciones.DataAccess.Contracts.Dtos;
+using Imputaciones.DataAccess.Contracts.Entities;
+using Imputaciones.DataAccess.Contracts.Mappers;
+using Imputaciones.DataAccess.Contracts.Repositories;
+using Imputaciones.DataAccess.Services.Repositories;
 
-namespace Imputations.DataAccess.Services.Respositories
+namespace Imputaciones.DataAccess.Services.Respositories
 {
     public class EmpleadoRepository : GenericRepository<Employee>, IEmployeeRepository
     {
@@ -20,7 +20,7 @@ namespace Imputations.DataAccess.Services.Respositories
             
             var resultCalendar = await _dbContext.calendars.FindAsync(resultEntity.Calendar_Id);
 
-            var resultRole = await _dbContext.roles.FindAsync(resultEntity.Role_Id);
+            var resultRol = await _dbContext.roles.FindAsync(resultEntity.Role_Id);
 
             _dbContext.SaveChanges();
 

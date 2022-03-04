@@ -1,8 +1,8 @@
-﻿using Imputations.Application.BusinessModel.Models;
-using Imputations.Application.BusinessModel.Responses;
-using Imputations.DataAccess.Contracts.Entities;
+﻿using Imputaciones.Application.BusinessModel.Models;
+using Imputaciones.Application.BusinessModel.Responses;
+using Imputaciones.DataAccess.Contracts.Entities;
 
-namespace Imputations.Application.Contracts.Mappers
+namespace Imputaciones.Application.Contracts.Mappers
 {
     public static class CalendarMapper
     {
@@ -12,15 +12,15 @@ namespace Imputations.Application.Contracts.Mappers
         {
             return new CalendarResponse()
             {
-                Idcalendarios = calendarModel.Idcalendarios,
-                Horas_diarias = calendarModel.Horas_diarias,
-                Lunes = calendarModel.Lunes,
-                Martes = calendarModel.Martes,
-                Miercoles = calendarModel.Miercoles,
-                Jueves = calendarModel.Jueves,
-                Viernes = calendarModel.Viernes,
-                Sabado = calendarModel.Sabado,
-                Domingo = calendarModel.Domingo,
+                Calendar_Id = calendarModel.Calendar_Id,
+                Daily_Hours = calendarModel.Daily_Hours,
+                Monday = calendarModel.Monday,
+                Tuesday = calendarModel.Tuesday,
+                Wednesday = calendarModel.Wednesday,
+                Thursday = calendarModel.Thursday,
+                Friday = calendarModel.Friday,
+                Saturday = calendarModel.Saturday,
+                Sunday = calendarModel.Sunday,
             };
         }
 
@@ -30,15 +30,15 @@ namespace Imputations.Application.Contracts.Mappers
         {
             return new CalendarModel()
             {
-                Idcalendarios = calendar.Idcalendarios,
-                Horas_diarias = calendar.Horas_diarias,
-                Lunes = calendar.Lunes,
-                Martes = calendar.Martes,
-                Miercoles = calendar.Miercoles,
-                Jueves = calendar.Jueves,
-                Viernes = calendar.Viernes,
-                Sabado = calendar.Sabado,
-                Domingo = calendar.Domingo,
+                Calendar_Id = calendar.Calendar_Id,
+                Daily_Hours = calendar.Daily_Hours,
+                Monday = calendar.Monday,
+                Tuesday = calendar.Tuesday,
+                Wednesday = calendar.Wednesday,
+                Thursday = calendar.Thursday,
+                Friday = calendar.Friday,
+                Saturday = calendar.Saturday,
+                Sunday = calendar.Sunday,
             };
         }
 

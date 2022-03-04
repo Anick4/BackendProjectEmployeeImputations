@@ -1,14 +1,13 @@
-﻿using Imputations.Application.BusinessModel.Models;
-using Imputations.Application.BusinessModel.Requests;
-using Imputations.Application.BusinessModel.Response;
-using Imputations.Application.BusinessModel.Responses;
-using Imputations.Application.Contracts.Mappers;
-using Imputations.Application.Contracts.Services;
+﻿using Imputaciones.Application.BusinessModel.Models;
+using Imputaciones.Application.BusinessModel.Requests;
+using Imputaciones.Application.BusinessModel.Response;
+using Imputaciones.Application.BusinessModel.Responses;
+using Imputaciones.Application.Contracts.Mappers;
+using Imputaciones.Application.Contracts.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ImputationsBackend.Controllers
+namespace ImputacionesBackend.Controllers
 {
-    
     [Route("api/[controller]")]
     [ApiController]
     public class EmployeeController : ControllerBase
@@ -32,7 +31,7 @@ namespace ImputationsBackend.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new EmployeesResponse(ex.Message, false));
+                return BadRequest(new EmployeeResponse(ex.Message, false));
             }
         }
 
@@ -43,7 +42,7 @@ namespace ImputationsBackend.Controllers
             try
             {
                 var result = _employeeService.GetEmployeeById(id);
-                return Ok(result.toEmpleadoResponseMapper());
+                return Ok(result.toEmployeeResponseMapper());
             }
             catch (Exception ex)
             {
@@ -62,7 +61,7 @@ namespace ImputationsBackend.Controllers
                 return Ok(result);
 
             }
-            catch 
+            catch
             {
                 throw new Exception();
             }

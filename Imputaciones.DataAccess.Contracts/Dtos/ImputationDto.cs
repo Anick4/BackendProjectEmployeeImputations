@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputaciones.Application.BusinessModel.Models
+namespace Imputaciones.DataAccess.Contracts.Dtos
 {
-    public class ImputationModel
+    public class ImputationDto
     {
+
         public int Imputation_Id { get; set; }
         public int Day { get; set; }
         public int Hours { get; set; }
@@ -16,6 +17,5 @@ namespace Imputaciones.Application.BusinessModel.Models
         public int Week { get; set; }
         public int Employee_Id { get; set; }
         public int Project_Id { get; set; }
-
     }
 }
