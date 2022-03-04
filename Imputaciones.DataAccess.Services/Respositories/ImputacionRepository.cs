@@ -20,8 +20,9 @@ namespace Imputaciones.DataAccess.Services.Respositories
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
-        public async Task<ImputationDto> GetImputationsByEmployeeByWeek(int id, int week)
+        public async Task<List<ImputationDto>> GetImputationsByEmployeeByWeek(int id, int week)
         {
+
             var result = _dbContext.imputations.Where(x => x.Employee_Id == id && x.Week == week).ToList().ToImputationDtoMapper();
 
             return result;
