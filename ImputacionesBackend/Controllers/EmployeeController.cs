@@ -4,6 +4,7 @@ using Imputaciones.Application.BusinessModel.Response;
 using Imputaciones.Application.BusinessModel.Responses;
 using Imputaciones.Application.Contracts.Mappers;
 using Imputaciones.Application.Contracts.Services;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ImputacionesBackend.Controllers
@@ -66,7 +67,7 @@ namespace ImputacionesBackend.Controllers
                 throw new Exception();
             }
         }
-
+        [EnableCors("PaseUsted")]
         [HttpPost]
         [Route("Login")]
         public async Task<ActionResult> Login(LoginRequest loginRequest)
