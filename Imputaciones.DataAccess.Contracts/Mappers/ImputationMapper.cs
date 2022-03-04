@@ -25,20 +25,29 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
             };
         }
 
-        public static ImputationDto ToImputationDtoMapper(this List<Imputation> imputacion)
+        public static List<ImputationDto> ToImputationDtoMapper(this List<Imputation> imputation)
         {
-            return new ImputationDto()
+            List<ImputationDto> result = new List<ImputationDto>();
+            foreach (var item in imputation)
             {
-                Day = imputacion[0].Day,
-                Employee_Id = imputacion[0].Employee_Id,
-                Extra_Hours = imputacion[0].Extra_Hours,
-                Hours = imputacion[0].Hours,
-                Imputation_Id = imputacion[0].Imputation_Id,
-                Project_Id = imputacion[0].Project_Id,
-                State = imputacion[0].State,
-                Week = imputacion[0].Week
+                result.Add(new ImputationDto()
+                {
+                    Day = item.Day,
+                    Employee_Id = item.Employee_Id,
+                    Extra_Hours = item.Extra_Hours,
+                    Hours = item.Hours,
+                    Imputation_Id = item.Imputation_Id,
+                    Project_Id = item.Project_Id,
+                    State = item.State,
+                    Week = item.Week
 
-            };
+                });
+
+
+            }
+            
+             return result;
+
         }
     }
 }

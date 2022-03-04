@@ -12,5 +12,6 @@ namespace Imputaciones.Application.Contracts.Services
         Task<List<ImputationModel>> GetAllImputations();
         ImputationModel GetImputationsById(int id);
         Task<ImputationModel> AddImputations(ImputationModel imputationsModel);
+        Task<List<ImputationModel>> GetImputationsByEmployeeByWeek(int id, int week);
     }
 }

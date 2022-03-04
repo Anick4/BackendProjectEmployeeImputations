@@ -34,11 +34,14 @@ namespace Imputaciones.Application
             throw new NotImplementedException();
         }
 
-       // public async Task<List<ImputationModel>> GetImputationsByEmployeeByWeek(int id, int week )
-       // {
-       //     var result = await _imputationRepository.GetImputationByEmployeeByWeek(id, week); 
-       //
-       //     
-       // }
+
+        public async Task<List<ImputationModel>> GetImputationsByEmployeeByWeek(int id, int week )
+        {
+            var result = await _imputationRepository.GetImputationsByEmployeeByWeek(id, week);
+
+            return result.ToImputationModelMapper();
+            
+            
+        }
     }
 }
