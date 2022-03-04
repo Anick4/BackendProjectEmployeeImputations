@@ -1,4 +1,5 @@
 ﻿
+using Imputaciones.Application.BusinessModel.Requests;
 using Imputaciones.Application.BusinessModel.Responses;
 using Imputaciones.Application.Contracts.Services;
 using Imputaciones.DataAccess.Contracts.Repositories;
@@ -32,5 +33,22 @@ namespace ImputacionesBackend.Controllers
                 return BadRequest(new ImputationResponse(ex.Message, false));
             }
         }
-    }
+
+        //[HttpGet]
+        //[Route("GetImputationsByEmployeeByWeek")]
+        // public async Task<ActionResult> GetImputationsByEmployeeByWeek(ImputationRequest imputationRequest)
+        // {
+        //     try
+        //     {
+        //         //var response = await _imputationService.GetImputationsByEmployeeByWeek(imputationRequest.Employee_Id, imputationRequest.Week);
+        //         return Ok(response);
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         return BadRequest(new ImputationResponse(ex.Message, false));
+        //
+        //         
+        //     }
+        // }
+    } 
 }
