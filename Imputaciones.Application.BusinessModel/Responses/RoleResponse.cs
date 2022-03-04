@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputaciones.Application.BusinessModel.Models
+namespace Imputaciones.Application.BusinessModel.Responses
 {
-    public class RoleModel
+    public class RoleResponse
     {
         public int Role_Id { get; set; }
         public string Role_Name { get; set; }
-
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Imputaciones.DataAccess.Services.Respositories
 {
-    public class ProyectoRepository : GenericRepository<Proyecto>, IProyectoRepository
+    public class ProyectoRepository : GenericRepository<Project>, IProjectRepository
     {
         private readonly ApplicationDbContext _dbContext;
         public ProyectoRepository(ApplicationDbContext dbcontext) : base(dbcontext)

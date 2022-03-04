@@ -7,11 +7,11 @@ namespace Imputaciones.DataAccess.Contracts
 {
     public interface IApplicationDbContext
     {
-        DbSet<Empleado> empleados { get; set; }
-        DbSet<Calendario> calendarios { get; set; }
-        DbSet<Imputacion> imputaciones { get; set; }
-        DbSet<Proyecto> proyectos { get; set; }
-        DbSet<Rol> roles { get; set; }
+        DbSet<Employee> employees { get; set; }
+        DbSet<Calendar> calendars { get; set; }
+        DbSet<Entities.Imputation> imputations { get; set; }
+        DbSet<Project> projects { get; set; }
+        DbSet<Role> roles { get; set; }
 
         int SaveChanges();
         void Dispose();

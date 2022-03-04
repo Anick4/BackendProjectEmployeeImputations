@@ -25,10 +25,10 @@ namespace Imputaciones.CrossCutting.Configuration
 
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
-            services.AddTransient<IEmpleadoService, EmpleadoService>();
-            services.AddTransient<IImputacionService, ImputacionService>();
-            services.AddTransient<IProyectoService, ProyectoService>();
-            services.AddTransient<ICalendarioService, CalendarioService>();
+            services.AddTransient<IEmployeeService, EmployeeService>();
+            services.AddTransient<IImputationService, ImputationService>();
+            services.AddTransient<IProjectService, ProjectService>();
+            services.AddTransient<ICalendarService, CalendarService>();
             
 
             return services;
@@ -36,10 +36,10 @@ namespace Imputaciones.CrossCutting.Configuration
 
         public static IServiceCollection AddRepository(this IServiceCollection services)
         {
-            services.AddTransient<IEmpleadoRepository, EmpleadoRepository>();
-            services.AddTransient<IImputacionRepository, ImputacionRepository>();
-            services.AddTransient<IProyectoRepository, ProyectoRepository>();
-            services.AddTransient<ICalendarioRepository, CalendarioRepository>();
+            services.AddTransient<IEmployeeRepository, EmpleadoRepository>();
+            services.AddTransient<IImputationRepository, ImputacionRepository>();
+            services.AddTransient<IProjectRepository, ProyectoRepository>();
+            services.AddTransient<ICalendarRepository, CalendarioRepository>();
 
 
 

@@ -6,7 +6,7 @@ using Imputaciones.DataAccess.Services.Repositories;
 
 namespace Imputaciones.DataAccess.Services.Respositories
 {
-    public class EmpleadoRepository : GenericRepository<Empleado>, IEmpleadoRepository
+    public class EmpleadoRepository : GenericRepository<Employee>, IEmployeeRepository
     {
         private readonly ApplicationDbContext _dbContext;
         public EmpleadoRepository(ApplicationDbContext dbContext) : base(dbContext)
@@ -14,24 +14,24 @@ namespace Imputaciones.DataAccess.Services.Respositories
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
-        public async Task<(EmpleadoDto, CalendarioDto, RolDto)> GetEmpleado(int id)
+        public async Task<(EmployeeDto, CalendarDto, RoleDto)> GetEmployee(int id)
         {
-            var resultEntity = await _dbContext.empleados.FindAsync(id);
+            var resultEntity = await _dbContext.employees.FindAsync(id);
             
-            var resultCalendario = await _dbContext.calendarios.FindAsync(resultEntity.Calendarios_idCalendarios);
+            var resultCalendar = await _dbContext.calendars.FindAsync(resultEntity.Calendar_Id);
 
-            var resultRol = await _dbContext.roles.FindAsync(resultEntity.Roles_idRoles1);
+            var resultRol = await _dbContext.roles.FindAsync(resultEntity.Role_Id);
 
             _dbContext.SaveChanges();
 
-            return (resultEntity.ToEmpleadoDtoMapper(), resultCalendario.ToCalendarioDtoMapper(), resultRol.ToRolDtoMapper());
+            return (resultEntity.ToEmployeeDtoMapper(), resultCalendar.ToCalendarDtoMapper(), resultRol.ToRolDtoMapper());
         }
 
-        public async Task<EmpleadoDto> GetEmpleadoByEmail(string email)
+        public async Task<EmployeeDto> GetEmployeeByEmail(string email)
         {
             try
             {
-                var result =  _dbContext.empleados.First(x => x.Email == email).ToEmpleadoDtoMapper();
+                var result =  _dbContext.employees.First(x => x.Email == email).ToEmployeeDtoMapper();
                 return result;
                 
 

@@ -4,7 +4,7 @@ using Imputaciones.DataAccess.Contracts.Repositories;
 
 namespace Imputaciones.DataAccess.Services.Respositories
 {
-    public class CalendarioRepository : GenericRepository<Calendario>, ICalendarioRepository
+    public class CalendarioRepository : GenericRepository<Calendar>, ICalendarRepository
     {
         private readonly ApplicationDbContext _dbContext;
 

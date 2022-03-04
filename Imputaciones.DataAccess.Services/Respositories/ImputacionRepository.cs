@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Imputaciones.DataAccess.Services.Respositories
 {
-    public class ImputacionRepository: GenericRepository<Imputacion>, IImputacionRepository
+    public class ImputacionRepository: GenericRepository<Contracts.Entities.Imputation>, IImputationRepository
     {
         private readonly ApplicationDbContext _dbContext;
         public ImputacionRepository(ApplicationDbContext dbContext) : base(dbContext)
