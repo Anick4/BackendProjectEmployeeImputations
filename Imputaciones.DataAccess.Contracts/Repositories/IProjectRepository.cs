@@ -11,6 +11,6 @@ namespace Imputaciones.DataAccess.Contracts.Repositories
 {
     public interface IProjectRepository : IGenericRespository<Project>
     {
-        public Task<ProjectDto> GetAllProjects(int idEmployee);
+        //public Task<ProjectDto> GetAllProjects(int idEmployee);
     }
 }
