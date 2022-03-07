@@ -22,10 +22,9 @@ namespace Imputaciones.DataAccess.Contracts.Dtos
 
         public string? Password { get; set; }
         public int? Calendar_Id { get; set; }
-        public CalendarDto? Calendar { get; set; }
         public int? Role_Id { get; set; }
-        public RoleDto? Role { get; set; }
-        public string? Token { get; set; }
+       
+        
 
 
 

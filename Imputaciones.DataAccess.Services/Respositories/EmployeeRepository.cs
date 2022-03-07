@@ -6,10 +6,10 @@ using Imputaciones.DataAccess.Services.Repositories;
 
 namespace Imputaciones.DataAccess.Services.Respositories
 {
-    public class EmpleadoRepository : GenericRepository<Employee>, IEmployeeRepository
+    public class EmployeeRepository : GenericRepository<Employee>, IEmployeeRepository
     {
         private readonly ApplicationDbContext _dbContext;
-        public EmpleadoRepository(ApplicationDbContext dbContext) : base(dbContext)
+        public EmployeeRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
@@ -32,6 +32,8 @@ namespace Imputaciones.DataAccess.Services.Respositories
             try
             {
                 var result =  _dbContext.employees.First(x => x.Email == email).ToEmployeeDtoMapper();
+
+                
                 return result;
                 
 

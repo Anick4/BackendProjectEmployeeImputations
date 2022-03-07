@@ -41,23 +41,20 @@ namespace Imputaciones.Application.Contracts.Mappers
         public static List<ImputationResponse> toImputationsResponse(this List<ImputationModel> imputationList)
         {
            List<ImputationResponse> imputationResponses = new List<ImputationResponse>();
-            int projectId = 0;
-            
-            foreach(var item in imputationList)
+
+            var projectIds = imputationList.Select(x => x.Project_Id).Distinct().ToList();
+            foreach(var item in projectIds)
             {
                
                ImputationResponse imputationResponse = new ImputationResponse();
-                if (true) // Necesito comprobar que no se repita el id del proyecto
-                {
-                    imputationResponse.ProjectName = "nombre";
-                    imputationResponse.ProjectId = item.Project_Id;
-                    projectId = item.Project_Id;
+                 // Necesito comprobar que no se repita el id del proyecto
+                
+               imputationResponse.ProjectName = "nombre";
+               imputationResponse.ProjectId = item;
 
-                    //El problema es la validacion del if
-                    //TODO ESTO DEBERIA HACERLO EN EL SERVICE
-                }
-                    imputationResponse.Imputations = imputationList.Where(x => x.Project_Id == item.Project_Id).ToList().toImputationResponse();
-                    imputationResponses.Add(imputationResponse);
+                
+               imputationResponse.Imputations = imputationList.Where(x => x.Project_Id == item).ToList().toImputationResponse();
+               imputationResponses.Add(imputationResponse);
             }
             return imputationResponses;
         }

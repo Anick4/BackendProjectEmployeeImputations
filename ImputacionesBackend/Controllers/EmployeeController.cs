@@ -62,9 +62,9 @@ namespace ImputacionesBackend.Controllers
                 return Ok(result);
 
             }
-            catch
+            catch(Exception ex)
             {
-                throw new Exception();
+                return BadRequest(new EmployeeResponse(ex.Message, false));
             }
         }
         [EnableCors("PaseUsted")]
@@ -75,8 +75,10 @@ namespace ImputacionesBackend.Controllers
             try
             {
                 var response = await _employeeService.CheckLogin(loginRequest.Email, loginRequest.Password);
-
-
+                if (response == null)
+                {
+                    return Unauthorized(); //401, el front se encarga del mensaje.
+                }
                 return Ok(response);
             }
             catch (Exception)
