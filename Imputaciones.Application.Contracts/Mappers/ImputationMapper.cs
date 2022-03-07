@@ -41,25 +41,29 @@ namespace Imputaciones.Application.Contracts.Mappers
         public static List<ImputationResponse> toImputationsResponse(this List<ImputationModel> imputationList)
         {
            List<ImputationResponse> imputationResponses = new List<ImputationResponse>();
-            int projectName = 0;
+            int projectId = 0;
+            
             foreach(var item in imputationList)
             {
+               
                ImputationResponse imputationResponse = new ImputationResponse();
-                if (item.Project_Id != projectName)
+                if (true) // Necesito comprobar que no se repita el id del proyecto
                 {
                     imputationResponse.ProjectName = "nombre";
                     imputationResponse.ProjectId = item.Project_Id;
-                    imputationResponse.Imputations = imputationList.Where(x => x.Project_Id == item.Project_Id).ToList().toImputationResponse();
+                    projectId = item.Project_Id;
 
-                    //ME LO SACA EN EL ORDEN DE LOS PROJECTOS EN MYSQL
-
+                    //El problema es la validacion del if
+                    //TODO ESTO DEBERIA HACERLO EN EL SERVICE
                 }
-
-                imputationResponses.Add(imputationResponse);
+                    imputationResponse.Imputations = imputationList.Where(x => x.Project_Id == item.Project_Id).ToList().toImputationResponse();
+                    imputationResponses.Add(imputationResponse);
             }
             return imputationResponses;
         }
 
+        
+        //AQUI SACO LA RESPONSE BUENA
         public static List<ImputationResponseBase> toImputationResponse(this List<ImputationModel> imputationModelList)
         {
             List<ImputationResponseBase> imputationResponses = new List<ImputationResponseBase>();
