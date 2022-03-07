@@ -17,21 +17,19 @@ namespace Imputaciones.Application
         {
             _projectRepository = projectRepository;
         }
-        public Task<ProjectModel> AddProject(ProjectModel projectModel)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<ProjectModel>> GetAllProjects()
-        {
-            throw new NotImplementedException();
-        }
 
         public ProjectModel GetProjectById(int id)
         {
             var result = _projectRepository.GetByID(id);
             return result.toProjectModel();
         }
+
+        public async Task<List<ProjectModel>> GetAllProjects(int idEmployee)  // (int idEmployee, int week)
+        {
+            var List = await _projectRepository.GetAsync();
+            return List.ToList().toListProjectModel();
+        }
+
     }
 }
 

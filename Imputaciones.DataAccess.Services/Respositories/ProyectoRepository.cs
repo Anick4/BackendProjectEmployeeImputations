@@ -1,4 +1,5 @@
-﻿using Imputaciones.DataAccess.Contracts.Entities;
+﻿using Imputaciones.DataAccess.Contracts.Dtos;
+using Imputaciones.DataAccess.Contracts.Entities;
 using Imputaciones.DataAccess.Contracts.Repositories;
 using Imputaciones.DataAccess.Services.Repositories;
 using System;
@@ -15,6 +16,13 @@ namespace Imputaciones.DataAccess.Services.Respositories
         public ProyectoRepository(ApplicationDbContext dbcontext) : base(dbcontext)
         {
             _dbContext = dbcontext ?? throw new ArgumentNullException(nameof(dbcontext));
+        }
+
+        public Task<ProjectDto> GetAllProjects(int idEmployee)
+        {
+            //var resultEntity = await _dbContext.projects.FindAsync(id); 
+            //var result = _dbContext.projects.FindAsync(resultEntity.project_id)
+           
         }
     }
 }

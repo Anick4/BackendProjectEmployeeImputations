@@ -36,6 +36,16 @@ namespace Imputaciones.Application.Contracts.Mappers
 
         }
 
+        public static List<ProjectModel> toListProjectModel(this List<Project> projects)
+        {
+            List<ProjectModel> projectModelList = new List<ProjectModel>();
+            foreach (var item in projects)
+            {
+                projectModelList.Add(item.toProjectModel());
+            }
+            return projectModelList;
+        }
+
 
 
     }
