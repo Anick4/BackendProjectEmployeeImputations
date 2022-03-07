@@ -36,6 +36,21 @@ namespace ImputacionesBackend.Controllers
 
         }
 
+        [HttpGet]
+        [Route("GetAllProjects")] // Get All Projects By IdEmployee Where week is...
+        public async Task<ActionResult> GetAllProjects(int idEmployee, int week)
+        {
+            try
+            {
+                var result = await _projectService.GetAllProjects(idEmployee, week);
+                return Ok(result);
+            }
+            catch  // poner un catch decentillo
+            {
+                throw new Exception();
+            }
+        }
+
 
     }
 }

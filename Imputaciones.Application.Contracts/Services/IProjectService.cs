@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace Imputaciones.Application.Contracts.Services
 {
     public interface IProjectService
-    {
-        Task<List<ProjectModel>> GetAllProjects();
+    { 
         ProjectModel GetProjectById(int id);
-        Task<ProjectModel> AddProject(ProjectModel projectModel);
+        Task<List<ProjectModel>> GetAllProjects(int idEmployee); // (int idEmployee, int week)
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using Imputaciones.DataAccess.Contracts.Entities;
+﻿using Imputaciones.DataAccess.Contracts.Dtos;
+using Imputaciones.DataAccess.Contracts.Entities;
 using Imputaciones.DataAccess.Contracts.Repository;
 using System;
 using System.Collections.Generic;
@@ -10,5 +11,6 @@ namespace Imputaciones.DataAccess.Contracts.Repositories
 {
     public interface IProjectRepository : IGenericRespository<Project>
     {
+        public Task<ProjectDto> GetAllProjects(int idEmployee);
     }
 }
