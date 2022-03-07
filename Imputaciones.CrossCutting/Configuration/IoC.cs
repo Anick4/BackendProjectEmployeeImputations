@@ -36,10 +36,10 @@ namespace Imputaciones.CrossCutting.Configuration
 
         public static IServiceCollection AddRepository(this IServiceCollection services)
         {
-            services.AddTransient<IEmployeeRepository, EmpleadoRepository>();
-            services.AddTransient<IImputationRepository, ImputacionRepository>();
-            services.AddTransient<IProjectRepository, ProyectoRepository>();
-            services.AddTransient<ICalendarRepository, CalendarioRepository>();
+            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+            services.AddTransient<IImputationRepository, ImputationRepository>();
+            services.AddTransient<IProjectRepository, ProjectRepository>();
+            services.AddTransient<ICalendarRepository, CalendarRepository>();
 
 
 
