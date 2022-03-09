@@ -7,13 +7,14 @@ using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
+var MyAllowSpecificOrigins = "PaseUsted";
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("PaseUsted",
+    options.AddPolicy(name : MyAllowSpecificOrigins,
         builder =>
         {
-            builder.WithOrigins("*");
+            builder.WithOrigins("*").AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
         });
 });
 

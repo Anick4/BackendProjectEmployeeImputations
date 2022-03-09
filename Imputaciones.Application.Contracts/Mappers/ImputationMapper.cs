@@ -53,9 +53,12 @@ namespace Imputaciones.Application.Contracts.Mappers
                imputationResponse.ProjectId = item;
 
                 
-               imputationResponse.Imputations = imputationList.Where(x => x.Project_Id == item).ToList().toImputationResponse();
+               imputationResponse.Imputations = imputationList.Where(x => x.Project_Id == item).OrderBy(x => x.Day).ToList().toImputationResponse();
+                //INTENTAR ORDENARLO  POR ID
                imputationResponses.Add(imputationResponse);
             }
+            imputationResponses = imputationResponses.OrderBy(x => x.ProjectId).ToList();
+
             return imputationResponses;
         }
 
