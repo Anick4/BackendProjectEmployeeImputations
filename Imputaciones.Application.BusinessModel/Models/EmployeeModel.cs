@@ -25,6 +25,8 @@ namespace Imputaciones.Application.BusinessModel.Models
         public CalendarModel? Calendar { get; set; }
         public int Role_Id { get; set; }
         public RoleModel? Role { get; set; }
+
+        public List<ProjectModelReviewer>? Reviewer { get; set; }
         public string? Token { get; set; }
         
 

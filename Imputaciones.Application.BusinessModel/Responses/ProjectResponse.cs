@@ -15,7 +15,13 @@ namespace Imputaciones.Application.BusinessModel.Responses
         public bool State { get; set; }
         public bool Generic { get; set; }
         public string? Name { get; set; }
-        //public int Imputaciones_idimputaciones { get; set; }
         public int Responsible_Id { get; set; }
     }
+
+    public class ProjectResponseReviewer
+    {
+        public string ProjectName { get; set; }
+        public int Project_Id { get; set; }
+    }
+
 }

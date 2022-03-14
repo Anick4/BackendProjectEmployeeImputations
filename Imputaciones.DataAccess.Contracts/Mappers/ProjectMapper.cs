@@ -11,8 +11,8 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
     public static class ProjectMapper
     {
 
-    //  Dto -> Entity
-    public static Project ToProjectMapper(this ProjectDto projectDto)
+        //  Dto -> Entity
+        public static Project ToProjectMapper(this ProjectDto projectDto)
         {
             return new Project()
             {
@@ -26,8 +26,8 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
 
 
 
-    //  Entity -> Dto
-    public static ProjectDto ToProjectDtoMapper(this Project project)
+        //  Entity -> Dto
+        public static ProjectDto ToProjectDtoMapper(this Project project)
         {
             return new ProjectDto()
             {
@@ -39,7 +39,29 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
             };
         }
 
+        public static List<ProjectDto> ToProjectListDtoMapper(this List<Project> projectList)
+        {
+            List<ProjectDto> list = new();
+            foreach (var item in projectList)
+            {
+                list.Add(new ProjectDto()
+                {
+                    Project_Id = item.Project_Id,
+                    State = item.State,
+                    Generic = item.Generic,
+                    Name = item.Name,
+                    Responsible_Id = item.Responsible_Id
+                });
+
+            }
+            return list;
+        }
+
 
 
     }
+
+   
+
 }
+

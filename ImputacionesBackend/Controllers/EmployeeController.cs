@@ -59,7 +59,7 @@ namespace ImputacionesBackend.Controllers
             {
                 var result = await _employeeService.GetEmployee(id);
 
-                return Ok(result);
+                return Ok(result.ToEmployeeResponseMapper()); //REVISASR
 
             }
             catch(Exception ex)

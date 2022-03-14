@@ -15,7 +15,7 @@ namespace Imputaciones.Application.BusinessModel.Responses
         { }
         public CalendarResponse Calendar { get; set; }
         public RoleResponse? Role { get; set; }
-        public ICollection<ProjectResponse>? Projects { get; set; }
+        public List<ProjectResponseReviewer>? Projects { get; set; }
         public string Token { get; set; }
         
         

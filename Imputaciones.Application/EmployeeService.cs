@@ -38,6 +38,7 @@ namespace Imputaciones.Application
             var employee = entityResponse.Item1.toEmployeeModelMapper();
             employee.Calendar = entityResponse.Item2.toCalendarModelMapper();
             employee.Role = entityResponse.Item3.ToRoleModelMapper();
+            employee.Reviewer = entityResponse.Item4.ToListDtoProjectModel();
 
 
             return employee;

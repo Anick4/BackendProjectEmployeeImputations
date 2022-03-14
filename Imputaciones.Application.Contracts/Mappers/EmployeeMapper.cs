@@ -53,6 +53,9 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Calendar_Id = employeeModel.Calendar_Id,
                 Role_Id = employeeModel.Role_Id,
                 Token = employeeModel.Token,
+                Projects = employeeModel.Reviewer.ToProjectListResponseReviewerMapper()
+                
+
             };
         }
 

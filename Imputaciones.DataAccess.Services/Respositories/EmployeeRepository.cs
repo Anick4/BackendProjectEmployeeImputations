@@ -16,7 +16,7 @@ namespace Imputaciones.DataAccess.Services.Respositories
 
         
 
-        public async Task<(EmployeeDto, CalendarDto, RoleDto)> GetEmployee(int id)
+        public async Task<(EmployeeDto, CalendarDto, RoleDto, List<ProjectDto>)> GetEmployee(int id)
         {
             var resultEntity = await _dbContext.Employees.FindAsync(id);
 
@@ -24,9 +24,11 @@ namespace Imputaciones.DataAccess.Services.Respositories
 
            var resultRole = await _dbContext.Roles.FindAsync(resultEntity.Role_Id);
 
+            var resultProject = _dbContext.Projects.Where(x => x.Responsible_Id == id).ToList();
+
             _dbContext.SaveChanges();
 
-            return (resultEntity.ToEmployeeDtoMapper(), resultCalendar.ToCalendarDtoMapper(), resultRole.ToRoleDtoMapper());
+            return (resultEntity.ToEmployeeDtoMapper(), resultCalendar.ToCalendarDtoMapper(), resultRole.ToRoleDtoMapper(), resultProject.ToProjectListDtoMapper());
         }
 
         public async Task<EmployeeDto> GetEmployeeByEmail(string email)

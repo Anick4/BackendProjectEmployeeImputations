@@ -1,5 +1,6 @@
 ﻿using Imputaciones.Application.BusinessModel.Models;
 using Imputaciones.Application.BusinessModel.Responses;
+using Imputaciones.DataAccess.Contracts.Dtos;
 using Imputaciones.DataAccess.Contracts.Entities;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,27 @@ namespace Imputaciones.Application.Contracts.Mappers
                 State = project.State,
                 Generic = project.Generic,
                 Responsible_Id = project.Responsible_Id,
+            };
+        }
+
+        public static ProjectModel ToProjectModel(this ProjectDto project)
+        {
+            return new ProjectModel()
+            {
+                Project_Id = project.Project_Id,
+                Name = project.Name,
+                State = project.State,
+                Generic = project.Generic,
+                Responsible_Id = project.Responsible_Id,
+            };
+        }
+
+        public static ProjectModelReviewer ToProjectModelReviewer(this ProjectDto projectDto)
+        {
+            return new ProjectModelReviewer()
+            {
+                ProjectName = projectDto.Name,
+                Project_Id = projectDto.Project_Id,
             };
         }
 
@@ -44,6 +66,30 @@ namespace Imputaciones.Application.Contracts.Mappers
                 projectModelList.Add(item.ToProjectModel());
             }
             return projectModelList;
+        }
+
+        public static List<ProjectModelReviewer> ToListDtoProjectModel(this List<ProjectDto> projectsList)
+        {
+            List<ProjectModelReviewer> projectModelList = new();
+            foreach (var item in projectsList)
+            {
+                projectModelList.Add(item.ToProjectModelReviewer());
+            }
+            return projectModelList;
+        }
+
+        public static List<ProjectResponseReviewer> ToProjectListResponseReviewerMapper( this List<ProjectModelReviewer> projectModelList)
+        {
+            List<ProjectResponseReviewer> list = new();
+            foreach(var item in projectModelList)
+            {
+                list.Add(new ProjectResponseReviewer()
+                {
+                    ProjectName = item.ProjectName,
+                    Project_Id = item.Project_Id
+                });
+            }
+            return list;
         }
 
 

@@ -11,9 +11,12 @@ namespace Imputaciones.Application.BusinessModel.Models
         
         public enum StateEnum
         {
-            enviado = 1,
-            aprovado = 2,
-            rechazado = 3,
+            sent = 1,
+            approved = 2,
+            rejected = 3,
         }
+
+        
+       
     }
 }
