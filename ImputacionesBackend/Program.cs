@@ -1,23 +1,26 @@
 using Imputaciones.CrossCutting.Configuration;
 
+
+
 using Imputaciones.DataAccess.Services;
+
+
 
 using Microsoft.EntityFrameworkCore;
 
 
 
-var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("PaseUsted",
-        builder =>
-        {
-            builder.WithOrigins("*").AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
-        });
-});
+// ***************************************************** CORS
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddCors(options => options.AddDefaultPolicy(o => o.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().SetIsOriginAllowed(origin => true)));
+
+
+
 
 // Add services to the container.
+
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -28,15 +31,22 @@ var appSettingsSection = builder.Configuration.GetSection("AppSettings");
 string myconnection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 options.UseMySql(
-myconnection, ServerVersion.AutoDetect(myconnection), 
+myconnection, ServerVersion.AutoDetect(myconnection),
 (p => p.MigrationsAssembly("ImputacionesBackend"))
 )
 );
 
 
+
+
 var app = builder.Build();
 
-app.UseCors();  
+
+
+app.UseCors(); //************************************************************** CORS
+
+
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -44,11 +54,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
+
 app.UseHttpsRedirection();
 
 
-app.UseAuthorization();
+
+
+//app.UseAuthorization(); PROBAMOS A QUITALO
+
+
 
 app.MapControllers();
+
+
 
 app.Run();

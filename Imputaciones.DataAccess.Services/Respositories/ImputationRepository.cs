@@ -49,6 +49,7 @@ namespace Imputaciones.DataAccess.Services.Respositories
                                                Extra_Hours = im.Extra_Hours,
                                                Hours = im.Hours,
                                                Imputation_Id = im.Imputation_Id,
+                                               Week = week,
                                                Status = null,
 
                                            }).OrderBy(x => x.Day).ToList()

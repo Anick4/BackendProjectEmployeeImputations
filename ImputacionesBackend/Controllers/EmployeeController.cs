@@ -67,7 +67,7 @@ namespace ImputacionesBackend.Controllers
                 return BadRequest(new EmployeeResponse(ex.Message, false));
             }
         }
-        [EnableCors("PaseUsted")]
+
         [HttpPost]
         [Route("Login")]
         public async Task<ActionResult> Login(LoginRequest loginRequest)
