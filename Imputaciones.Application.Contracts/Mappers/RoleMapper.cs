@@ -18,7 +18,7 @@ namespace Imputaciones.Application.Contracts.Mappers
             {
                 Role_Id = roleDto.Role_Id,
                 Role_Name = roleDto.Role_Name,
-   
+     
             };
         }
 
@@ -40,5 +40,7 @@ namespace Imputaciones.Application.Contracts.Mappers
 
             };
         }
+
+
     }
 }

@@ -21,11 +21,12 @@ namespace Imputaciones.DataAccess.Services.Respositories
             var resultEntity = await _dbContext.Employees.FindAsync(id);
 
            var resultCalendar = await _dbContext.Calendars.FindAsync(resultEntity.Calendar_Id);
-           var resultRol = await _dbContext.Roles.FindAsync(resultEntity.Role_Id);
+
+           var resultRole = await _dbContext.Roles.FindAsync(resultEntity.Role_Id);
 
             _dbContext.SaveChanges();
 
-            return (resultEntity.ToEmployeeDtoMapper(), resultCalendar.ToCalendarDtoMapper(), resultRol.ToRoleDtoMapper());
+            return (resultEntity.ToEmployeeDtoMapper(), resultCalendar.ToCalendarDtoMapper(), resultRole.ToRoleDtoMapper());
         }
 
         public async Task<EmployeeDto> GetEmployeeByEmail(string email)

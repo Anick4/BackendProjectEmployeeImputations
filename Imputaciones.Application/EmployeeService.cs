@@ -34,13 +34,13 @@ namespace Imputaciones.Application
 
         public async Task<EmployeeModel> GetEmployee(int id)
         {
-            var response = _employeeRepository.GetByID(id).ToEmployeeModelMapper();
-            //var employee = entityResponse.Item1.ToEmployeeModelMapper();
-            //employee.Calendar = entityResponse.Item2.ToCalendarModelMapper();
-            //employee.Role = entityResponse.Item3.ToRoleModelMapper();
+            var entityResponse = await _employeeRepository.GetEmployee(id);
+            var employee = entityResponse.Item1.toEmployeeModelMapper();
+            employee.Calendar = entityResponse.Item2.toCalendarModelMapper();
+            employee.Role = entityResponse.Item3.ToRoleModelMapper();
 
 
-            return response;
+            return employee;
         }
 
         public static Boolean CheckPassword(EmployeeModel employee, string password)

@@ -12,4 +12,6 @@ namespace Imputaciones.Application.BusinessModel.Models
         public string Role_Name { get; set; }
 
     }
+
+
 }
