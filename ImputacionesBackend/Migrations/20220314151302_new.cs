@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace ImputacionesBackend.Migrations
 {
-    public partial class asdadad : Migration
+    public partial class @new : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -148,7 +149,8 @@ namespace ImputacionesBackend.Migrations
                     Extra_Hours = table.Column<int>(type: "int", nullable: false),
                     Week = table.Column<int>(type: "int", nullable: false),
                     Employee_Id = table.Column<int>(type: "int", nullable: false),
-                    Project_Id = table.Column<int>(type: "int", nullable: false)
+                    Project_Id = table.Column<int>(type: "int", nullable: false),
+                    Date = table.Column<DateOnly>(type: "date", nullable: true)
                 },
                 constraints: table =>
                 {

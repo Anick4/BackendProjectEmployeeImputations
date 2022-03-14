@@ -20,5 +20,6 @@ namespace Imputaciones.Application.BusinessModel.Responses
         public StateEnum State { get; set; }
         public int Extra_Hours { get; set; }
         public int Week { get; set; }
+        
     }
 }

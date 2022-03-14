@@ -1,4 +1,5 @@
 ﻿using Imputaciones.Application.BusinessModel.Models;
+using Imputaciones.Application.BusinessModel.Requests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Imputaciones.Application.Contracts.Services
     {
         Task<List<ImputationModel>> GetAllImputations();
         ImputationModel GetImputationsById(int id);
-        Task<ImputationModel> AddImputations(ImputationModel imputationsModel);
+        Task<ImputationModel> InsertImputation(List<ImputationInsertRequest> imputationRequest);
         Task<List<ImputationResponseModel>> GetImputationsWithProjectByEmployeeByWeek(int id, int week);
     }
 }

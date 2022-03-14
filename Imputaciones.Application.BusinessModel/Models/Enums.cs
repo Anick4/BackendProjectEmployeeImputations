@@ -16,7 +16,5 @@ namespace Imputaciones.Application.BusinessModel.Models
             rejected = 3,
         }
 
-        
-       
     }
 }

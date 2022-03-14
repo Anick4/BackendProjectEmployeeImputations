@@ -1,4 +1,5 @@
 ﻿using Imputaciones.Application.BusinessModel.Models;
+using Imputaciones.Application.BusinessModel.Requests;
 using Imputaciones.Application.BusinessModel.Responses;
 using Imputaciones.DataAccess.Contracts.Dtos;
 using Imputaciones.DataAccess.Contracts.Entities;
@@ -162,6 +163,15 @@ namespace Imputaciones.Application.Contracts.Mappers
             }
 
             return result;
+        }
+
+        public static ImputationModel ToImputationModelMapper(this ImputationInsertRequestBase imputationRequest)
+        {
+            var result = new ImputationModel()
+            {
+                Date = imputationRequest.Date,
+                Name
+            }
         }
     }
 }

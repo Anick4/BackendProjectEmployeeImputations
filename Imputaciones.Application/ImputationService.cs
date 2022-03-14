@@ -1,4 +1,5 @@
 ﻿using Imputaciones.Application.BusinessModel.Models;
+using Imputaciones.Application.BusinessModel.Requests;
 using Imputaciones.Application.Contracts.Mappers;
 using Imputaciones.Application.Contracts.Services;
 using Imputaciones.DataAccess.Contracts.Repositories;
@@ -18,9 +19,14 @@ namespace Imputaciones.Application
         {
             _imputationRepository = imputationRepository;
         }
-        public Task<ImputationModel> AddImputations(ImputationModel imputationsModel)
+        public async Task<ImputationModel> InsertImputation(ImputationInsertRequest imputationRequest)
         {
-            throw new NotImplementedException();
+            var results = imputationRequest.Imputations;
+            foreach (var result in results)
+            {
+             await _imputationRepository.Insert(result.ToImputationMapper());
+
+            }
         }
 
         public async Task<List<ImputationModel>> GetAllImputations()

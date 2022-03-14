@@ -18,6 +18,8 @@ namespace Imputaciones.Application.BusinessModel.Models
         public int Week { get; set; }
         public int Employees_Id { get; set; }
         public int Projects_Id { get; set; }
+        public DateOnly Date { get; set; }
+        public string ProjectName { get; set; }
 
     }
 
@@ -27,4 +29,5 @@ namespace Imputaciones.Application.BusinessModel.Models
         public int ProjectId { get; set; }
         public List<ImputationResponseBase>? Imputations { get; set; }
     }
+
 }

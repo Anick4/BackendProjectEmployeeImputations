@@ -52,5 +52,21 @@ namespace ImputacionesBackend.Controllers
                  return BadRequest(new ImputationResponseBase(ex.Message, false));
             }
          }
+
+        [HttpPost]
+        [Route("ImputationPost")]
+        public async Task<ActionResult> InsertImputation(List<ImputationInsertRequest> imputationList)
+        {
+            try
+            {
+                var result = await _imputationService.InsertImputation();
+                return Ok(result);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(new ImputationResponseBase(ex.Message, false));
+            }
+
+        }
     } 
 }
