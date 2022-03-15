@@ -61,6 +61,22 @@ namespace Imputaciones.DataAccess.Services.Respositories
             return calendarId;
         }
 
+        public async Task<List<IGrouping<int, int>>> GetDailyHours(int Employeeid, int week)
+        {
+
+            var query = (from im in _dbContext.Imputations
+                        where im.Week == week && im.Employee_Id == Employeeid
+                        group im.Hours by im.Day into list
+                        orderby list.Key
+                        select list);
+
+          
+            return await query.ToListAsync();
+
+
+
+        }
+
     }
        
 }

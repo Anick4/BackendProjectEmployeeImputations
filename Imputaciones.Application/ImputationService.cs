@@ -73,6 +73,13 @@ namespace Imputaciones.Application
             
         }
 
+        public async Task<List<IGrouping<int, int>>> GetExtraHours(int Employeeid, int week )
+        {
+            var result = await _imputationRepository.GetDailyHours(Employeeid, week);
+
+            return result;
+        }
+
          
     }
 }
