@@ -16,7 +16,7 @@ namespace Imputaciones.Application.BusinessModel.Models
         public StateEnum State { get; set; }
         public int Extra_Hours { get; set; }
         public int Week { get; set; }
-        public int Employees_Id { get; set; }
+        public int Employee_Id { get; set; }
         public int Project_Id { get; set; }
 
         public DateTime Date { get; set; }
@@ -26,6 +26,7 @@ namespace Imputaciones.Application.BusinessModel.Models
 
     public class ImputationResponseModel
     {
+        public int EmployeeId { get; set; }
         public string? ProjectName { get; set; }
         public int Projects_Id { get; set; }
         public List<ImputationResponseBase>? Imputations { get; set; }

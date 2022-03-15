@@ -32,7 +32,7 @@ namespace Imputaciones.Application.Contracts.Mappers
                 State = imputation.State,
                 Extra_Hours = imputation.Extra_Hours,
                 Project_Id = imputation.Project_Id,
-                Employees_Id = imputation.Employee_Id,
+                Employee_Id = imputation.Employee_Id,
                 Imputation_Id = imputation.Imputation_Id,
                 Hours = imputation.Hours,
                 Week = imputation.Week
@@ -97,7 +97,7 @@ namespace Imputaciones.Application.Contracts.Mappers
                 State = imputationDto.State,
                 Extra_Hours = imputationDto.Extra_Hours,
                 Project_Id = imputationDto.Project_Id,
-                Employees_Id = imputationDto.Employee_Id,
+                Employee_Id = imputationDto.Employee_Id,
                 Imputation_Id = imputationDto.Imputation_Id,
                 Hours = imputationDto.Hours,
                 Week = imputationDto.Week
@@ -113,7 +113,7 @@ namespace Imputaciones.Application.Contracts.Mappers
                 {
                     Day = item.Day,
                     Project_Id = item.Project_Id,
-                    Employees_Id = item.Employee_Id,
+                    Employee_Id = item.Employee_Id,
                     Extra_Hours = item.Extra_Hours,
                     Hours = item.Hours,
                     Imputation_Id = item.Imputation_Id,
@@ -175,10 +175,12 @@ namespace Imputaciones.Application.Contracts.Mappers
                 {
                     list.Add(new ImputationModel()
                     {
+
+                       
                         Project_Id = im.ProjectId,
                         Date = item.Date,
                         Day = item.Day,
-                        Employees_Id = item.Employee_Id,
+                        Employee_Id = im.EmployeeId,
                         Hours = item.Hours,
                         Extra_Hours = item.Extra_Hours,
                         State = item.State,
@@ -200,7 +202,7 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Project_Id = imputation.Project_Id,
                 Date = imputation.Date,
                 Day = imputation.Day,
-                Employee_Id = imputation.Employees_Id,
+                Employee_Id = imputation.Employee_Id,
                 Hours = imputation.Hours,
                 Extra_Hours = imputation.Extra_Hours,
                 Imputation_Id = imputation.Imputation_Id,
