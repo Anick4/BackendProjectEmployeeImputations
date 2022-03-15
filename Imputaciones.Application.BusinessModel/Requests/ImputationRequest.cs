@@ -17,7 +17,6 @@ namespace Imputaciones.Application.BusinessModel.Requests
 
     public class ImputationInsertRequestBase
     {
-        public int Imputation_Id { get; set; }
         public int Day { get; set; }
         public int Hours { get; set; }
         public StateEnum State { get; set; }
@@ -25,7 +24,7 @@ namespace Imputaciones.Application.BusinessModel.Requests
         public int Week { get; set; }
         public int Employee_Id { get; set; }
         public int Project_Id { get; set; }
-        public DateOnly Date { get; set; }
+        public DateTime Date { get; set; }
     }
     public class ImputationInsertRequest
     {

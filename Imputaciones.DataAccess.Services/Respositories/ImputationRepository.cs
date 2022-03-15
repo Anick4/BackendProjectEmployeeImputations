@@ -52,6 +52,15 @@ namespace Imputaciones.DataAccess.Services.Respositories
 
         }
 
+        public async Task<int> CheckCalendar(int id)
+        {
+            var employee = await _dbContext.Employees.FindAsync(id);
+            var calendar = await _dbContext.Calendars.FindAsync(employee.Calendar_Id);
+            int calendarId = calendar.Calendar_Id;
+
+            return calendarId;
+        }
+
     }
        
 }

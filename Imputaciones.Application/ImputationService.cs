@@ -19,13 +19,36 @@ namespace Imputaciones.Application
         {
             _imputationRepository = imputationRepository;
         }
-        public async Task<ImputationModel> InsertImputation(ImputationInsertRequest imputationRequest)
+        public async Task<bool> InsertImputation(List<ImputationInsertRequest> imputationRequest)
         {
-            var results = imputationRequest.Imputations;
-            foreach (var result in results)
-            {
-             await _imputationRepository.Insert(result.ToImputationMapper());
+            List<ImputationModel> modelList = imputationRequest.ToImputationModelMapper();
+            //int employeeId = imputationRequest[0].Imputations[0].Employee_Id;
+            //int calendarId = await _imputationRepository.CheckCalendar(employeeId);
 
+            try
+            {
+                
+                foreach (var model in modelList)
+                {
+                   
+                    if(_imputationRepository.Equals(model.Project_Id)==false)
+                    {
+
+                        _imputationRepository.Insert(model.ToImputationMapper());
+                        _imputationRepository.SaveChanges();
+                    }
+                    else
+                    {
+                        _imputationRepository.Update(model.ToImputationMapper());
+                        _imputationRepository.SaveChanges();
+                    }
+                }
+                return true;
+
+            }
+            catch
+            {
+                return false;
             }
         }
 

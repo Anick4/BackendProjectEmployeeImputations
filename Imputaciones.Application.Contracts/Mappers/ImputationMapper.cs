@@ -31,7 +31,7 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Day = imputation.Day,
                 State = imputation.State,
                 Extra_Hours = imputation.Extra_Hours,
-                Projects_Id = imputation.Project_Id,
+                Project_Id = imputation.Project_Id,
                 Employees_Id = imputation.Employee_Id,
                 Imputation_Id = imputation.Imputation_Id,
                 Hours = imputation.Hours,
@@ -96,7 +96,7 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Day = imputationDto.Day,
                 State = imputationDto.State,
                 Extra_Hours = imputationDto.Extra_Hours,
-                Projects_Id = imputationDto.Project_Id,
+                Project_Id = imputationDto.Project_Id,
                 Employees_Id = imputationDto.Employee_Id,
                 Imputation_Id = imputationDto.Imputation_Id,
                 Hours = imputationDto.Hours,
@@ -112,7 +112,7 @@ namespace Imputaciones.Application.Contracts.Mappers
                 result.Add(new ImputationModel ()
                 {
                     Day = item.Day,
-                    Projects_Id = item.Project_Id,
+                    Project_Id = item.Project_Id,
                     Employees_Id = item.Employee_Id,
                     Extra_Hours = item.Extra_Hours,
                     Hours = item.Hours,
@@ -137,7 +137,7 @@ namespace Imputaciones.Application.Contracts.Mappers
                 var model = new ImputationResponseModel()
                 {
                     ProjectName = item.ProjectName,
-                    ProjectId = item.ProjectId,
+                    Projects_Id = item.ProjectId,
                     Imputations = item.Imputations,
 
                 };
@@ -155,7 +155,7 @@ namespace Imputaciones.Application.Contracts.Mappers
                 var model = new ImputationResponse()
                 {
                     ProjectName = item.ProjectName,
-                    ProjectId = item.ProjectId,
+                    ProjectId = item.Projects_Id,
                     Imputations = item.Imputations,
 
                 };
@@ -165,13 +165,49 @@ namespace Imputaciones.Application.Contracts.Mappers
             return result;
         }
 
-        public static ImputationModel ToImputationModelMapper(this ImputationInsertRequestBase imputationRequest)
+        public static List<ImputationModel> ToImputationModelMapper(this List<ImputationInsertRequest> imputationRequest)
         {
-            var result = new ImputationModel()
+            List<ImputationModel> list = new();
+            
+            foreach (var im in imputationRequest)
             {
-                Date = imputationRequest.Date,
-                Name
+                foreach(var item in im.Imputations)
+                {
+                    list.Add(new ImputationModel()
+                    {
+                        Project_Id = im.ProjectId,
+                        Date = item.Date,
+                        Day = item.Day,
+                        Employees_Id = item.Employee_Id,
+                        Hours = item.Hours,
+                        Extra_Hours = item.Extra_Hours,
+                        State = item.State,
+                        Week = item.Week
+                    });
+
+                }
+                
             }
+
+            return list;
+            
+        }
+
+        public static Imputation ToImputationMapper(this ImputationModel imputation)
+        {
+            return new()
+            {
+                Project_Id = imputation.Project_Id,
+                Date = imputation.Date,
+                Day = imputation.Day,
+                Employee_Id = imputation.Employees_Id,
+                Hours = imputation.Hours,
+                Extra_Hours = imputation.Extra_Hours,
+                Imputation_Id = imputation.Imputation_Id,
+                State = imputation.State,
+                Week = imputation.Week,
+
+            };
         }
     }
 }

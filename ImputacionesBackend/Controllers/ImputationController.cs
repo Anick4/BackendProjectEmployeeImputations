@@ -59,7 +59,7 @@ namespace ImputacionesBackend.Controllers
         {
             try
             {
-                var result = await _imputationService.InsertImputation();
+                var result = await _imputationService.InsertImputation(imputationList);
                 return Ok(result);
             }
             catch(Exception ex)

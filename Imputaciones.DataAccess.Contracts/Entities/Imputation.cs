@@ -40,7 +40,7 @@ namespace Imputaciones.DataAccess.Contracts.Entities
         [Required]
         public int Project_Id { get; set; }
         public virtual Project Project { get; set; }
-
-        public DateOnly Date { get; set; }
+        
+        public DateTime Date { get; set; }
     }
 }
