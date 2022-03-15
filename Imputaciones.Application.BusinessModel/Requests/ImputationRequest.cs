@@ -22,9 +22,9 @@ namespace Imputaciones.Application.BusinessModel.Requests
         public StateEnum State { get; set; }
         public int Extra_Hours { get; set; }
         public int Week { get; set; }
-        public int Employee_Id { get; set; }
-        public int Project_Id { get; set; }
-        public DateTime Date { get; set; }
+        //public int Employee_Id { get; set; }
+        //public int Project_Id { get; set; }
+        public string Date { get; set; }
     }
     public class ImputationInsertRequest
     {

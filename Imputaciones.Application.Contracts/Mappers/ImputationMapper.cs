@@ -200,7 +200,7 @@ namespace Imputaciones.Application.Contracts.Mappers
             return new()
             {
                 Project_Id = imputation.Project_Id,
-                Date = imputation.Date,
+                Date = Convert.ToDateTime(imputation.Date),
                 Day = imputation.Day,
                 Employee_Id = imputation.Employee_Id,
                 Hours = imputation.Hours,
@@ -208,7 +208,6 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Imputation_Id = imputation.Imputation_Id,
                 State = imputation.State,
                 Week = imputation.Week,
-
             };
         }
     }
