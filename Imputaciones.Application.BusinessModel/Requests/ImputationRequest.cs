@@ -17,6 +17,9 @@ namespace Imputaciones.Application.BusinessModel.Requests
 
     public class ImputationInsertRequestBase
     {
+        public string Message { get; set; }
+        public bool Status { get; set; }
+        public int Imputation_Id { get; set; }
         public int Day { get; set; }
         public int Hours { get; set; }
         public StateEnum State { get; set; }
