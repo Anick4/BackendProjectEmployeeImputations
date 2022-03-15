@@ -18,7 +18,9 @@ namespace Imputaciones.DataAccess.Contracts.Entities
         public int Imputation_Id { get; set; }
         [Required]
         public int Day { get; set; }
-   
+
+        [Required]
+
         public int Hours { get; set; }
 
 
@@ -26,7 +28,7 @@ namespace Imputaciones.DataAccess.Contracts.Entities
         
         public StateEnum State { get; set; }
        
-        [Required]
+  
         public int Extra_Hours { get; set; }
         [Required]
         public int Week { get; set; }
