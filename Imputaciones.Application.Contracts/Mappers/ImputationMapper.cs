@@ -196,8 +196,9 @@ namespace Imputaciones.Application.Contracts.Mappers
                     EmployeeName = item.EmployeeName,
                     Hours = item.Hours,
                     ProjectId = item.ProjectId,
-                    ProjectName = item.ProjectName,
+                    EmployeeId = item.EmployeeId,
                     ImputationId = item.ImputationId,
+                    Status = item.Status,
                 });
             }
             return list;
@@ -216,8 +217,10 @@ namespace Imputaciones.Application.Contracts.Mappers
                     EmployeeName = item.EmployeeName,
                     Hours = item.Hours,
                     ProjectId = item.ProjectId,
-                    ProjectName = item.ProjectName,
+                    EmployeeId = item.EmployeeId,
                     ImputationId = item.ImputationId,
+                    Status=item.Status,
+                    
                 });
             }
             return list;
