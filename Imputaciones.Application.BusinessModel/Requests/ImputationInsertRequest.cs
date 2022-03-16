@@ -4,16 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Imputaciones.Application.BusinessModel.Responses
+namespace Imputaciones.Application.BusinessModel.Requests
 {
-    public class ImputationResponse 
+    public class ImputationInsertRequest
     {
-        
+        public int EmployeeId { get; set; }
         public string? ProjectName { get; set; }
         public int ProjectId { get; set; }
-        public List<ImputationResponseBase>? Imputations { get; set; }
-        
+        public List<ImputationInsertRequestBase>? Imputations { get; set; }
     }
-
-
 }

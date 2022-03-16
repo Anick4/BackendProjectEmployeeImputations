@@ -20,9 +20,9 @@ namespace ImputacionesBackend.Controllers
         }
 
         [HttpGet]
-        [Route("GetProyectoById")]
+        [Route("GetProjectById")]
 
-        public ActionResult GetProyectoById(int id)
+        public ActionResult GetProjectById(int id)
         {
             try
             {

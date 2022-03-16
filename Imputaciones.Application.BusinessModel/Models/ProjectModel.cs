@@ -15,9 +15,4 @@ namespace Imputaciones.Application.BusinessModel.Models
         public int Responsible_Id { get; set; }
     }
 
-    public class ProjectModelReviewer
-    {
-        public string ProjectName { get; set; }
-        public int Project_Id { get; set; }
-    }
 }
