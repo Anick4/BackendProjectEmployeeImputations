@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Imputaciones.Application.BusinessModel.Responses;
+using static Imputaciones.Application.BusinessModel.Models.Enums;
 
 namespace Imputaciones.DataAccess.Services.Respositories
 {
@@ -83,7 +84,7 @@ namespace Imputaciones.DataAccess.Services.Respositories
         public async Task<List<ImputationsForReviewDto>> GetImputationsByProject(int ProjectId)
         {
             var query = from im in _dbContext.Imputations
-                        where im.Project_Id == ProjectId
+                        where im.Project_Id == ProjectId && im.State == (StateEnum)1
                         join e in _dbContext.Employees on im.Employee_Id equals e.Employee_Id
                         join p in _dbContext.Projects on im.Project_Id equals p.Project_Id
                         select new ImputationsForReviewDto()
