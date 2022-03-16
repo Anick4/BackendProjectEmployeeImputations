@@ -15,8 +15,10 @@ namespace Imputaciones.DataAccess.Contracts.Repositories
        //public Task<List<ImputationDto>> GetImputationsByEmployeeByWeek(int id, int week);
         public Task<List<ImputationResponseDto>> GetImputationsWithProjectByEmployeeByWeek(int id, int week);
 
-        public Task<int> CheckCalendar(int id);
+        public Task<int?> CheckCalendar(int id);
 
-        public Task<List<IGrouping<int, int>>> GetDailyHours(int Employeeid, int week);
+        public Task<List<TotalHoursDto>> GetDailyHours(int Employeeid, int week);
+
+        public Task<List<ImputationsForReviewDto>> GetImputationsByProject(int ProjectId);
     }
 }

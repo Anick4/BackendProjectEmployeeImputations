@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Imputaciones.Application.BusinessModel.Models.Enums;
 
 namespace Imputaciones.Application
 {
@@ -54,13 +55,16 @@ namespace Imputaciones.Application
 
         public async Task<List<ImputationModel>> GetAllImputations()
         {
+            
             var List = await _imputationRepository.GetAsync();
             return List.ToList().ToListImputationModel();
         }
 
-        public ImputationModel GetImputationsById(int id)
+        public async Task<List<ImputationModel>> GetImputationsById(int id)
         {
-            throw new NotImplementedException();
+
+            var list = await _imputationRepository.GetAsync(x => x.Project_Id == id);
+            return list.ToList().ToListImputationModel();
         }
 
 
@@ -77,9 +81,52 @@ namespace Imputaciones.Application
         {
             var result = await _imputationRepository.GetDailyHours(Employeeid, week);
 
-            return result;
+            return null;
         }
 
-         
+        public async Task<List<ImputationsForReviewModel>> GetImputationsByProject(int ProjecId)
+        {
+            var result = await _imputationRepository.GetImputationsByProject(ProjecId);
+
+            return result.ToListModelMapper();
+        }
+
+        public async Task<bool> ChangeImputationStatus(int id, int status)
+        {
+            try
+            {
+                var result = _imputationRepository.GetByID(id);
+                result.State = (StateEnum)status;
+                _imputationRepository.SaveChanges();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+
+        public async Task<bool> AproveAllImputations(int ProjectId)
+        {
+            try
+            {
+                var result = await GetImputationsById(ProjectId);
+                foreach (var item in result)
+                {
+                    _imputationRepository.GetByID(item.Imputation_Id).State = (StateEnum)2;
+                    _imputationRepository.SaveChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
+
+        }
+
     }
 }

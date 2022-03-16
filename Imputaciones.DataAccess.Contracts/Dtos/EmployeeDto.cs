@@ -25,11 +25,5 @@ namespace Imputaciones.DataAccess.Contracts.Dtos
 
         public int Role_Id { get; set; }
 
-
-
-
-
-
-
     }
 }

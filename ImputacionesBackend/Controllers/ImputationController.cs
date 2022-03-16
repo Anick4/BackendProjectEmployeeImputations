@@ -5,6 +5,7 @@ using Imputaciones.Application.Contracts.Mappers;
 using Imputaciones.Application.Contracts.Services;
 using Imputaciones.DataAccess.Contracts.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using static Imputaciones.Application.BusinessModel.Models.Enums;
 
 namespace ImputacionesBackend.Controllers
 {
@@ -68,5 +69,51 @@ namespace ImputacionesBackend.Controllers
             }
 
         }
+
+        [HttpGet]
+        [Route("GetImputationsByProject")]   
+        public async Task<ActionResult> GetImputationsByProject(int ProjectId)
+        {
+            try 
+            {
+                var result = await _imputationService.GetImputationsByProject(ProjectId);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ImputationResponseBase(ex.Message, false));
+            }
+        }
+
+        [HttpPut]
+        [Route("ChangeImputationStatus")]
+        public async Task<ActionResult> ChangeImputationStatus(int id, int status)
+        {
+            try
+            {
+                await _imputationService.ChangeImputationStatus(id, status);
+                return Ok("Estado cambiado correctamente");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ImputationResponseBase(ex.Message, false));
+            }
+        }
+
+        [HttpPut]
+        [Route("AproveAllImputations")]
+        public async Task<ActionResult> AproveAllImputations(int ProjectId)
+        {
+            try
+            {
+                await _imputationService.AproveAllImputations(ProjectId);
+                return Ok("Estado cambiado correctamente");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ImputationResponseBase(ex.Message, false));
+            }
+        }
+
     } 
 }

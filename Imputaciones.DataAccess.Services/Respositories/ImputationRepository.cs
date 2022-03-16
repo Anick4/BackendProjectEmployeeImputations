@@ -52,30 +52,52 @@ namespace Imputaciones.DataAccess.Services.Respositories
 
         }
 
-        public async Task<int> CheckCalendar(int id)
+        public async Task<int?> CheckCalendar(int id)
         {
             var employee = await _dbContext.Employees.FindAsync(id);
-            var calendar = await _dbContext.Calendars.FindAsync(employee.Calendar_Id);
-            int calendarId = calendar.Calendar_Id;
+            var calendar = await _dbContext.Calendars.FindAsync(employee?.Calendar_Id);
+            int? calendarId = calendar?.Calendar_Id;
 
             return calendarId;
         }
 
-        public async Task<List<IGrouping<int, int>>> GetDailyHours(int Employeeid, int week)
+        public async Task<List<TotalHoursDto>> GetDailyHours(int Employeeid, int week) //REVISARLO CON PEDRO
         {
+            var queryName = await (from e in _dbContext.Employees
+                            where e.Employee_Id == Employeeid
+                            select e.Name).ToListAsync();
 
             var query = (from im in _dbContext.Imputations
-                        where im.Week == week && im.Employee_Id == Employeeid
-                        group im.Hours by im.Day into list
-                        orderby list.Key
-                        select list);
-
-          
+                         where im.Week == week && im.Employee_Id == Employeeid
+                         group im by im.Day into g
+                         select new TotalHoursDto()
+                         {
+                             EmployeeName = queryName.FirstOrDefault(),
+                             TotalHours = g.Select(x => x.Hours).Sum(),
+                             Day = g.Key
+                         });
+                            
             return await query.ToListAsync();
-
-
-
         }
+
+        public async Task<List<ImputationsForReviewDto>> GetImputationsByProject(int ProjectId)
+        {
+            var query = from im in _dbContext.Imputations
+                        where im.Project_Id == ProjectId
+                        join e in _dbContext.Employees on im.Employee_Id equals e.Employee_Id
+                        join p in _dbContext.Projects on im.Project_Id equals p.Project_Id
+                        select new ImputationsForReviewDto()
+                        {
+                            Date = im.Date,
+                            EmployeeName = e.Name,
+                            ProjectId = ProjectId,
+                            ProjectName = p.Name,
+                            Hours = im.Hours,
+                            ImputationId = im.Imputation_Id,
+                        };
+            return await query.ToListAsync();
+        }
+
 
     }
        

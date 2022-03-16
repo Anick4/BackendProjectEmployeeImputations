@@ -32,4 +32,14 @@ namespace Imputaciones.Application.BusinessModel.Models
         public List<ImputationResponseBase>? Imputations { get; set; }
     }
 
+    public class ImputationsForReviewModel
+    {
+        public int ImputationId { get; set; }
+
+        public string EmployeeName { get; set; }
+        public int ProjectId { get; set; }
+        public string ProjectName { get; set; }
+        public int Hours { get; set; }
+        public DateTime Date { get; set; }
+    }
 }
