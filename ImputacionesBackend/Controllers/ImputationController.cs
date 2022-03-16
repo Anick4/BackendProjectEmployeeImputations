@@ -71,13 +71,13 @@ namespace ImputacionesBackend.Controllers
         }
 
         [HttpGet]
-        [Route("GetImputationsByProject")]   
+        [Route("GetImputationsByProjectId")]   
         public async Task<ActionResult> GetImputationsByProject(int ProjectId)
         {
             try 
             {
                 var result = await _imputationService.GetImputationsByProject(ProjectId);
-                return Ok(result);
+                return Ok(result.ToListResponseMapper());
             }
             catch (Exception ex)
             {

@@ -14,6 +14,6 @@ namespace Imputaciones.Application.BusinessModel.Responses
         public int ProjectId { get; set; }
         public string ProjectName { get; set; }
         public int Hours { get; set; }
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
     }
 }

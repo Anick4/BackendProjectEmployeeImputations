@@ -212,7 +212,7 @@ namespace Imputaciones.Application.Contracts.Mappers
             {
                 list.Add(new ImputationsForReviewResponse()
                 {
-                    Date = Convert.ToDateTime(item.Date),
+                    Date = item.Date.ToString("dd-MM-yyyy"),
                     EmployeeName = item.EmployeeName,
                     Hours = item.Hours,
                     ProjectId = item.ProjectId,
