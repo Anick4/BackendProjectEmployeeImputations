@@ -92,9 +92,12 @@ namespace Imputaciones.DataAccess.Services.Respositories
                             Date = im.Date,
                             EmployeeName = e.Name,
                             ProjectId = ProjectId,
-                            ProjectName = p.Name,
+                            EmployeeId = e.Employee_Id,
                             Hours = im.Hours,
                             ImputationId = im.Imputation_Id,
+                            Status = im.State
+
+
                         };
             return await query.ToListAsync();
         }
