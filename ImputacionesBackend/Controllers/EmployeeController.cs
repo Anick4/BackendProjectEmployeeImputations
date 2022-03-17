@@ -58,7 +58,7 @@ namespace ImputacionesBackend.Controllers
             {
                 var result = await _employeeService.GetEmployee(id);
 
-                return Ok(result.ToEmployeeResponseMapper()); //REVISAR--------------------------------------
+                return Ok(result.ToEmployeeResponseMapper());
             }
             catch(Exception ex)
             {
@@ -75,7 +75,7 @@ namespace ImputacionesBackend.Controllers
                 var response = await _employeeService.CheckLogin(loginRequest.Email, loginRequest.Password);
                 if (response == null)
                 {
-                    return Unauthorized(); //401, el front se encarga del mensaje.
+                    return Unauthorized();
                 }
                 return Ok(response);
             }

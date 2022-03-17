@@ -82,31 +82,31 @@ namespace ImputacionesBackend.Controllers
 
         [HttpPut]
         [Route("ChangeImputationStatus")]
-        public async Task<ActionResult> ChangeImputationStatus(int id, int status)
+        public async Task<IResult> ChangeImputationStatus(int id, int status)
         {
             try
             {
                 await _imputationService.ChangeImputationStatus(id, status);
-                return Ok("Estado cambiado correctamente");
+                return Results.Ok("Estado cambiado correctamente");
             }
             catch (Exception ex)
             {
-                return BadRequest(new ImputationResponseBase(ex.Message, false));
+                return Results.BadRequest(new ImputationResponseBase(ex.Message, false));
             }
         }
 
         [HttpPut]
         [Route("AproveAllImputations")]
-        public async Task<ActionResult> AproveAllImputations(int ProjectId)
+        public async Task<IResult> AproveAllImputations(int ProjectId)
         {
             try
             {
                 await _imputationService.AproveAllImputations(ProjectId);
-                return Ok("Estado cambiado correctamente");
+                return Results.Ok("Estado cambiado correctamente");
             }
             catch (Exception ex)
             {
-                return BadRequest(new ImputationResponseBase(ex.Message, false));
+                return Results.BadRequest(new ImputationResponseBase(ex.Message, false));
             }
         }
     } 

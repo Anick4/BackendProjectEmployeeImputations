@@ -12,5 +12,7 @@ namespace Imputaciones.Application.Contracts.Services
         public Task<List<ImputationsForReviewModel>> GetImputationsByProject(int ProjecId);
         public Task<bool> ChangeImputationStatus(int id, int status);
         public Task<bool> AproveAllImputations(int ProjectId);
+
+        public Task<List<TotalHoursModel>> GetExtraHours(int Employeeid, int week);
     }
 }

@@ -6,6 +6,6 @@ namespace Imputaciones.DataAccess.Contracts.Repositories
 {
     public interface IProjectRepository : IGenericRespository<Project>
     {
-        public Task<List<ProjectDto>> GetByEmployeeId(int id);
+      
     }
 }

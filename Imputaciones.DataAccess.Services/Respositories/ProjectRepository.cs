@@ -16,20 +16,5 @@ namespace Imputaciones.DataAccess.Services.Respositories
             _dbContext = dbcontext ?? throw new ArgumentNullException(nameof(dbcontext));
         }
 
-        public async Task<List<ProjectDto>> GetByEmployeeId(int id) 
-        {
-            var query = from a in _dbContext.Employees_projects
-                        join x in _dbContext.Projects on a.Employee_Id equals id
-                        select new ImputationResponse()
-                        {
-                            ProjectName = x.Name,
-                            ProjectId = x.Project_Id,
-                            Imputations = null
-                        };
-
-           var result2 = _dbContext.Employees_projects.Include(x => x.Employee_Id == id).ToList();          
-           var result = _dbContext.Employees_projects.Where(x => x.Employee_Id == id).ToList();          
-           return null;                        
-        }
     }
 }

@@ -191,7 +191,7 @@ namespace Imputaciones.Application.Contracts.Mappers
                     Status = item.Status,
                 });
             }
-            return list;
+            return list.OrderBy(x => x.Date).ToList();
         }
 
 
@@ -213,6 +213,24 @@ namespace Imputaciones.Application.Contracts.Mappers
                 });
             }
             return list;
+        }
+
+        // List<TotalHoursDto> -> List<TotalHoursModel>
+
+        public static List<TotalHoursModel> ToTotalHoursModelMapper(this List<TotalHoursDto> totalHoursList)
+        {
+            List<TotalHoursModel> list = new();
+            foreach (var item in totalHoursList)
+            {
+                list.Add(new TotalHoursModel()
+                {
+                    Day = item.Day,
+                    EmployeeName = item.EmployeeName,
+                    TotalHours = item.TotalHours,
+                });
+            }
+            return list;
+
         }
     }
 }

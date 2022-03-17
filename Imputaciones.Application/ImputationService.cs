@@ -61,16 +61,16 @@ namespace Imputaciones.Application
             return result.ToListModelResponseMapper(); 
         }
 
-        public async Task<List<IGrouping<int, int>>> GetExtraHours(int Employeeid, int week )
+        public async Task<List<TotalHoursModel>> GetExtraHours(int Employeeid, int week )
         {
             var result = await _imputationRepository.GetDailyHours(Employeeid, week);
-            return null; 
+            return result.ToTotalHoursModelMapper(); 
         }
 
         public async Task<List<ImputationsForReviewModel>> GetImputationsByProject(int ProjecId)
         {
             var result = await _imputationRepository.GetImputationsByProject(ProjecId);
-            return result.ToListModelMapper();
+            return result.ToListModelMapper().OrderBy(x => x.EmployeeName).ToList();
         }
 
         public async Task<bool> ChangeImputationStatus(int id, int status)
