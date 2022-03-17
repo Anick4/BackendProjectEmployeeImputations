@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Imputaciones.DataAccess.Contracts.Entities
 {
@@ -27,9 +22,6 @@ namespace Imputaciones.DataAccess.Contracts.Entities
         [Required]
         public Boolean Saturday { get; set; }
         [Required]
-        public Boolean Sunday { get; set; }
-
-        
-
+        public Boolean Sunday { get; set; }     
     }
 }

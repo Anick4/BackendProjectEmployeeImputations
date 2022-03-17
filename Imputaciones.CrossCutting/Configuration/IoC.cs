@@ -8,13 +8,11 @@ namespace Imputaciones.CrossCutting.Configuration
 {
     public static class IoC
     {
-
         public static IServiceCollection Register(this IServiceCollection services)
         {
             AddRegistration(services);
             AddServices(services);
             AddRepository(services);
-
             return services;
         }
 
@@ -28,9 +26,7 @@ namespace Imputaciones.CrossCutting.Configuration
             services.AddTransient<IEmployeeService, EmployeeService>();
             services.AddTransient<IImputationService, ImputationService>();
             services.AddTransient<IProjectService, ProjectService>();
-            services.AddTransient<ICalendarService, CalendarService>();
-            
-
+            services.AddTransient<ICalendarService, CalendarService>();           
             return services;
         }
 
@@ -40,14 +36,7 @@ namespace Imputaciones.CrossCutting.Configuration
             services.AddTransient<IImputationRepository, ImputationRepository>();
             services.AddTransient<IProjectRepository, ProjectRepository>();
             services.AddTransient<ICalendarRepository, CalendarRepository>();
-
-
-
             return services;
         }
-
-
-
-
     }
 }

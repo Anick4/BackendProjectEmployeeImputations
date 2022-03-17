@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Imputaciones.DataAccess.Contracts.Dtos
+﻿namespace Imputaciones.DataAccess.Contracts.Dtos
 {
     public class CalendarDto
     {
@@ -17,7 +11,5 @@ namespace Imputaciones.DataAccess.Contracts.Dtos
         public Boolean Friday { get; set; }
         public Boolean Saturday { get; set; }
         public Boolean Sunday { get; set; }
-
-
     }
 }

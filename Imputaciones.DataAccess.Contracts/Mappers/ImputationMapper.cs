@@ -1,10 +1,5 @@
 ﻿using Imputaciones.DataAccess.Contracts.Dtos;
 using Imputaciones.DataAccess.Contracts.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Imputaciones.DataAccess.Contracts.Mappers
 {
@@ -21,8 +16,7 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
                 State = imputacion.State,
                 Week = imputacion.Week,
                 Employee_Id = imputacion.Employee_Id,
-                Project_Id = imputacion.Project_Id,
-                
+                Project_Id = imputacion.Project_Id,                
             };
         }
 
@@ -42,12 +36,8 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
                     Employee_Id = item.Employee_Id,
                     Project_Id = item.Project_Id,
                 });
-
-
-            }
-            
+            }           
              return result;
-
         }
     }
 }

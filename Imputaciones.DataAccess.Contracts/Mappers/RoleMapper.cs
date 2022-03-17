@@ -12,8 +12,6 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
                 Role_Id = role.Role_Id,
                 Role_Name = role.Role_Name,
             };
-        }
-
-      
+        }     
     }
 }

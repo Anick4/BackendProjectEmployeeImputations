@@ -2,11 +2,6 @@
 using Imputaciones.Application.BusinessModel.Responses;
 using Imputaciones.DataAccess.Contracts.Dtos;
 using Imputaciones.DataAccess.Contracts.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Imputaciones.Application.Contracts.Mappers
 {
@@ -17,8 +12,7 @@ namespace Imputaciones.Application.Contracts.Mappers
             return new RoleModel()
             {
                 Role_Id = roleDto.Role_Id,
-                Role_Name = roleDto.Role_Name,
-     
+                Role_Name = roleDto.Role_Name,   
             };
         }
 
@@ -37,10 +31,7 @@ namespace Imputaciones.Application.Contracts.Mappers
             {
                 Role_Id = role.Role_Id,
                 Role_Name = role.Role_Name,
-
             };
         }
-
-
     }
 }

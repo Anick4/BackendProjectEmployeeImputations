@@ -1,27 +1,15 @@
 using Imputaciones.CrossCutting.Configuration;
-
-
-
 using Imputaciones.DataAccess.Services;
-
-
-
 using Microsoft.EntityFrameworkCore;
 
 
 
-
-// ***************************************************** CORS
+// CORS:
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options => options.AddDefaultPolicy(o => o.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().SetIsOriginAllowed(origin => true)));
 
 
-
-
-// Add services to the container.
-
-
-
+// Add services to the container
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -37,36 +25,19 @@ myconnection, ServerVersion.AutoDetect(myconnection),
 );
 
 
-
-
 var app = builder.Build();
 
+app.UseCors(); //CORS
 
-
-app.UseCors(); //************************************************************** CORS
-
-
-
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-
-
 app.UseHttpsRedirection();
 
-
-
-
-//app.UseAuthorization(); PROBAMOS A QUITALO
-
-
-
 app.MapControllers();
-
-
 
 app.Run();

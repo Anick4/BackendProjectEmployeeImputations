@@ -40,7 +40,6 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Friday = calendar.Friday,
                 Saturday = calendar.Saturday,
                 Sunday = calendar.Sunday,
-
             };
         }
 
@@ -48,7 +47,6 @@ namespace Imputaciones.Application.Contracts.Mappers
         {
             return new CalendarModel()
             {
-
                 Calendar_Id = calendarDto.Calendar_Id,
                 Daily_Hours = calendarDto.Daily_Hours,
                 Monday = calendarDto.Monday,
@@ -58,7 +56,6 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Friday = calendarDto.Friday,
                 Saturday = calendarDto.Saturday,
                 Sunday = calendarDto.Sunday,
-
             };
         }
     }

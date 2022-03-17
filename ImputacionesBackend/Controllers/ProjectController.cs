@@ -16,8 +16,8 @@ namespace ImputacionesBackend.Controllers
         public ProjectController(IProjectService projectService)
         {
             _projectService = projectService;
-
         }
+
 
         [HttpGet]
         [Route("GetProjectById")]
@@ -33,24 +33,6 @@ namespace ImputacionesBackend.Controllers
             {
                 return BadRequest(new ProjectResponse(ex.Message, false));
             }
-
         }
-
-        //[HttpGet]
-        //[Route("GetAllProjects")] // Get All Projects By IdEmployee Where week is...
-        //public async Task<ActionResult> GetAllProjects(int idEmployee)
-        //{
-            //try
-            //{
-                //var result = await _projectService.GetAllProjects(idEmployee);
-                //return Ok(result);
-            //}
-            //catch  // poner un catch decentillo
-            //{
-                //throw new Exception();
-            //}
-        //}
-
-
     }
 }

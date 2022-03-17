@@ -1,10 +1,5 @@
 ﻿using Imputaciones.DataAccess.Contracts.Dtos;
 using Imputaciones.DataAccess.Contracts.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Imputaciones.DataAccess.Contracts.Mappers
 {
@@ -23,8 +18,6 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
                 Responsible_Id = projectDto.Responsible_Id
             };
         }
-
-
 
         //  Entity -> Dto
         public static ProjectDto ToProjectDtoMapper(this Project project)
@@ -52,16 +45,9 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
                     Name = item.Name,
                     Responsible_Id = item.Responsible_Id
                 });
-
             }
             return list;
         }
-
-
-
     }
-
-   
-
 }
 

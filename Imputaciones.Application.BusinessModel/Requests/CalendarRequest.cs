@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Imputaciones.Application.BusinessModel.Requests
+﻿namespace Imputaciones.Application.BusinessModel.Requests
 {
     public class CalendarRequest
     {
- 
-
         public int Calendar_Id { get; set; }
         public int? Daily_Hours { get; set; }
         public Boolean? Monday { get; set; }
@@ -19,6 +11,5 @@ namespace Imputaciones.Application.BusinessModel.Requests
         public Boolean Friday { get; set; }
         public Boolean? Saturday { get; set; }
         public Boolean? Sunday { get; set; }
-
     }
 }

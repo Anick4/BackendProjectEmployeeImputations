@@ -3,11 +3,6 @@ using Imputaciones.Application.BusinessModel.Requests;
 using Imputaciones.Application.Contracts.Mappers;
 using Imputaciones.Application.Contracts.Services;
 using Imputaciones.DataAccess.Contracts.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static Imputaciones.Application.BusinessModel.Models.Enums;
 
 namespace Imputaciones.Application
@@ -20,21 +15,16 @@ namespace Imputaciones.Application
         {
             _imputationRepository = imputationRepository;
         }
+
         public async Task<bool> InsertImputation(List<ImputationInsertRequest> imputationRequest)
         {
             List<ImputationModel> modelList = imputationRequest.ToImputationModelMapper();
-            //int employeeId = imputationRequest[0].Imputations[0].Employee_Id;
-            //int calendarId = await _imputationRepository.CheckCalendar(employeeId);
-
             try
             {
-                
                 foreach (var model in modelList)
                 {
-                   
                     if(_imputationRepository.Equals(model.Project_Id)==false)
                     {
-
                         _imputationRepository.Insert(model.ToImputationMapper());
                         _imputationRepository.SaveChanges();
                     }
@@ -45,7 +35,6 @@ namespace Imputaciones.Application
                     }
                 }
                 return true;
-
             }
             catch
             {
@@ -55,14 +44,12 @@ namespace Imputaciones.Application
 
         public async Task<List<ImputationModel>> GetAllImputations()
         {
-            
             var List = await _imputationRepository.GetAsync();
             return List.ToList().ToListImputationModel();
         }
 
         public async Task<List<ImputationModel>> GetImputationsById(int id)
         {
-
             var list = await _imputationRepository.GetAsync(x => x.Project_Id == id);
             return list.ToList().ToListImputationModel();
         }
@@ -71,23 +58,18 @@ namespace Imputaciones.Application
         public async Task<List<ImputationResponseModel>> GetImputationsWithProjectByEmployeeByWeek(int id, int week )
         {
             var result = await _imputationRepository.GetImputationsWithProjectByEmployeeByWeek(id, week);
-
-            return result.ToListModelResponseMapper();
-            
-            
+            return result.ToListModelResponseMapper(); 
         }
 
         public async Task<List<IGrouping<int, int>>> GetExtraHours(int Employeeid, int week )
         {
             var result = await _imputationRepository.GetDailyHours(Employeeid, week);
-
             return null; //
         }
 
         public async Task<List<ImputationsForReviewModel>> GetImputationsByProject(int ProjecId)
         {
             var result = await _imputationRepository.GetImputationsByProject(ProjecId);
-
             return result.ToListModelMapper();
         }
 
@@ -98,7 +80,6 @@ namespace Imputaciones.Application
                 var result = _imputationRepository.GetByID(id);
                 result.State = (StateEnum)status;
                 _imputationRepository.SaveChanges();
-
                 return true;
             }
             catch
@@ -124,9 +105,6 @@ namespace Imputaciones.Application
             {
                 return false;
             }
-            
-
         }
-
     }
 }

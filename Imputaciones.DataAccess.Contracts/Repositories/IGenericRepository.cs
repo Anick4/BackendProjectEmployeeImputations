@@ -13,6 +13,5 @@ namespace Imputaciones.DataAccess.Contracts.Repository
         void Update(TEntity entityToUpdate);
         void Detached(TEntity entity);
         void SaveChanges();
-
     }
 }

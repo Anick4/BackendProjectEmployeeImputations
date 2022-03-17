@@ -13,16 +13,14 @@ namespace Imputaciones.DataAccess.Services.Respositories
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
-
-        
-
+      
         public async Task<(EmployeeDto, CalendarDto, RoleDto, List<ProjectDto>)> GetEmployee(int id)
         {
             var resultEntity = await _dbContext.Employees.FindAsync(id);
 
-           var resultCalendar = await _dbContext.Calendars.FindAsync(resultEntity.Calendar_Id);
+            var resultCalendar = await _dbContext.Calendars.FindAsync(resultEntity.Calendar_Id);
 
-           var resultRole = await _dbContext.Roles.FindAsync(resultEntity.Role_Id);
+            var resultRole = await _dbContext.Roles.FindAsync(resultEntity.Role_Id);
 
             var resultProject = _dbContext.Projects.Where(x => x.Responsible_Id == id).ToList();
 
@@ -35,12 +33,8 @@ namespace Imputaciones.DataAccess.Services.Respositories
         {
             try
             {
-                var result =  _dbContext.Employees.First(x => x.Email == email).ToEmployeeDtoMapper();
-
-                
-                return result;
-                
-
+                var result =  _dbContext.Employees.First(x => x.Email == email).ToEmployeeDtoMapper();                
+                return result;              
             }
             catch (Exception)
             {

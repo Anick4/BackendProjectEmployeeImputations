@@ -3,9 +3,7 @@ using Imputaciones.Application.BusinessModel.Requests;
 using Imputaciones.Application.BusinessModel.Responses;
 using Imputaciones.Application.Contracts.Mappers;
 using Imputaciones.Application.Contracts.Services;
-using Imputaciones.DataAccess.Contracts.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using static Imputaciones.Application.BusinessModel.Models.Enums;
 
 namespace ImputacionesBackend.Controllers
 {
@@ -20,13 +18,13 @@ namespace ImputacionesBackend.Controllers
             _imputationService = imputationService;
         }
 
+
         [HttpGet]
         [Route("GetImputations")]
         public async Task<ActionResult> GetImputations()
         {
             try
             {
-
                 var response = await _imputationService.GetAllImputations();
                 return Ok(response);
             }
@@ -44,8 +42,6 @@ namespace ImputacionesBackend.Controllers
              {
                 var response = await _imputationService.GetImputationsWithProjectByEmployeeByWeek(imputationRequest.Employee_Id, imputationRequest.Week);
                 var imputationsList = response.ToListImputationsResponse();
-
-
                 return Ok(imputationsList);
              }
              catch (Exception ex)
@@ -67,7 +63,6 @@ namespace ImputacionesBackend.Controllers
             {
                 return BadRequest(new ImputationResponseBase(ex.Message, false));
             }
-
         }
 
         [HttpGet]
@@ -114,6 +109,5 @@ namespace ImputacionesBackend.Controllers
                 return BadRequest(new ImputationResponseBase(ex.Message, false));
             }
         }
-
     } 
 }

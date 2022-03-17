@@ -2,11 +2,6 @@
 using Imputaciones.Application.Contracts.Mappers;
 using Imputaciones.Application.Contracts.Services;
 using Imputaciones.DataAccess.Contracts.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Imputaciones.Application
 {
@@ -26,9 +21,7 @@ namespace Imputaciones.Application
 
         public async Task<List<ProjectModel>> GetAllProjectsByEmployee(int idEmployee)  
         {
-            //var List = _projectRepository.GetByEmployeeId();
-            //return List.ToListProjectModel();
-            return null;
+            return null;  //***************************???????????????????????????????????????????
         }
 
     }

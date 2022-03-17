@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Imputaciones.Application.BusinessModel.Response
+﻿namespace Imputaciones.Application.BusinessModel.Response
 {
     public class BaseResponse
     {
@@ -14,6 +8,7 @@ namespace Imputaciones.Application.BusinessModel.Response
             this.Message = message;
             this.Status = status;
         }
+
         public string? Message { get; set; }
         public bool? Status { get; set; }
     }

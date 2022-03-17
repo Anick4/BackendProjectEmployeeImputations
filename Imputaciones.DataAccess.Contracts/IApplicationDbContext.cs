@@ -13,14 +13,10 @@ namespace Imputaciones.DataAccess.Contracts
         DbSet<Project> Projects { get; set; }
         DbSet<Role> Roles { get; set; }
         DbSet<Employees_Projects> Employees_projects { get; set; }
-
         int SaveChanges();
         void Dispose();
-
         EntityEntry<TEntity> GetEntry<TEntity>(TEntity entity) where TEntity : class;
-
         DbSet<T> GetEntitySet<T>() where T : class;
-
         DatabaseFacade TheDatabase
         {
             get;

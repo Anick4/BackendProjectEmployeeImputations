@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Imputaciones.Application.BusinessModel.Models
+﻿namespace Imputaciones.Application.BusinessModel.Models
 {
     public class ProjectModel
     {
@@ -14,5 +8,4 @@ namespace Imputaciones.Application.BusinessModel.Models
         public string? Name { get; set; }
         public int Responsible_Id { get; set; }
     }
-
 }

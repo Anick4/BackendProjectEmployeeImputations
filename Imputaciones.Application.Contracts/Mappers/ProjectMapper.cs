@@ -2,11 +2,6 @@
 using Imputaciones.Application.BusinessModel.Responses;
 using Imputaciones.DataAccess.Contracts.Dtos;
 using Imputaciones.DataAccess.Contracts.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Imputaciones.Application.Contracts.Mappers
 {
@@ -41,7 +36,7 @@ namespace Imputaciones.Application.Contracts.Mappers
             return new ProjectModelReviewer()
             {
                 ProjectName = projectDto.Name,
-                Project_Id = projectDto.Project_Id,
+                Project_Id = projectDto.Project_Id
             };
         }
 
@@ -53,7 +48,7 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Name = projectModel.Name,
                 State = projectModel.State,
                 Generic = projectModel.Generic,
-                Responsible_Id = projectModel.Responsible_Id,
+                Responsible_Id = projectModel.Responsible_Id
             };
 
         }
@@ -91,9 +86,6 @@ namespace Imputaciones.Application.Contracts.Mappers
             }
             return list;
         }
-
-
-
     }
 }
 

@@ -3,11 +3,6 @@ using Imputaciones.Application.BusinessModel.Requests;
 using Imputaciones.Application.BusinessModel.Responses;
 using Imputaciones.DataAccess.Contracts.Dtos;
 using Imputaciones.DataAccess.Contracts.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Imputaciones.Application.Contracts.Mappers
 {
@@ -21,7 +16,6 @@ namespace Imputaciones.Application.Contracts.Mappers
                 imputationModelList.Add(item.ToImputationModel());
             }
             return imputationModelList;
-
         }
 
         public static ImputationModel ToImputationModel(this Imputation imputation)
@@ -40,13 +34,11 @@ namespace Imputaciones.Application.Contracts.Mappers
         }
 
         
-        //AQUI SACO LA RESPONSE BUENA
         public static List<ImputationResponseBase> ToImputationResponse(this List<ImputationModel> imputationModelList)
         {
             List<ImputationResponseBase> imputationResponses = new ();
             foreach(var item in imputationModelList)
-            {
-                
+            {  
                 imputationResponses.Add(new ImputationResponseBase()
                 {
                     Day = item.Day,
@@ -55,7 +47,6 @@ namespace Imputaciones.Application.Contracts.Mappers
                     Imputation_Id = item.Imputation_Id,
                     Week = item.Week,
                     State = item.State,
-
                 });
             }
             return imputationResponses;
@@ -93,14 +84,9 @@ namespace Imputaciones.Application.Contracts.Mappers
                     Imputation_Id = item.Imputation_Id,
                     State = item.State,
                     Week = item.Week
-
                 });
-
-
             }
-
             return result;
-
         }
 
         public static List<ImputationResponseModel> ToListModelResponseMapper(this List<ImputationResponseDto> imputationResponseDtoList)
@@ -112,12 +98,10 @@ namespace Imputaciones.Application.Contracts.Mappers
                 {
                     ProjectName = item.ProjectName,
                     Projects_Id = item.ProjectId,
-                    Imputations = item.Imputations,
-
+                    Imputations = item.Imputations
                 };
                 result.Add(model);
             }
-
              return result;
         }
 
@@ -130,27 +114,22 @@ namespace Imputaciones.Application.Contracts.Mappers
                 {
                     ProjectName = item.ProjectName,
                     ProjectId = item.Projects_Id,
-                    Imputations = item.Imputations,
-
+                    Imputations = item.Imputations
                 };
                 result.Add(model);
             }
-
             return result;
         }
 
         public static List<ImputationModel> ToImputationModelMapper(this List<ImputationInsertRequest> imputationRequest)
         {
-            List<ImputationModel> list = new();
-            
+            List<ImputationModel> list = new();        
             foreach (var im in imputationRequest)
             {
                 foreach(var item in im.Imputations)
                 {
                     list.Add(new ImputationModel()
                     {
-
-                       
                         Project_Id = im.ProjectId,
                         Date = item.Date,
                         Day = item.Day,
@@ -160,13 +139,9 @@ namespace Imputaciones.Application.Contracts.Mappers
                         State = item.State,
                         Week = item.Week
                     });
-
-                }
-                
+                }               
             }
-
-            return list;
-            
+            return list;          
         }
 
         public static Imputation ToImputationMapper(this ImputationModel imputation)
@@ -181,13 +156,12 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Extra_Hours = imputation.Extra_Hours,
                 Imputation_Id = imputation.Imputation_Id,
                 State = imputation.State,
-                Week = imputation.Week,
+                Week = imputation.Week
             };
         }
 
         public static List<ImputationsForReviewModel> ToListModelMapper(this List<ImputationsForReviewDto> imputationList) {
             List<ImputationsForReviewModel> list = new();
-
             foreach(var item in imputationList)
             {
                 list.Add(new ImputationsForReviewModel()
@@ -202,13 +176,11 @@ namespace Imputaciones.Application.Contracts.Mappers
                 });
             }
             return list;
-
         }
 
         public static List<ImputationsForReviewResponse> ToListResponseMapper(this List<ImputationsForReviewModel> imputationList)
         {
             List<ImputationsForReviewResponse> list = new();
-
             foreach (var item in imputationList)
             {
                 list.Add(new ImputationsForReviewResponse()
@@ -219,12 +191,10 @@ namespace Imputaciones.Application.Contracts.Mappers
                     ProjectId = item.ProjectId,
                     EmployeeId = item.EmployeeId,
                     ImputationId = item.ImputationId,
-                    Status=item.Status,
-                    
+                    Status=item.Status,                   
                 });
             }
             return list;
-
         }
     }
 }

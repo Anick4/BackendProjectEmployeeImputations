@@ -18,7 +18,6 @@ namespace Imputaciones.DataAccess.Contracts.Entities
         public string Email { get; set; }
         [Required]
         public string Password { get; set; }
-       
         [ForeignKey(nameof(Calendar))]
         [Required]
         public int Calendar_Id { get; set; }
@@ -27,6 +26,5 @@ namespace Imputaciones.DataAccess.Contracts.Entities
         [Required]
         public int Role_Id { get; set; }
         public virtual Role Role { get; set; }
-
     }
 }

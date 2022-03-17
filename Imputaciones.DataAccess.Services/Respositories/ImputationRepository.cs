@@ -1,16 +1,10 @@
 ﻿
+using Imputaciones.Application.BusinessModel.Responses;
 using Imputaciones.DataAccess.Contracts.Dtos;
 using Imputaciones.DataAccess.Contracts.Entities;
 using Imputaciones.DataAccess.Contracts.Repositories;
 using Imputaciones.DataAccess.Services.Repositories;
-using Imputaciones.DataAccess.Contracts.Mappers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Imputaciones.Application.BusinessModel.Responses;
 using static Imputaciones.Application.BusinessModel.Models.Enums;
 
 namespace Imputaciones.DataAccess.Services.Respositories
@@ -27,9 +21,7 @@ namespace Imputaciones.DataAccess.Services.Respositories
 
             var query = from ep in _dbContext.Employees_projects
                         join p in _dbContext.Projects on ep.Project_Id equals p.Project_Id
-
                         where ep.Employee_Id == id
-
                         select new ImputationResponseDto()
                         {
                             ProjectName = p.Name,
@@ -44,13 +36,9 @@ namespace Imputaciones.DataAccess.Services.Respositories
                                                Week = week,
                                                Status = null,
 
-                                           }).OrderBy(x => x.Day).ToList()
-           
+                                           }).OrderBy(x => x.Day).ToList()           
                         };
-           return await query.OrderBy(x => x.ProjectId).ToListAsync();
-
-            
-
+           return await query.OrderBy(x => x.ProjectId).ToListAsync();          
         }
 
         public async Task<int?> CheckCalendar(int id)
@@ -58,7 +46,6 @@ namespace Imputaciones.DataAccess.Services.Respositories
             var employee = await _dbContext.Employees.FindAsync(id);
             var calendar = await _dbContext.Calendars.FindAsync(employee?.Calendar_Id);
             int? calendarId = calendar?.Calendar_Id;
-
             return calendarId;
         }
 
@@ -96,13 +83,9 @@ namespace Imputaciones.DataAccess.Services.Respositories
                             Hours = im.Hours,
                             ImputationId = im.Imputation_Id,
                             Status = im.State
-
-
                         };
             return await query.ToListAsync();
         }
-
-
     }
        
 }

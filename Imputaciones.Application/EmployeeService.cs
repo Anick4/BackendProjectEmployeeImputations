@@ -1,7 +1,6 @@
 ﻿using Imputaciones.Application.BusinessModel.Models;
 using Imputaciones.Application.Contracts.Mappers;
 using Imputaciones.Application.Contracts.Services;
-using Imputaciones.DataAccess.Contracts.Dtos;
 using Imputaciones.DataAccess.Contracts.Mappers;
 using Imputaciones.DataAccess.Contracts.Repositories;
 
@@ -23,7 +22,6 @@ namespace Imputaciones.Application
         {
             var List = await _employeeRepository.GetAsync();
             return List.ToList().ToListEmployeeModel();
-
         }
 
         public EmployeeModel GetEmployeeById(int id)
@@ -39,8 +37,6 @@ namespace Imputaciones.Application
             employee.Calendar = entityResponse.Item2.toCalendarModelMapper();
             employee.Role = entityResponse.Item3.ToRoleModelMapper();
             employee.Reviewer = entityResponse.Item4.ToListDtoProjectModel();
-
-
             return employee;
         }
 
@@ -58,39 +54,24 @@ namespace Imputaciones.Application
 
         public async Task<EmployeeModel> CheckLogin(string email, string password)
         {
-
             var employee = await _employeeRepository.GetEmployeeByEmail(email);
             if (employee != null)
             {
                 if (CheckPassword(employee.ToEmployeeModelMapper(), password))
                 {
-
-                    //TOKEN CUTRISIMO ASIN ES LA BIDA
                     var employeWithToken = await GetEmployee(employee.Employee_Id);
-                    
-                
-                    
                     employeWithToken.Token = string.Concat("Soytutoken");
-                    //Hcerlo igual que en el controller
-
                     return employeWithToken;
-
                 }
                 else
                 {
                     return null;
                 }
-
             }
             else
             {
                 return null;
             }
-
-
-
         }
-
-
     }
 }

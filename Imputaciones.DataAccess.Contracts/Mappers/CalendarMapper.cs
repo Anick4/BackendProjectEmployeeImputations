@@ -1,11 +1,6 @@
 ﻿using Imputaciones.Application.BusinessModel.Models;
 using Imputaciones.DataAccess.Contracts.Dtos;
 using Imputaciones.DataAccess.Contracts.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Imputaciones.DataAccess.Contracts.Mappers
 {
@@ -15,7 +10,6 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
         {
             return new CalendarDto()
             {
-
                 Calendar_Id = calendar.Calendar_Id,
                 Daily_Hours = calendar.Daily_Hours,
                 Monday = calendar.Monday,
@@ -26,7 +20,6 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
                 Saturday = calendar.Saturday,
                 Sunday = calendar.Sunday
             };
-
         }
 
 
@@ -45,9 +38,5 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
                 Sunday = calendar.Sunday,
             };
         }
-
-
-
-
     }
 }

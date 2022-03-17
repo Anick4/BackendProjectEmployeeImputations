@@ -1,5 +1,4 @@
-﻿using Imputaciones.DataAccess.Services;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace Imputaciones.DataAccess.Services.Repositories
@@ -116,7 +115,6 @@ namespace Imputaciones.DataAccess.Services.Repositories
         {
             context.SaveChanges();
         }
-
 
         #endregion
     }

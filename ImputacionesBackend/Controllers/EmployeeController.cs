@@ -1,10 +1,8 @@
-﻿using Imputaciones.Application.BusinessModel.Models;
-using Imputaciones.Application.BusinessModel.Requests;
+﻿using Imputaciones.Application.BusinessModel.Requests;
 using Imputaciones.Application.BusinessModel.Response;
 using Imputaciones.Application.BusinessModel.Responses;
 using Imputaciones.Application.Contracts.Mappers;
 using Imputaciones.Application.Contracts.Services;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ImputacionesBackend.Controllers
@@ -20,6 +18,7 @@ namespace ImputacionesBackend.Controllers
             _employeeService = employeeService;
 
         }
+
 
         [HttpGet]
         [Route("GetAllEmployees")]
@@ -53,14 +52,13 @@ namespace ImputacionesBackend.Controllers
 
         [HttpGet]
         [Route("GetEmployee")]
-        public async Task<ActionResult> GetEmployee(int id) //NOMBRE CAMBIADO
+        public async Task<ActionResult> GetEmployee(int id) 
         {
             try
             {
                 var result = await _employeeService.GetEmployee(id);
 
-                return Ok(result.ToEmployeeResponseMapper()); //REVISASR
-
+                return Ok(result.ToEmployeeResponseMapper()); //REVISAR--------------------------------------
             }
             catch(Exception ex)
             {

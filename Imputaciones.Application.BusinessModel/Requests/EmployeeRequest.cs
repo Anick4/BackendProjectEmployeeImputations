@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Imputaciones.Application.BusinessModel.Requests
+﻿namespace Imputaciones.Application.BusinessModel.Requests
 {
     public class EmployeeRequest
     {
@@ -14,7 +8,6 @@ namespace Imputaciones.Application.BusinessModel.Requests
         public string? Email { get; set; }
         public string? Password { get; set; }
         public int? Calendar_Id { get; set; }
-        public int? Role_Id { get; set; }
-        
+        public int? Role_Id { get; set; }     
     }
 }

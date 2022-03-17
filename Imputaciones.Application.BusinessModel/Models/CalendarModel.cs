@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Imputaciones.Application.BusinessModel.Models
+﻿namespace Imputaciones.Application.BusinessModel.Models
 {
     public class CalendarModel
     {
@@ -17,6 +11,5 @@ namespace Imputaciones.Application.BusinessModel.Models
         public Boolean Friday { get; set; }
         public Boolean Saturday { get; set; }
         public Boolean Sunday { get; set; }
-
     }
 }

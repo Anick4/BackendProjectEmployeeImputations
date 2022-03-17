@@ -1,11 +1,6 @@
 ﻿using Imputaciones.Application.BusinessModel.Models;
 using Imputaciones.DataAccess.Contracts.Dtos;
 using Imputaciones.DataAccess.Contracts.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Imputaciones.DataAccess.Contracts.Mappers
 {
@@ -24,9 +19,7 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
                 Password = employeeDto.Password,
                 Email = employeeDto.Email,
                 Calendar = null,
-                Role = null
-                
-                
+                Role = null                             
             };
         }
 
@@ -42,9 +35,7 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
                 Employee_Code = employee.Employee_Code,
                 Password = employee.Password,
                 Email = employee.Email
-
             };
-
         }
 
         public static EmployeeModel toEmployeeModelMapper(this EmployeeDto employeeDto)

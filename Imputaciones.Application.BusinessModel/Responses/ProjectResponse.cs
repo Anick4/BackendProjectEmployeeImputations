@@ -1,9 +1,4 @@
 ﻿using Imputaciones.Application.BusinessModel.Response;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Imputaciones.Application.BusinessModel.Responses
 {
@@ -17,6 +12,4 @@ namespace Imputaciones.Application.BusinessModel.Responses
         public string? Name { get; set; }
         public int Responsible_Id { get; set; }
     }
-
-
 }

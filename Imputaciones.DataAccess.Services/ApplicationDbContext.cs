@@ -4,11 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Imputaciones.DataAccess.Services
 {
@@ -21,7 +16,6 @@ namespace Imputaciones.DataAccess.Services
         public DbSet<Project> Projects { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Employees_Projects> Employees_projects { get; set; }
-
 
 
         #region Arquitectura generica   
@@ -64,11 +58,6 @@ namespace Imputaciones.DataAccess.Services
             builder.Entity<Project>().ToTable("projects");
             builder.Entity<Role>().ToTable("roles");
             builder.Entity<Employees_Projects>().ToTable("employees_projects");
-
-
-            
-
-            // builder.Entity<Car>().Property(x => x.id).IsRequired().ValueGeneratedOnAdd();
 
             base.OnModelCreating(builder);
 

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Imputaciones.Application.BusinessModel.Models.Enums;
+﻿using static Imputaciones.Application.BusinessModel.Models.Enums;
 
 namespace Imputaciones.DataAccess.Contracts.Dtos
 {

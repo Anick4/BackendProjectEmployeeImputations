@@ -4,17 +4,13 @@ using Imputaciones.DataAccess.Contracts.Entities;
 using Imputaciones.DataAccess.Contracts.Repositories;
 using Imputaciones.DataAccess.Services.Repositories;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Imputaciones.DataAccess.Services.Respositories
 {
     public class ProjectRepository : GenericRepository<Project>, IProjectRepository
     {
         private readonly ApplicationDbContext _dbContext;
+
         public ProjectRepository(ApplicationDbContext dbcontext) : base(dbcontext)
         {
             _dbContext = dbcontext ?? throw new ArgumentNullException(nameof(dbcontext));
@@ -31,17 +27,9 @@ namespace Imputaciones.DataAccess.Services.Respositories
                             Imputations = null
                         };
 
-
-
-           var result2 = _dbContext.Employees_projects.Include(x => x.Employee_Id == id).ToList(); //OOJO
-          
-           var result = _dbContext.Employees_projects.Where(x => x.Employee_Id == id).ToList();
-          
-           return null;
-
-           
-          
-        
+           var result2 = _dbContext.Employees_projects.Include(x => x.Employee_Id == id).ToList();          
+           var result = _dbContext.Employees_projects.Where(x => x.Employee_Id == id).ToList();          
+           return null;                        
         }
     }
 }

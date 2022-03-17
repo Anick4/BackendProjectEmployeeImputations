@@ -13,8 +13,6 @@ namespace Imputaciones.DataAccess.Services
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-
-
         public void Commit()
         {
             _context.SaveChanges();

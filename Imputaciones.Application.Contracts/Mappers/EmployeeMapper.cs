@@ -2,17 +2,11 @@
 using Imputaciones.Application.BusinessModel.Responses;
 using Imputaciones.DataAccess.Contracts.Dtos;
 using Imputaciones.DataAccess.Contracts.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Imputaciones.Application.Contracts.Mappers
 {
     public static class EmployeeMapper
     {
-
         public static List<EmployeeModel> ToListEmployeeModel(this List<Employee> employees)
         {
             List<EmployeeModel> employeeModelList = new ();
@@ -35,7 +29,6 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Password = employee.Password,
                 Calendar_Id = employee.Calendar_Id,
                 Role_Id = employee.Role_Id
-
             };
         }
 
@@ -54,8 +47,6 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Role_Id = employeeModel.Role_Id,
                 Token = employeeModel.Token,
                 Projects = employeeModel.Reviewer.ToProjectListResponseReviewerMapper()
-                
-
             };
         }
 
@@ -73,7 +64,5 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Role_Id = employeeDto.Role_Id,
             };
         }
-
-
     }
 }
