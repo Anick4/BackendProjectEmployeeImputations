@@ -8,6 +8,7 @@ namespace Imputaciones.Application.Contracts.Mappers
 {
     public static class ImputationMapper
     {
+        // List<Imputation> -> List<ImputationModel>
         public static List<ImputationModel> ToListImputationModel(this List<Imputation> imputations)
         {
             List<ImputationModel> imputationModelList = new ();
@@ -18,6 +19,8 @@ namespace Imputaciones.Application.Contracts.Mappers
             return imputationModelList;
         }
 
+
+        // Entity Imputation -> ImputationModel
         public static ImputationModel ToImputationModel(this Imputation imputation)
         {
             return new ImputationModel ()
@@ -33,7 +36,8 @@ namespace Imputaciones.Application.Contracts.Mappers
             };
         }
 
-        
+
+        // List<ImputationModel> -> List<ImputationResponseBase>
         public static List<ImputationResponseBase> ToImputationResponse(this List<ImputationModel> imputationModelList)
         {
             List<ImputationResponseBase> imputationResponses = new ();
@@ -53,7 +57,7 @@ namespace Imputaciones.Application.Contracts.Mappers
         }
 
 
-
+        // ImputationDto -> ImputationModel
         public static ImputationModel ToImputationModelMapper(this ImputationDto imputationDto)
         {
             return new ImputationModel ()
@@ -69,6 +73,8 @@ namespace Imputaciones.Application.Contracts.Mappers
             };
         }
 
+
+        // List<ImputationDto> -> List<ImputationModel>
         public static List<ImputationModel> ToImputationModelMapper(this List<ImputationDto> imputationDtoList)
         {
             List<ImputationModel> result = new ();
@@ -89,6 +95,8 @@ namespace Imputaciones.Application.Contracts.Mappers
             return result;
         }
 
+
+        // List<ImputationResponseDto> -> List<ImputationResponseModel>
         public static List<ImputationResponseModel> ToListModelResponseMapper(this List<ImputationResponseDto> imputationResponseDtoList)
         {
             List<ImputationResponseModel> result = new ();
@@ -105,6 +113,8 @@ namespace Imputaciones.Application.Contracts.Mappers
              return result;
         }
 
+
+        // List<ImputationResponseModel> -> List<ImputationResponse>
         public static List<ImputationResponse> ToListImputationsResponse(this List<ImputationResponseModel> imputationResponseModelList)
         {
             List<ImputationResponse> result = new ();
@@ -121,6 +131,8 @@ namespace Imputaciones.Application.Contracts.Mappers
             return result;
         }
 
+
+        // List<ImputationInsertRequest> -> List<ImputationModel>
         public static List<ImputationModel> ToImputationModelMapper(this List<ImputationInsertRequest> imputationRequest)
         {
             List<ImputationModel> list = new();        
@@ -144,6 +156,8 @@ namespace Imputaciones.Application.Contracts.Mappers
             return list;          
         }
 
+
+        // ImputationModel -> Entity Imputation
         public static Imputation ToImputationMapper(this ImputationModel imputation)
         {
             return new()
@@ -160,6 +174,8 @@ namespace Imputaciones.Application.Contracts.Mappers
             };
         }
 
+
+        // List<ImputationsForReviewDto> -> List<ImputationsForReviewModel>
         public static List<ImputationsForReviewModel> ToListModelMapper(this List<ImputationsForReviewDto> imputationList) {
             List<ImputationsForReviewModel> list = new();
             foreach(var item in imputationList)
@@ -178,6 +194,8 @@ namespace Imputaciones.Application.Contracts.Mappers
             return list;
         }
 
+
+        // List<ImputationsForReviewModel> -> List<ImputationsForReviewResponse>
         public static List<ImputationsForReviewResponse> ToListResponseMapper(this List<ImputationsForReviewModel> imputationList)
         {
             List<ImputationsForReviewResponse> list = new();

@@ -7,6 +7,7 @@ namespace Imputaciones.Application.Contracts.Mappers
 {
     public static class RoleMapper
     {
+        // RoleDto -> RoleModel
         public static RoleModel ToRoleModelMapper(this RoleDto roleDto)
         {
             return new RoleModel()
@@ -16,6 +17,8 @@ namespace Imputaciones.Application.Contracts.Mappers
             };
         }
 
+
+        // RoleModel -> RoleResponse
         public static RoleResponse ToRoleResponseMapper(this RoleModel roleModel)
         {
             return new RoleResponse()
@@ -25,6 +28,8 @@ namespace Imputaciones.Application.Contracts.Mappers
             };
         }
 
+
+        // Entity Role -> RoleModel
         public static RoleModel ToRoleModelMapper(this Role role)
         {
             return new RoleModel()

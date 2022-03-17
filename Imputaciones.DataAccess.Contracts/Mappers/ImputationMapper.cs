@@ -5,6 +5,7 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
 {
     public static class ImputationMapper
     {
+        // Entity Imputation -> ImputationDto
         public static ImputationDto ToImputationDtoMapper(this Imputation imputacion)
         {
             return new ImputationDto()
@@ -20,6 +21,8 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
             };
         }
 
+
+        // List<Imputation> -> List<ImputationDto>
         public static List<ImputationDto> ToImputationDtoMapper(this List<Imputation> imputation)
         {
             List<ImputationDto> result = new ();

@@ -8,7 +8,7 @@ namespace Imputaciones.Application.Contracts.Mappers
     public static class CalendarMapper
     {
 
-        // Transforma de CalendarioModel -> CalendarioResponse
+        // CalendarModel -> CalendarResponse
         public static CalendarResponse ToCalendarResponseMapper(this CalendarModel calendarModel)
         {
             return new CalendarResponse()
@@ -26,7 +26,7 @@ namespace Imputaciones.Application.Contracts.Mappers
         }
 
 
-        // Transforma de  Entity Calendario -> CalendarioModel 
+        // Entity Calendar -> CalendarModel 
         public static CalendarModel ToCalendarModelMapper(this Calendar calendar)
         {
             return new CalendarModel()
@@ -43,6 +43,8 @@ namespace Imputaciones.Application.Contracts.Mappers
             };
         }
 
+
+        // CalendarDto -> CalendarModel
         public static CalendarModel ToCalendarModelMapper(this CalendarDto calendarDto)
         {
             return new CalendarModel()

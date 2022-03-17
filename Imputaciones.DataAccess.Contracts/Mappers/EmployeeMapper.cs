@@ -6,6 +6,7 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
 {
     public static class EmployeeMapper
     {
+        // EmployeeDto -> Entity Employee
         public static Employee ToEmployeeMapper(this EmployeeDto employeeDto)
         {
             return new Employee()
@@ -23,6 +24,8 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
             };
         }
 
+
+        // Entity Employee -> EmployeeDto
         public static EmployeeDto ToEmployeeDtoMapper(this Employee employee)
         {
             return new EmployeeDto
@@ -38,6 +41,8 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
             };
         }
 
+
+        // EmployeeDto -> EmployeeModel
         public static EmployeeModel toEmployeeModelMapper(this EmployeeDto employeeDto)
         {
             return new EmployeeModel()

@@ -7,6 +7,7 @@ namespace Imputaciones.Application.Contracts.Mappers
 {
     public static class EmployeeMapper
     {
+        // List<Employee> -> List<EmployeeModel>
         public static List<EmployeeModel> ToListEmployeeModel(this List<Employee> employees)
         {
             List<EmployeeModel> employeeModelList = new ();
@@ -17,6 +18,8 @@ namespace Imputaciones.Application.Contracts.Mappers
             return employeeModelList;
         }
 
+
+        // Entity Employee -> EmployeeModel
         public static EmployeeModel ToEmployeeModelMapper(this Employee employee)
         {
             return new EmployeeModel()
@@ -33,6 +36,7 @@ namespace Imputaciones.Application.Contracts.Mappers
         }
 
 
+        // EmployeeModel -> EmployeeResponseWithCalendar
         public static EmployeeResponseWithCalendar ToEmployeeResponseMapper(this EmployeeModel employeeModel)
         {
             return new EmployeeResponseWithCalendar()
@@ -50,6 +54,8 @@ namespace Imputaciones.Application.Contracts.Mappers
             };
         }
 
+
+        // EmployeeDto -> EmployeeModel
         public static EmployeeModel ToEmployeeModelMapper(this EmployeeDto employeeDto)
         {
             return new EmployeeModel()

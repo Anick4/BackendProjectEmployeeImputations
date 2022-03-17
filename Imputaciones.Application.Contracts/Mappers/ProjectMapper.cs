@@ -7,6 +7,7 @@ namespace Imputaciones.Application.Contracts.Mappers
 {
     public static class ProjectMapper
     {
+       // Entity Project -> ProjectModel
         public static ProjectModel ToProjectModel(this Project project)
         {
             return new ProjectModel()
@@ -19,6 +20,8 @@ namespace Imputaciones.Application.Contracts.Mappers
             };
         }
 
+
+        // ProjectDto -> ProjectModel
         public static ProjectModel ToProjectModel(this ProjectDto project)
         {
             return new ProjectModel()
@@ -31,6 +34,8 @@ namespace Imputaciones.Application.Contracts.Mappers
             };
         }
 
+
+        // ProjectDto -> ProjectModelReviewer
         public static ProjectModelReviewer ToProjectModelReviewer(this ProjectDto projectDto)
         {
             return new ProjectModelReviewer()
@@ -40,6 +45,8 @@ namespace Imputaciones.Application.Contracts.Mappers
             };
         }
 
+
+        // ProjectModel -> ProjectResponse
         public static ProjectResponse ToProjectResponseMapper(this ProjectModel projectModel)
         {
             return new ProjectResponse()
@@ -53,6 +60,8 @@ namespace Imputaciones.Application.Contracts.Mappers
 
         }
 
+
+        // List<Project> -> List<ProjectModel>
         public static List<ProjectModel> ToListProjectModel(this List<Project> projects)
         {
             List<ProjectModel> projectModelList = new ();
@@ -63,6 +72,8 @@ namespace Imputaciones.Application.Contracts.Mappers
             return projectModelList;
         }
 
+
+        // List<ProjectDto> -> List<ProjectModelReviewer>
         public static List<ProjectModelReviewer> ToListDtoProjectModel(this List<ProjectDto> projectsList)
         {
             List<ProjectModelReviewer> projectModelList = new();
@@ -73,6 +84,8 @@ namespace Imputaciones.Application.Contracts.Mappers
             return projectModelList;
         }
 
+
+        // List<ProjectModelReviewer> -> List<ProjectResponseReviewer>
         public static List<ProjectResponseReviewer> ToProjectListResponseReviewerMapper( this List<ProjectModelReviewer> projectModelList)
         {
             List<ProjectResponseReviewer> list = new();

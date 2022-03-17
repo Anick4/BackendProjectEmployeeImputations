@@ -5,6 +5,7 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
 {
     public static class RoleMapper
     {
+        // Entity Role -> RoleDto
         public static RoleDto ToRoleDtoMapper(this Role role)
         {
             return new RoleDto()

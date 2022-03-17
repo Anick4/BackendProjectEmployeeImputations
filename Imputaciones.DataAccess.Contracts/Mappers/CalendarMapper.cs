@@ -6,6 +6,7 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
 {
     public static class CalendarMapper
     {
+        // Entity Calendar -> CalendarDto
         public static CalendarDto ToCalendarDtoMapper(this Calendar calendar)
         {
             return new CalendarDto()
@@ -23,6 +24,7 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
         }
 
 
+        // CalendarDto -> CalendarModel
         public static CalendarModel toCalendarModelMapper(this CalendarDto calendar)
         {
             return new CalendarModel()
