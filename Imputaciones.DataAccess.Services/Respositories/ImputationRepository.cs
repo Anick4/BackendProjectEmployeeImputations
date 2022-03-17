@@ -71,7 +71,7 @@ namespace Imputaciones.DataAccess.Services.Respositories
         public async Task<List<ImputationsForReviewDto>> GetImputationsByProject(int ProjectId)
         {
             var query = from im in _dbContext.Imputations
-                        where im.Project_Id == ProjectId && im.State == (StateEnum)1
+                        where im.Project_Id == ProjectId 
                         join e in _dbContext.Employees on im.Employee_Id equals e.Employee_Id
                         join p in _dbContext.Projects on im.Project_Id equals p.Project_Id
                         select new ImputationsForReviewDto()
