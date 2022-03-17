@@ -77,7 +77,7 @@ namespace Imputaciones.DataAccess.Services.Respositories
                         select new ImputationsForReviewDto()
                         {
                             Date = im.Date,
-                            EmployeeName = e.Name,
+                            EmployeeName = $"{e.Name} {e.Surname}",
                             ProjectId = ProjectId,
                             EmployeeId = e.Employee_Id,
                             Hours = im.Hours,
