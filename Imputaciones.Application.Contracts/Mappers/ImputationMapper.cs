@@ -142,6 +142,7 @@ namespace Imputaciones.Application.Contracts.Mappers
                 {
                     list.Add(new ImputationModel()
                     {
+                        Imputation_Id = item.Imputation_Id,
                         Project_Id = im.ProjectId,
                         Date = item.Date,
                         Day = item.Day,

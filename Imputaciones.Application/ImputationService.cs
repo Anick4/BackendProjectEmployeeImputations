@@ -23,14 +23,16 @@ namespace Imputaciones.Application
             {
                 foreach (var model in modelList)
                 {
-                    if(_imputationRepository.Equals(model.Imputation_Id)==false)
+                    if(_imputationRepository.GetByID(model.Imputation_Id) == null)
                     {
                         _imputationRepository.Insert(model.ToImputationMapper());
                         _imputationRepository.SaveChanges();
                     }
                     else
                     {
-                        _imputationRepository.Update(model.ToImputationMapper());
+                        var entity = _imputationRepository.GetByID(model.Imputation_Id);
+                        entity.Hours = model.Hours;
+                        entity.State = model.State;
                         _imputationRepository.SaveChanges();
                     }
                 }
