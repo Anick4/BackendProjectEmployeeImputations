@@ -6,14 +6,13 @@ namespace Imputaciones.Application.BusinessModel.Responses
     {
         public EmployeeResponse() { }
         public EmployeeResponse(string message, bool status) : base(message, status) { }
-        public EmployeeResponse(int employee_Id, string? employee_Code, string? name, string? surname, string? email, string? password, int? calendar_Id, int? role_Id) 
+        public EmployeeResponse(int employee_Id, string? employee_Code, string? name, string? surname, string? email, int? calendar_Id, int? role_Id) 
         { 
             this.Employee_Id = employee_Id;
-            this.Employee_Code = employee_Code;
-            this.Name = name;
-            this.Surname = surname;
-            this.Email = email;
-            this.Password = password;
+            this.Employee_Code = employee_Code!;
+            this.Name = name!;
+            this.Surname = surname!;
+            this.Email = email!;
             this.Calendar_Id = calendar_Id;
             this.Role_Id = role_Id;
         }
@@ -23,7 +22,6 @@ namespace Imputaciones.Application.BusinessModel.Responses
         public string? Name { get; set; }
         public string? Surname { get; set; }
         public string? Email { get; set; }
-        public string? Password { get; set; }
         public int? Calendar_Id { get; set; }
         public int? Role_Id { get; set; }
     }

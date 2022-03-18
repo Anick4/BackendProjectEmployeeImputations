@@ -1,9 +1,6 @@
-﻿using Imputaciones.Application.BusinessModel.Responses;
-using Imputaciones.DataAccess.Contracts.Dtos;
-using Imputaciones.DataAccess.Contracts.Entities;
+﻿using Imputaciones.DataAccess.Contracts.Entities;
 using Imputaciones.DataAccess.Contracts.Repositories;
 using Imputaciones.DataAccess.Services.Repositories;
-using Microsoft.EntityFrameworkCore;
 
 namespace Imputaciones.DataAccess.Services.Respositories
 {

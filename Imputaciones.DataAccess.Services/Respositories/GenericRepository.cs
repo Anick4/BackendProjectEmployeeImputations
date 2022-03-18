@@ -18,8 +18,8 @@ namespace Imputaciones.DataAccess.Services.Repositories
 
 
         public virtual IEnumerable<TEntity> Get(
-            Expression<Func<TEntity, bool>> filter = null,
-            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+            Expression<Func<TEntity, bool>> filter = null!,
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null!,
             string includeProperties = "")
         {
             IQueryable<TEntity> query = dbSet;
@@ -46,8 +46,8 @@ namespace Imputaciones.DataAccess.Services.Repositories
         }
 
         public virtual async Task<IEnumerable<TEntity>> GetAsync(
-            Expression<Func<TEntity, bool>> filter = null,
-            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+            Expression<Func<TEntity, bool>> filter = null!,
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null!,
             string includeProperties = "")
         {
             IQueryable<TEntity> query = dbSet;
@@ -75,7 +75,7 @@ namespace Imputaciones.DataAccess.Services.Repositories
 
         public virtual TEntity GetByID(object id)
         {
-            return dbSet.Find(id);
+            return dbSet.Find(id)!;
         }
 
         public virtual TEntity Insert(TEntity entity)
@@ -87,7 +87,7 @@ namespace Imputaciones.DataAccess.Services.Repositories
 
         public virtual void Delete(object id)
         {
-            TEntity entityToDelete = dbSet.Find(id);
+            TEntity entityToDelete = dbSet.Find(id)!;
             Delete(entityToDelete);
         }
 

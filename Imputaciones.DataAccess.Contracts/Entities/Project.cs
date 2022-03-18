@@ -14,10 +14,10 @@ namespace Imputaciones.DataAccess.Contracts.Entities
         [Required]
         public Boolean Generic { get; set; }
         [Required]
-        public string Name { get; set; }      
+        public string? Name { get; set; }      
         [ForeignKey(nameof(Responsible))]
         [Required]
         public int Responsible_Id { get; set; }
-        public virtual Employee Responsible { get; set; }
+        public virtual Employee? Responsible { get; set; }
     }
 }

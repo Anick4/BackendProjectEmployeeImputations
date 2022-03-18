@@ -22,23 +22,5 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
                 Sunday = calendar.Sunday
             };
         }
-
-
-        // CalendarDto -> CalendarModel
-        public static CalendarModel toCalendarModelMapper(this CalendarDto calendar)
-        {
-            return new CalendarModel()
-            {
-                Calendar_Id = calendar.Calendar_Id,
-                Daily_Hours = calendar.Daily_Hours,
-                Monday = calendar.Monday,
-                Tuesday = calendar.Tuesday,
-                Wednesday = calendar.Wednesday,
-                Thursday = calendar.Thursday,
-                Friday = calendar.Friday,
-                Saturday = calendar.Saturday,
-                Sunday = calendar.Sunday,
-            };
-        }
     }
 }

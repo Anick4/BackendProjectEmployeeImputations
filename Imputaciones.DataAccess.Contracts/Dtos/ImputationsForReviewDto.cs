@@ -5,7 +5,7 @@ namespace Imputaciones.DataAccess.Contracts.Dtos
     public class ImputationsForReviewDto
     {
         public int ImputationId { get; set; }
-        public string EmployeeName { get; set; }
+        public string? EmployeeName { get; set; }
         public int ProjectId { get; set; }
         public int EmployeeId { get; set; }
         public int Hours { get; set; }

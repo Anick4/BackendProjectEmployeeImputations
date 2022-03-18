@@ -12,7 +12,7 @@ namespace Imputaciones.Application.BusinessModel.Models
         public int Week { get; set; }
         public int Employee_Id { get; set; }
         public int Project_Id { get; set; }
-        public string Date { get; set; }
-        public string ProjectName { get; set; }
+        public string? Date { get; set; }
+        public string? ProjectName { get; set; }
     }
 }

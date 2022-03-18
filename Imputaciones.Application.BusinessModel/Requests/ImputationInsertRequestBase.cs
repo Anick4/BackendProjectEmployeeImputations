@@ -10,6 +10,6 @@ namespace Imputaciones.Application.BusinessModel.Requests
         public StateEnum State { get; set; }
         public int Extra_Hours { get; set; }
         public int Week { get; set; }
-        public string Date { get; set; }
+        public string? Date { get; set; }
     }
 }

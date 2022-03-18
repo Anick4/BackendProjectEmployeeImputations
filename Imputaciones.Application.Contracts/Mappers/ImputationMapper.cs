@@ -138,7 +138,7 @@ namespace Imputaciones.Application.Contracts.Mappers
             List<ImputationModel> list = new();        
             foreach (var im in imputationRequest)
             {
-                foreach(var item in im.Imputations)
+                foreach(var item in im.Imputations!)
                 {
                     list.Add(new ImputationModel()
                     {

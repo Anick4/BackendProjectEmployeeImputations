@@ -6,7 +6,7 @@ namespace Imputaciones.DataAccess.Contracts.Repositories
 {
     public interface IEmployeeRepository : IGenericRespository<Employee>
     {
-        public Task<(EmployeeDto, CalendarDto, RoleDto, List<ProjectDto>)> GetEmployee(int id);
-        public Task<EmployeeDto> GetEmployeeByEmail(string email);
+        public Task<(EmployeeDto, CalendarDto, RoleDto, List<ProjectDto>?)>? GetEmployee(int? id);
+        public Task<EmployeeDto?> GetEmployeeByEmail(string email);
     }
 }

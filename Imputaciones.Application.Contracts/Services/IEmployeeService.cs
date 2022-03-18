@@ -8,7 +8,9 @@ namespace Imputaciones.Application.Contracts.Services
         Task<List<EmployeeModel>> GetAllEmployees();
         public EmployeeModel GetEmployeeById(int id);
         Task<EmployeeModel> AddEmployee(EmployeeModel employeeModel);
-        public Task<EmployeeModel> GetEmployee(int id);
-        public Task<EmployeeModel> CheckLogin(string email, string password);
+        public Task<EmployeeModel?>? GetEmployee(int? id);
+
+        public Task<EmployeeModel?>? CheckLogin(string email, string password);
+
     }
 }

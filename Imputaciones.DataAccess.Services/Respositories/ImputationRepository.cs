@@ -49,7 +49,7 @@ namespace Imputaciones.DataAccess.Services.Respositories
             return calendarId;
         }
 
-        public async Task<List<TotalHoursDto>> GetDailyHours(int Employeeid, int week) //REVISARLO CON PEDRO
+        public async Task<List<TotalHoursDto>> GetDailyHours(int Employeeid, int week) 
         {
             var queryName = await (from e in _dbContext.Employees
                             where e.Employee_Id == Employeeid

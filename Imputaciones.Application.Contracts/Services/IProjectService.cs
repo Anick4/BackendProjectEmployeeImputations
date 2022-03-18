@@ -5,7 +5,7 @@ namespace Imputaciones.Application.Contracts.Services
     public interface IProjectService
     { 
         public ProjectModel GetProjectById(int id);
-        public Task<List<ProjectModel>> GetAllProjectsByEmployee(int idEmployee);
+
 
     }
 }

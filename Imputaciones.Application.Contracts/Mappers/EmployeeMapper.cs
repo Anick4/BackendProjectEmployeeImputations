@@ -29,7 +29,6 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Surname = employee.Surname,
                 Employee_Code = employee.Employee_Code,
                 Email = employee.Email,
-                Password = employee.Password,
                 Calendar_Id = employee.Calendar_Id,
                 Role_Id = employee.Role_Id
             };
@@ -46,11 +45,10 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Surname = employeeModel.Surname,
                 Employee_Code = employeeModel.Employee_Code,
                 Email = employeeModel.Email,
-                Password = employeeModel.Password,
                 Calendar_Id = employeeModel.Calendar_Id,
                 Role_Id = employeeModel.Role_Id,
-                Token = employeeModel.Token,
-                Projects = employeeModel.Reviewer.ToProjectListResponseReviewerMapper()
+                Token = employeeModel.Token!,
+                Projects = employeeModel.Reviewer!.ToProjectListResponseReviewerMapper()
             };
         }
 
@@ -65,7 +63,6 @@ namespace Imputaciones.Application.Contracts.Mappers
                 Surname = employeeDto.Surname,
                 Employee_Code = employeeDto.Employee_Code,
                 Email = employeeDto.Email,
-                Password = employeeDto.Password,
                 Calendar_Id = employeeDto.Calendar_Id,
                 Role_Id = employeeDto.Role_Id,
             };

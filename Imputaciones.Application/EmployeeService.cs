@@ -1,6 +1,7 @@
 ﻿using Imputaciones.Application.BusinessModel.Models;
 using Imputaciones.Application.Contracts.Mappers;
 using Imputaciones.Application.Contracts.Services;
+using Imputaciones.DataAccess.Contracts.Dtos;
 using Imputaciones.DataAccess.Contracts.Mappers;
 using Imputaciones.DataAccess.Contracts.Repositories;
 
@@ -30,17 +31,19 @@ namespace Imputaciones.Application
             return result.ToEmployeeModelMapper();
         }
 
-        public async Task<EmployeeModel> GetEmployee(int id)
+        public async Task<EmployeeModel?> GetEmployee(int? id)
         {
-            var entityResponse = await _employeeRepository.GetEmployee(id);
-            var employee = entityResponse.Item1.toEmployeeModelMapper();
-            employee.Calendar = entityResponse.Item2.toCalendarModelMapper();
+
+            var entityResponse = await _employeeRepository.GetEmployee(id)!;
+            var employee = entityResponse.Item1.ToEmployeeModelMapper();
+            employee.Calendar = entityResponse.Item2.ToCalendarModelMapper();
             employee.Role = entityResponse.Item3.ToRoleModelMapper();
-            employee.Reviewer = entityResponse.Item4.ToListDtoProjectModel();
+            employee.Reviewer = entityResponse.Item4?.ToListDtoProjectModel();
             return employee;
         }
+       
 
-        public static Boolean CheckPassword(EmployeeModel employee, string password)
+        public static Boolean CheckPassword(EmployeeDto employee, string password)
         {
             if (employee.Password == password)
             {
@@ -52,15 +55,15 @@ namespace Imputaciones.Application
             }
         }
 
-        public async Task<EmployeeModel> CheckLogin(string email, string password)
+        public async Task<EmployeeModel?> CheckLogin(string email, string password)
         {
-            var employee = await _employeeRepository.GetEmployeeByEmail(email);
+            var employee = await _employeeRepository.GetEmployeeByEmail(email)!;
             if (employee != null)
             {
-                if (CheckPassword(employee.ToEmployeeModelMapper(), password))
+                if (CheckPassword(employee, password))
                 {
                     var employeWithToken = await GetEmployee(employee.Employee_Id);
-                    employeWithToken.Token = string.Concat("Soytutoken");
+                    employeWithToken!.Token = string.Concat("Soytutoken");
                     return employeWithToken;
                 }
                 else
@@ -73,5 +76,6 @@ namespace Imputaciones.Application
                 return null;
             }
         }
+
     }
 }

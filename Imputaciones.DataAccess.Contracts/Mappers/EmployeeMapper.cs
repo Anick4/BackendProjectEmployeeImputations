@@ -52,7 +52,6 @@ namespace Imputaciones.DataAccess.Contracts.Mappers
                 Surname = employeeDto.Surname,
                 Employee_Code = employeeDto.Employee_Code,
                 Email = employeeDto.Email,
-                Password = employeeDto.Password,
                 Calendar_Id = employeeDto.Calendar_Id,
                 Role_Id = employeeDto.Role_Id,
                 Calendar = null,

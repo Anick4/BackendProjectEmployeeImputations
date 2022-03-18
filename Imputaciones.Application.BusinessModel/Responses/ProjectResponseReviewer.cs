@@ -2,7 +2,7 @@
 {
     public class ProjectResponseReviewer
     {
-        public string ProjectName { get; set; }
+        public string? ProjectName { get; set; }
         public int Project_Id { get; set; }
     }
 }

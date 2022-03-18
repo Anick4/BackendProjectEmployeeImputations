@@ -11,10 +11,10 @@ namespace Imputaciones.DataAccess.Contracts.Entities
         [ForeignKey(nameof(Employee))]
         [Required]
         public int Employee_Id { get; set; }
-        public virtual Employee Employee { get; set; }
+        public virtual Employee? Employee { get; set; }
         [ForeignKey(nameof(Project))]
         [Required]
         public int Project_Id { get; set; }
-        public virtual Project Project { get; set; }
+        public virtual Project? Project { get; set; }
     }
 }

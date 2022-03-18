@@ -8,7 +8,7 @@ namespace Imputaciones.Application.BusinessModel.Models
 {
     public class TotalHoursModel
     {
-            public string EmployeeName { get; set; }
+            public string? EmployeeName { get; set; }
             public int TotalHours { get; set; }
             public int Day { get; set; }
         

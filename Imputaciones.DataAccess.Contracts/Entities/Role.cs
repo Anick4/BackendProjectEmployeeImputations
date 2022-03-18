@@ -8,6 +8,6 @@ namespace Imputaciones.DataAccess.Contracts.Entities
         [Required]
         public int Role_Id { get; set; }
         [Required]
-        public string Role_Name { get; set; }
+        public string? Role_Name { get; set; }
     }
 }

@@ -40,7 +40,7 @@ namespace Imputaciones.Application.Contracts.Mappers
         {
             return new ProjectModelReviewer()
             {
-                ProjectName = projectDto.Name,
+                ProjectName = projectDto.Name!,
                 Project_Id = projectDto.Project_Id
             };
         }
