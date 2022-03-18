@@ -23,7 +23,7 @@ namespace Imputaciones.Application
             {
                 foreach (var model in modelList)
                 {
-                    if(_imputationRepository.Equals(model.Project_Id)==false)
+                    if(_imputationRepository.Equals(model.Imputation_Id)==false)
                     {
                         _imputationRepository.Insert(model.ToImputationMapper());
                         _imputationRepository.SaveChanges();
